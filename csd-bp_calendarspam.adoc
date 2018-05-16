@@ -1,0 +1,242 @@
+= CalConnect Standard: Guidelines against calendar abuse for calendaring system operators
+:title: Guidelines against calendar abuse for calendaring system operators
+:docnumber: CD 18XX
+:status: working-draft
+:doctype: standard
+:edition: 1
+:copyright-year: 2018
+:revdate: 2018-04-13T00:00:00Z
+:language: en
+:technical-committee: CALSPAM
+:draft:
+:toc:
+
+.Foreword
+The Calendaring and Scheduling Consortium ("`CalConnect`") is global non-profit
+organization with the aim to facilitate interoperability of technologies across
+user-centric systems and applications.
+
+CalConnect works closely with liaison partners including international
+organizations such as ISO, OASIS and M3AAWG.
+
+The procedures used to develop this document and those intended for its further
+maintenance are described in the CalConnect Directives.
+
+In particular the different approval criteria needed for the different types of
+ISO documents should be noted. This document was drafted in accordance with the
+editorial rules of the CalConnect Directives.
+
+Attention is drawn to the possibility that some of the elements of this
+document may be the subject of patent rights. CalConnect shall not be held responsible
+for identifying any or all such patent rights. Details of any patent rights
+identified during the development of the document will be in the Introduction
+and/or on the CalConnect list of patent declarations received (see
+www.calconnect.com/patents).
+
+Any trade name used in this document is information given for the convenience
+of users and does not constitute an endorsement.
+
+This document was prepared by Technical Committee _{technical-committee}_.
+
+
+:sectnums!:
+== Introduction
+
+"Calendar spam", unsolicited calendar events and meeting invitations, is a
+recently exploited channel inserting unsolicited or otherwise unwanted events
+and invitations into calendaring and scheduling systems. It is a new form of
+application-specific spam which takes advantage of the application layer across
+multiple technologies that spans scheduling, calendaring and messaging systems.
+As is the case with email spam, calendar spam is not only used to deliver
+unwanted information, but can also be used for malicious purposes such as
+phishing attempts and delivering dangerous payloads.
+
+This CalConnect Standard provides guidelines for calendar system operators to
+better protect users from receiving undesired information delivered
+through calendar systems.
+
+
+:sectnums:
+== Scope
+
+This document specifies guidelines for calendaring system operators to:
+
+* detect the occurrence of calendar abuse;
+
+* processes and procedures to mitigate calendar abuse; and
+
+* definition of acceptable practices with calendar usage.
+
+
+[bibliography]
+== Normative References
+
+The following documents are referred to in the text in such a way that some or
+all of their content constitutes requirements of this document. For dated
+references, only the edition cited applies. For undated references, the latest
+edition of the referenced document (including any amendments) applies.
+
+// Insert references here:
+* [[[ISO27000,ISO/IEC 27000]]], _Information technology -- Security techniques -- Information security management systems -- Overview and vocabulary_
+
+* [[[ISO27001,ISO/IEC 27001]]], _Information technology -- Security techniques -- Information security management systems -- Requirements_
+
+
+== Terms and Definitions
+
+For the purposes of this document, the following terms and definitions apply.
+
+:sectnums!:
+
+[[calendar-system]]
+=== calendar system
+
+an information system that provides calendaring and scheduling functionality.
+
+NOTE: The term _calendar system_ in this standard specifically refers to calendaring systems that fulfill the requirements of CalConnect calendaring standards.
+
+[[calendar-spam]]
+=== calendar spam
+
+unsolicited calendar events and meeting invitations delivered through calendaring systems
+
+[[calendar-abuse]]
+=== calendar abuse
+
+malicious usage of a _calendar system_ (<<calendar-system>>), possibly leading to an _attack_ (<<ISO27000,ISO/IEC 27000 3.2>>) on the receiving user
+
+[[attack]]
+=== attack
+
+attempt to destroy, expose, alter, disable, steal or gain unauthorized access to or make unauthorized use of an asset
+
+[.source]
+<<ISO27000>>
+
+
+[[spam]]
+=== spam
+[alt]#SPAM#
+
+unsolicited information
+
+
+:sectnums:
+
+== Calendar abuse flow
+
+=== General
+
+=== Defining calendar abuse
+
+=== Creation of abusive content
+
+=== Delivery of abusive content
+
+=== Consequences of abusive content
+
+
+== Process
+
+There should be a "calendar abuse management process" in place.
+
+Define policies, roles and responsibilities.
+
+Document policies, procedures to ensure process is resilient.
+
+=== Policies
+
+Determine policy of acceptable calendar user behavior.
+
+
+=== Acceptable calendar user behavior
+
+==== Typical behavior
+
+==== Defining acceptability
+
+
+== Managing calendar abuse
+
+=== General
+
+Four stages:
+
+* Detect
+* Identify
+* Block
+* Report
+
+== Identifying calendar abuse
+
+=== General
+
+=== Types of abuse
+
+==== Spam
+
+==== Malware
+
+
+== Blocking calendar abuse
+
+=== General
+
+=== Preventing false positives
+
+
+== Reporting calendar abuse
+
+=== General
+
+=== Reporting parties
+
+=== Managing
+
+
+== How management of calendar abuse interacts with other processes
+
+* Information security management <<ISO27001>>
+* IT service management (ISO/IEC 20000-1)
+* Vulnerability management
+
+This document defines four classes of requirements and conformance. <<AnnexA>>
+specifies how conformance with these classes shall be tested.
+
+
+
+[[AnnexA]]
+[appendix,obligation=informative]
+== Technical controls
+
+=== Introduction
+
+This annex provides a list of technical controls that constitute best practice for
+calendar operators.
+
+[[calendar-spam-detection]]
+=== Calendar spam detection
+
+.Calendar Spam Detection
+|===
+|Technical control | Description
+
+|Check email spam score | Use email message spam analysis methods to determine nature of calendar message.
+|===
+
+An example of using SpamAssasin to detect calendar spam:
+
+[source,json]
+----
+{
+  "Assassin": {
+    "check": "spam"
+  }
+}
+----
+
+
+[bibliography]
+== Bibliography
+
+* [[[ISO9945,ISO/IEC/IEEE 9945:2009]]], _Information technology -- Portable Operating System Interface (POSIX®) Base Specifications, Issue 7_
