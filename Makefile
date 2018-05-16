@@ -1,5 +1,5 @@
 SRC  := $(wildcard csd-*.adoc)
-XML := $(patsubst %.adoc,%.xml,$(SRC))
+XML  := $(patsubst %.adoc,%.xml,$(SRC))
 HTML := $(patsubst %.adoc,%.html,$(SRC))
 
 SHELL := /bin/bash
@@ -10,7 +10,7 @@ clean:
 	rm -f $(HTML) $(XML)
 
 %.xml %.html: %.adoc
-	bundle exec asciidoctor -b csd -r 'asciidoctor-csd' $^ --trace
+	bundle exec metanorma -t csd $^
 
 open:
 	open $(HTML)
