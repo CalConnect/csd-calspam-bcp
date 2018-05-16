@@ -1,11 +1,11 @@
-= CalConnect Standard: Guidelines against calendar abuse for calendaring system operators
-:title: Guidelines against calendar abuse for calendaring system operators
+= CalConnect Standard: Guidelines against calendar abuse for calendaring and mail system operators
+:title: Guidelines against calendar abuse for calendaring and mail system operators
 :docnumber: CD 18XX
 :status: working-draft
 :doctype: standard
 :edition: 1
 :copyright-year: 2018
-:revdate: 2018-04-13T00:00:00Z
+:revdate: 2018-05-16T00:00:00Z
 :language: en
 :technical-committee: CALSPAM
 :draft:
@@ -20,11 +20,12 @@ CalConnect works closely with liaison partners including international
 organizations such as ISO, OASIS and M3AAWG.
 
 The procedures used to develop this document and those intended for its further
-maintenance are described in the CalConnect Directives.
+maintenance are described in the CalConnect Directives and in this case also aligned
+with the procedures used at M3AAWG.
 
 In particular the different approval criteria needed for the different types of
 ISO documents should be noted. This document was drafted in accordance with the
-editorial rules of the CalConnect Directives.
+editorial rules of the CalConnect Directives and M3AAWG.
 
 Attention is drawn to the possibility that some of the elements of this
 document may be the subject of patent rights. CalConnect shall not be held responsible
@@ -42,24 +43,45 @@ This document was prepared by Technical Committee _{technical-committee}_.
 :sectnums!:
 == Introduction
 
-"Calendar spam", unsolicited calendar events and meeting invitations, is a
-recently exploited channel inserting unsolicited or otherwise unwanted events
-and invitations into calendaring and scheduling systems. It is a new form of
-application-specific spam which takes advantage of the application layer across
-multiple technologies that spans scheduling, calendaring and messaging systems.
-As is the case with email spam, calendar spam is not only used to deliver
-unwanted information, but can also be used for malicious purposes such as
-phishing attempts and delivering dangerous payloads.
+=== Definition
 
-This CalConnect Standard provides guidelines for calendar system operators to
-better protect users from receiving undesired information delivered
-through calendar systems.
+"Calendar spam", unsolicited calendar events and meeting invitations, is a recently 
+exploited channel inserting unsolicited or otherwise unwanted events and invitations into 
+calendaring & scheduling systems. It is a new form of application-specific spam which 
+takes advantage of the application layer across multiple technologies that spans 
+scheduling, calendaring and messaging systems.
+As is the case with email spam, calendar spam is not only used to deliver unwanted 
+information, but can also be used for malicious purposes such as phishing attempts 
+and delivering dangerous payloads.
 
+As calendar events and meeting invitations are often transported and delivered via 
+email, combatting calendar spam requires awareness, intervention, and integration 
+with email systems and services.
+
+=== Impact
+
+Calendar spam is unique in a number of ways:
+
+1. Calendar spam, unlike email, can be placed chronologically anywhere in calendars, in 
+the past or the future, not just the present, making it difficult detect at the time of 
+delivery.
+
+2. Spam meeting invitations, may automatically see these unwanted invitations added to 
+their calendar without their consent, with notifications sent to all their devices. 
+These invitations are not only difficult to find, but in some cases there is no way for 
+the user to remove these events short of deleting the entire calendar.
+
+3. Calendar events and meeting invitations do not yet carry the rich provenance (detailed 
+header information) which today accompanies email, making it difficult to ascertain, 
+where and when events originated and were delivered.
+
+4. Calendar events often contain notifications/alarms which are often propagated across 
+a users many desktop and mobile calendaring clients.
 
 :sectnums:
 == Scope
 
-This document specifies guidelines for calendaring system operators to:
+This document specifies guidelines for calendaring and mail system operators to:
 
 * detect the occurrence of calendar abuse;
 
@@ -78,9 +100,6 @@ edition of the referenced document (including any amendments) applies.
 
 // Insert references here:
 * [[[ISO27000,ISO/IEC 27000]]], _Information technology -- Security techniques -- Information security management systems -- Overview and vocabulary_
-
-* [[[ISO27001,ISO/IEC 27001]]], _Information technology -- Security techniques -- Information security management systems -- Requirements_
-
 
 == Terms and Definitions
 
