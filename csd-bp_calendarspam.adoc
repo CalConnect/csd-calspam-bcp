@@ -24,7 +24,7 @@ maintenance are described in the CalConnect Directives and in this case also ali
 with the procedures used at M3AAWG.
 
 In particular the different approval criteria needed for the different types of
-ISO documents should be noted. This document was drafted in accordance with the
+CalConnect documents should be noted. This document was drafted in accordance with the
 editorial rules of the CalConnect Directives and M3AAWG.
 
 Attention is drawn to the possibility that some of the elements of this
@@ -45,37 +45,37 @@ This document was prepared by Technical Committee _{technical-committee}_.
 
 === Definition
 
-"Calendar spam", unsolicited calendar events and meeting invitations, is a recently 
-exploited channel inserting unsolicited or otherwise unwanted events and invitations into 
-calendaring & scheduling systems. It is a new form of application-specific spam which 
-takes advantage of the application layer across multiple technologies that spans 
+"Calendar spam", unsolicited calendar events and meeting invitations, is a recently
+exploited channel inserting unsolicited or otherwise unwanted events and invitations into
+calendaring & scheduling systems. It is a new form of application-specific spam which
+takes advantage of the application layer across multiple technologies that spans
 scheduling, calendaring and messaging systems.
-As is the case with email spam, calendar spam is not only used to deliver unwanted 
-information, but can also be used for malicious purposes such as phishing attempts 
+As is the case with email spam, calendar spam is not only used to deliver unwanted
+information, but can also be used for malicious purposes such as phishing attempts
 and delivering dangerous payloads.
 
-As calendar events and meeting invitations are often transported and delivered via 
-email, combatting calendar spam requires awareness, intervention, and integration 
+As calendar events and meeting invitations are often transported and delivered via
+email, combatting calendar spam requires awareness, intervention, and integration
 with email systems and services.
 
 === Impact
 
 Calendar spam is unique in a number of ways:
 
-1. Calendar spam, unlike email, can be placed chronologically anywhere in calendars, in 
-the past or the future, not just the present, making it difficult detect at the time of 
+. Calendar spam, unlike email, can be placed chronologically anywhere in calendars, in
+the past or the future, not just the present, making it difficult detect at the time of
 delivery.
 
-2. Spam meeting invitations, may automatically see these unwanted invitations added to 
-their calendar without their consent, with notifications sent to all their devices. 
-These invitations are not only difficult to find, but in some cases there is no way for 
+. Spam meeting invitations, may automatically see these unwanted invitations added to
+their calendar without their consent, with notifications sent to all their devices.
+These invitations are not only difficult to find, but in some cases there is no way for
 the user to remove these events short of deleting the entire calendar.
 
-3. Calendar events and meeting invitations do not yet carry the rich provenance (detailed 
-header information) which today accompanies email, making it difficult to ascertain, 
+. Calendar events and meeting invitations do not yet carry the rich provenance (detailed
+header information) which today accompanies email, making it difficult to ascertain,
 where and when events originated and were delivered.
 
-4. Calendar events often contain notifications/alarms which are often propagated across 
+. Calendar events often contain notifications/alarms which are often propagated across
 a users many desktop and mobile calendaring clients.
 
 :sectnums:
@@ -112,7 +112,9 @@ For the purposes of this document, the following terms and definitions apply.
 
 an information system that provides calendaring and scheduling functionality.
 
-NOTE: The term _calendar system_ in this standard specifically refers to calendaring systems that fulfill the requirements of CalConnect calendaring standards.
+NOTE: The term _calendar system_ in this standard specifically refers
+to calendaring systems that fulfill the requirements of CalConnect
+calendaring standards.
 
 [[calendar-spam]]
 === calendar spam
@@ -122,12 +124,15 @@ unsolicited calendar events and meeting invitations delivered through calendarin
 [[calendar-abuse]]
 === calendar abuse
 
-malicious usage of a _calendar system_ (<<calendar-system>>), possibly leading to an _attack_ (<<ISO27000,ISO/IEC 27000 3.2>>) on the receiving user
+malicious usage of a _calendar system_ (<<calendar-system>>),
+possibly leading to an _attack_ (<<ISO27000,ISO/IEC 27000 3.2>>)
+on the receiving user
 
 [[attack]]
 === attack
 
-attempt to destroy, expose, alter, disable, steal or gain unauthorized access to or make unauthorized use of an asset
+attempt to destroy, expose, alter, disable, steal or gain unauthorized
+access to or make unauthorized use of an asset
 
 [.source]
 <<ISO27000>>
@@ -215,7 +220,7 @@ Four stages:
 
 == How management of calendar abuse interacts with other processes
 
-* Information security management <<ISO27001>>
+* Information security management (ISO/IEC 27001)
 * IT service management (ISO/IEC 20000-1)
 * Vulnerability management
 
