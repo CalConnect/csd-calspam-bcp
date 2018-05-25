@@ -99,26 +99,26 @@ references, only the edition cited applies. For undated references, the latest
 edition of the referenced document (including any amendments) applies.
 
 // Insert references here:
-* [[[ISO27000,ISO/IEC 27000]]], _Information technology -- Security techniques -- Information security management systems -- Overview and vocabulary_
-* [[[iMIP,RFC6047]]], _iCalendar Message-Based Interoperability Protocol (iMIP)_
-* [[[iTIP,RFC5546]]], _iCalendar Transport-Independent Interoperability Protocol (iTIP)_
-* [[[SMTP,RFC2821]]], _Simple Mail Transfer Protocol (SMTP)_
+* [[[iMIP,IETF RFC 6047]]], _iCalendar Message-Based Interoperability Protocol (iMIP)_
+* [[[iTIP,IETF RFC 5546]]], _iCalendar Transport-Independent Interoperability Protocol (iTIP)_
 
-== Terms and Definitions
+
+== Terms, definitions and abbreviations
+
+=== Terms and definitions
 
 For the purposes of this document, the following terms and definitions apply.
 
-:sectnums!:
 
 [[calendar-system]]
-=== calendar system
+==== calendar system
 
-an information system, that provides the calendar and scheduling functionality for their 
-user accounts. This includes creating, editing and deleting events as well as scheduling 
-events between different user accounts including user accounts from other calendaring 
+an information system, that provides the calendar and scheduling functionality for their
+user accounts. This includes creating, editing and deleting events as well as scheduling
+events between different user accounts including user accounts from other calendaring
 systems.
 
-The _calendar system_ should apply state-of-the-art methods to prevent spam being send and 
+The _calendar system_ should apply state-of-the-art methods to prevent spam being send and
 received for user accounts on their system.
 
 NOTE: The term _calendar system_ in this standard specifically refers
@@ -126,19 +126,19 @@ to calendaring systems that fulfill the requirements of CalConnect
 calendaring standards.
 
 [[calendar-spam]]
-=== calendar spam
+==== calendar spam
 
 unsolicited calendar events and meeting invitations delivered through calendaring systems
 
 [[calendar-abuse]]
-=== calendar abuse
+==== calendar abuse
 
 malicious usage of a _calendar system_ (<<calendar-system>>),
-possibly leading to an _attack_ (<<ISO27000,ISO/IEC 27000 3.2>>)
+possibly leading to an _attack_ (<<ISO27000,clause 3.2>>)
 on the receiving user
 
 [[attack]]
-=== attack
+==== attack
 
 attempt to destroy, expose, alter, disable, steal or gain unauthorized
 access to or make unauthorized use of an asset
@@ -146,24 +146,60 @@ access to or make unauthorized use of an asset
 [.source]
 <<ISO27000>>
 
-[[iMIP]]
-=== iMIP
+
+[[mail-system]]
+==== mail system
+
+an information system that provides mail functionality. The most used method to send
+calendar invites between users is _iMIP_ (<<iMIP>>), a way of exchanging iTIP (<<iTIP>>) messages
+using email. Therefor _mail systems_ play a vital role in connecting users from different
+providers by creating events and inviting other users to join. Mail systems are used to
+transport the calendar relevant information from organizers to attendees of events.
+
+The _mail system_ should apply state-of-the-art methods to prevent spam being send and
+received for user accounts on their system.
+
+[[user-system]]
+==== user system
+
+an information system that provides authentication and autorisation functionality. The
+_user system_ should prevent fake, bot or spam registrations in order to limit the
+number of user accounts on their system, that can later be used for creating spam
+(either mail or calendar).
+
+The _user system_ should also prevent real user accounts being compromised by
+malicious actors by providing state-of-the-art authentication methods e.g. two-factor-
+authentication.
+
+[[spam]]
+==== spam
+
+unsolicited information
+
+
+[[abbrev]]
+=== Abbreviations
+
+For the purposes of this document, the following abbreviations apply.
+
+[[terms-imip]]
+==== iMIP
 
 iCalendar Message-Based Interoperability Protocol (iMIP)
 
 [.source]
 <<iMIP>>
 
-[[iTIP]]
-=== iTIP
+[[terms-itip]]
+==== iTIP
 
 iCalendar Transport-Independent Interoperability Protocol (iTIP)
 
 [.source]
 <<iTIP>>
 
-[[SMTP]]
-=== SMTP
+[[terms-smtp]]
+==== SMTP
 
 Simple Mail Transfer Protocol
 
@@ -171,47 +207,17 @@ Simple Mail Transfer Protocol
 <<SMTP>>
 
 
-[[mail-system]]
-=== mail system
 
-an information system that provides mail functionality. The most used method to send 
-calendar invites between users is _iMIP_ <<iMIP>>, a way of exchanging _iTIP_ messages 
-using email. Therefor _mail systems_ play a vital role in connecting users from different 
-providers by creating events and inviting other users to join. Mail systems are used to 
-transport the calendar relevant information from organizers to attendees of events.
+== Best common practices for mitigating ways calendar spam occurs
 
-The _mail system_ should apply state-of-the-art methods to prevent spam being send and 
-received for user accounts on their system.
+=== Detecting and mitigating spam on source system
 
-[[user-system]]
-=== user system
-
-an information system that provides authentication and autorisation functionality. The 
-_user system_ should prevent fake, bot or spam registrations in order to limit the
-number of user accounts on their system, that can later be used for creating spam 
-(either mail or calendar).
-
-The _user system_ should also prevent real user accounts being compromised by 
-malicious actors by providing state-of-the-art authentication methods e.g. two-factor-
-authentication. 
-
-[[spam]]
-=== spam
-
-unsolicited information
-
-
-:sectnums:
-== best common practices for mitigating ways calendar spam occurs
-
-=== detecting and mitigating spam on source System
-
-User accounts could be compromised by malicious actors or free hosting providers could 
-be abused with bots signing up for free accounts. These accounts are then used to create 
-calendar spam events. The calendar system uses templating to send an email invitation 
-with the calendar event attached and the event content will also be inserted into body 
-of the email.  The "source" hosting provider should take steps to detect and mitigate this 
-internal abuse on the calendar system and the email system. 
+User accounts could be compromised by malicious actors or free hosting providers could
+be abused with bots signing up for free accounts. These accounts are then used to create
+calendar spam events. The calendar system uses templating to send an email invitation
+with the calendar event attached and the event content will also be inserted into body
+of the email.  The "source" hosting provider should take steps to detect and mitigate this
+internal abuse on the calendar system and the email system.
 
 ==== using calendar systems
 
@@ -220,24 +226,24 @@ There are different best common practices that can be applied here:
 . abuse detection on frontend usage using input as network/IPs, user agents, click rate /
 path
 
-. checking the event content (subject, description, recurrence, number of attendees, 
-links, ...) for typical spam pattern before creating the event and sending the email 
+. checking the event content (subject, description, recurrence, number of attendees,
+links, ...) for typical spam pattern before creating the event and sending the email
 invitations
 
-with possible actions if potential spam is detected e.g. not sending, display frontend 
-error or feedback, alert user account, apply rate limiting, demand solving captcha before 
-sending and more. 
+with possible actions if potential spam is detected e.g. not sending, display frontend
+error or feedback, alert user account, apply rate limiting, demand solving captcha before
+sending and more.
 
 ==== using smtp
 
 There are different best common practices that can be applied here:
 
-. abuse detection for smtp access using input as network, DNSBL, ...
+. abuse detection for SMTP access using input as network, DNSBL, ...
 
-. check email for spam pattern (malicious content, blacklisted/known phishing URLs, ...) 
+. check email for spam pattern (malicious content, blacklisted/known phishing URLs, ...)
 using standard email anti-spam scanning applications
 
-with possible actions if potential spam is detected e.g. not sending, using specific 
+with possible actions if potential spam is detected e.g. not sending, using specific
 black mailer for sending indicating receivers about potential spam content and more.
 
 
@@ -245,13 +251,13 @@ black mailer for sending indicating receivers about potential spam content and m
 
 Spam events are typically received by recipients in two ways:
 
-. via email from an external system, or 
+. via email from an external system, or
 
 . directly from another account (bot or compromised) within the _calendar system_
 
-Events from internal accounts may propagate natively within the _calendar system_ or they 
-may propagate over email, depending on implementation.  The "receiving" hosting provider 
-can take steps to detect and mitigate the "external" abuse on the _calendar system_ and 
+Events from internal accounts may propagate natively within the _calendar system_ or they
+may propagate over email, depending on implementation.  The "receiving" hosting provider
+can take steps to detect and mitigate the "external" abuse on the _calendar system_ and
 the _mail system_.
 
 ==== mail system
@@ -261,41 +267,41 @@ There are different best common practices that can be applied here:
 . abuse detection for receiving email including input as network, mail header/
 structure, ...
 
-. check email for spam pattern using standard email anti-spam scanning applications, 
+. check email for spam pattern using standard email anti-spam scanning applications,
 DNSBLs, URIBLs, etc.
 
-. check sender From address reputation using internal and external sources e.g. subscribe 
+. check sender From address reputation using internal and external sources e.g. subscribe
 to InfoSec feeds of known malicious addresses, organiser on white list, ...
 
-with possible actions if potential spam detected e.g. not accepting (reject or discard), 
-putting in quarantaine or spam folder. As some of these actions do not deliver the email 
-to the user and no interaction with the _calendar system_ occurs, the recipient 
-has no way to handle false positives. Therefor these actions can only be taken if the 
-_mail system_ is very certain about this being abuse or spam. For these events also the 
+with possible actions if potential spam detected e.g. not accepting (reject or discard),
+putting in quarantaine or spam folder. As some of these actions do not deliver the email
+to the user and no interaction with the _calendar system_ occurs, the recipient
+has no way to handle false positives. Therefor these actions can only be taken if the
+_mail system_ is very certain about this being abuse or spam. For these events also the
 interaction with the _calendar system_ should not be initiated.
 
-For some of the milder action e.g. putting in spam folder, the user should be offered 
-options, that allow these emails to be marked as false positives and offer manual insert 
-into calendar option in app/web app/... 
+For some of the milder action e.g. putting in spam folder, the user should be offered
+options, that allow these emails to be marked as false positives and offer manual insert
+into calendar option in app/web app/...
 
 ==== interaction between _mail system_ and _calendar system_
 
-When interacting between _mail system_ and _calendar system_ the following best common 
+When interacting between _mail system_ and _calendar system_ the following best common
 practices should be applied:
 
 . the events should be parsed on _calendar system_ side as the domain knowledge about
 how events are structured is there (and not in the _mail system_)
 
-. the event content should be checked for spam pattern (subject, description, recurrence, 
+. the event content should be checked for spam pattern (subject, description, recurrence,
 links, ...) to determine the likeliness being _spam_
 
-. depending on the likeliness being _spam_, rules should be applied offered in the 
-users settings for insert (e.g. only automatic insert for organisers on a white 
-list/personal address book, state of this events in availability of calendar (e.g. free, 
+. depending on the likeliness being _spam_, rules should be applied offered in the
+users settings for insert (e.g. only automatic insert for organizers on a white
+list/personal address book, state of this events in availability of calendar (e.g. free,
 conditional or blocked))
 
-with possible actions if potential spam detected e.g. not automatically inserting, 
-deactivated notifications, ... 
+with possible actions if potential spam detected e.g. not automatically inserting,
+deactivated notifications, ...
 
 ==== _calendar system_
 
@@ -304,28 +310,28 @@ during the interaction between _mail system_ and _calendar system_, the _calenda
 system_ should offer these best common practices:
 
 . offer delete option for unwanted events e.g. mark as spam in app/web app/... in order
-to give the user the option for deleting the unwanted event without notifying the 
+to give the user the option for deleting the unwanted event without notifying the
 organizer. Does ARF need to be extended for calendar abuse reporting?
 
 . store information about how an event was inserted into the users calendar e.g. Mail ID
-in order to be able to inform the user about this and prevent extended information for 
+in order to be able to inform the user about this and prevent extended information for
 being able to inform the sending system about the abuse
 
-with possible actions if spam is detected by the user e.g. sending Feedback loop if 
+with possible actions if spam is detected by the user e.g. sending Feedback loop if
 MailID and original email is still available in the _mail system_.
 
 === other ways calendar _spam_ can occur
 
 ==== subscribing to shared calendars containing malicious events
 
-Another way how malicious events can end up in users calendar are shared calendars 
+Another way how malicious events can end up in users calendar are shared calendars
 being manipulated on origin side. Popular calendars e.g. official vacation/bank holidays
-in countries or states or schedules of populat sports clubs could be target for phishing 
+in countries or states or schedules of populat sports clubs could be target for phishing
 / taken over by spammers.
 
-Single malicious events within these subscribed calendars can not be deleted if shared 
-read-only. More robust controls may be needed for calendar subscribers, but unsubscribing 
-the specific calendar can solve the problem on an all or nothing approach (also the 
+Single malicious events within these subscribed calendars can not be deleted if shared
+read-only. More robust controls may be needed for calendar subscribers, but unsubscribing
+the specific calendar can solve the problem on an all or nothing approach (also the
 wanted events are then unsubscribed and deleted from users calendar).
 
 ==== _iTIP_
@@ -334,9 +340,10 @@ Calendar systems using _iTIP_ for direct communication between each other e.g. w
 the same _calendar system_ also need to consider and implement anti-abuse options as
 mentioned above.
 
-==== conclusion
+== Conclusion
 
-...
+TODO.
+
 
 
 [[AnnexA]]
@@ -345,44 +352,43 @@ mentioned above.
 
 === Structure of an best practice iMIP message containing an event
 
-Email messages may have more than a single iCalendar file attached, but the best practice 
-is to only attach a single _iMIP_ file to each email.
+Email messages may have more than a single iCalendar file attached, but the best practice
+is to only attach a single iMIP (<<iMIP>>) file to each email.
 
 The recommended structure the email is as follows:
 
 [source,json]
 ----
- multipart/mixed 
-    multipart/alternative 
+ multipart/mixed
+    multipart/alternative
         text/plain
-        text/html 
+        text/html
     text/calendar; method=REQUEST
     application/ics (with a content-disposition:attachment) BASE64
 ----
 
-This structure is based on interoperability testing with various existing implementations. 
-Some clients will only see the part with the standard text/calendar content-type and the 
-method header. Other clients are only able to attached parts with application/ics (which 
-is non-standard)
+This structure is based on interoperability testing with various existing implementations.
+Some clients will only see the part with the standard `text/calendar` content-type and the
+method header. Other clients are only able to attached parts with `application/ics` (which
+is non-standard).
 
-It is also recommended that the filename of the application/ics part end with .ics.
+It is also recommended that the filename of the `application/ics` part ends
+with the `.ics` file extension.
 
-Some vendors add links within the HTML part which can be used from non-calendaring-aware 
-email clients to accept or decline a request without having to process the calendar parts 
-at all. The server just updates the ORGANIZER’s copy of the event based on the link 
+Some vendors add links within the HTML part which can be used from non-calendaring-aware
+email clients to accept or decline a request without having to process the calendar parts
+at all. The server just updates the ORGANIZER’s copy of the event based on the link
 clicked.
 
 When using standard conform _calendar systems_ the structure of the email will be like
-above and the text/plain and text/html part of the message in the body will also include 
-information of the event e.g. subject, description, ... . This does not prevent spammers 
+above and the `text/plain` and `text/html` part of the message in the body will also include
+information of the event e.g. subject, description, ... . This does not prevent spammers
 from not including this potential malicious content besides the attached files, so all
-parts need to be parsed to detect malicious content in events. 
+parts need to be parsed to detect malicious content in events.
 
 [bibliography]
 == Bibliography
 
 * [[[ISO27000,ISO/IEC 27000:2018]]], _Information technology -- Security techniques -- Information security management systems -- Overview and vocabulary_ https://www.iso.org/standard/73906.html
-* [[[iMIP,RFC6047]]], _iCalendar Message-Based Interoperability Protocol (iMIP)_ https://tools.ietf.org/html/rfc6047
-* [[[iTIP,RFC5546]]], _iCalendar Transport-Independent Interoperability Protocol (iTIP)_ https://tools.ietf.org/html/rfc5546
-* [[[SMTP,RFC2821]]], _Simple Mail Transfer Protocol (SMTP)_ https://tools.ietf.org/html/rfc2821
+* [[[SMTP,IETF RFC 2821]]], _Simple Mail Transfer Protocol (SMTP)_ https://tools.ietf.org/html/rfc2821
 
