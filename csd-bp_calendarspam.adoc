@@ -392,6 +392,6 @@ parts need to be parsed to detect malicious content in events.
 [bibliography]
 == Bibliography
 
-* [[[ISO27000,ISO/IEC 27000:2018]]], _Information technology -- Security techniques -- Information security management systems -- Overview and vocabulary_ https://www.iso.org/standard/73906.html
-* [[[SMTP,IETF RFC 2821]]], _Simple Mail Transfer Protocol (SMTP)_ https://tools.ietf.org/html/rfc2821
+* [[[ISO27000,ISO/IEC 27000:2018]]], _Information technology -- Security techniques -- Information security management systems -- Overview and vocabulary_
+* [[[SMTP,IETF RFC 2821]]], _Simple Mail Transfer Protocol (SMTP)_ https://www.ietf.org/rfc/rfc2821.txt
 
