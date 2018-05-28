@@ -1,0 +1,54 @@
+= CalConnect Standard: Guidelines against calendar abuse for calendaring system operators
+
+////
+image:https://img.shields.io/travis/calconnect/csd-operator-guidelines/master.svg[
+	Build Status, link="https://travis-ci.org/calconnect/csd-operator-guidelines"]
+////
+
+This CalConnect Standard Document ("`CSD`") is written in pure AsciiDoc using the excellent
+https://github.com/riboseinc/asciidoctor-csd[`asciidoctor-csd` gem]. The latest
+draft of this is available through your CalConnect membership.
+
+The CSD model is defined here: https://github.com/riboseinc/csd
+
+== Fetching the document
+
+[source,sh]
+----
+git clone https://github.com/calconnect/TC-CALSPAM/
+----
+
+== Installing Build Tools
+
+You will need Ruby.
+
+=== On macOS
+
+[source,sh]
+----
+cd BP_workingdraft
+gem install bundler
+bundle install
+----
+
+== Building The Document
+
+[source,sh]
+----
+make clean all
+----
+
+The following formats will be built:
+
+* CSD HTML (`[filename].html`)
+* CSD XML (https://github.com/riboseinc/csd) (`[filename].xml`)
+
+== Iterating the document
+
+[source,sh]
+----
+make clean all
+open csd-*.html
+----
+
+
