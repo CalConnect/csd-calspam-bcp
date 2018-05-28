@@ -289,6 +289,9 @@ into calendar option in app/web app/...
 When interacting between _mail system_ and _calendar system_ the following best common
 practices should be applied:
 
+. the interaction should only be triggered for emails not already identified as spam
+during applying the above mentioned best common practices for mail systems 
+
 . the events should be parsed on _calendar system_ side as the domain knowledge about
 how events are structured is there (and not in the _mail system_)
 

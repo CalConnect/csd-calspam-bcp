@@ -1,0 +1,1505 @@
+<?xml version="1.0"?>
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:epub="http://www.idpf.org/2007/ops">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>csd-bp_calendarspam</title><style>
+  <!--
+/*
+    0 CSS RESET
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Overpass", sans-serif;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+/*
+ol, ul {
+	list-style: none;
+}
+*/
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*
+    1. HTML & Body
+*/
+body {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  color: #1d1d1d;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.4em;
+  background-color: #ffffff; }
+
+main {
+  margin: 0 3em 0 6em; }
+
+#toc {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400; }
+
+/*
+    2. Responsive navigation layout
+*/
+@media (min-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 323px;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0 0 0 45px;
+    margin-right: 30px;
+    background-color: #f7f7f7; }
+
+  #toggle {
+    position: fixed;
+    height: 100%;
+    width: 30px;
+    background-color: #1d1d1d;
+    color: white !important;
+    cursor: pointer;
+    z-index: 100; }
+
+  #toggle span {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%); }
+
+  .container {
+    padding-left: 360px; }
+
+  .rule.toc {
+    display: none; }
+
+  h1.toc-contents {
+    margin-top: 1em; }
+
+  ul#toc-list {
+    padding: 0;
+    margin: 0; } }
+@media (max-width: 768px) {
+  #toc {
+    padding: 0 1.5em 0 1.5em;
+    overflow: visible; } }
+#toc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#toc li {
+  padding: 5px 10px; }
+
+#toc a {
+  color: #485094;
+  text-decoration: none;
+  display: block; }
+
+#toc a:hover {
+  color: white; }
+
+#toc .h2 {
+  padding-left: 30px; }
+
+#toc .h3 {
+  padding-left: 50px; }
+
+#toc .toc-active a {
+  color: white; }
+
+#toc .toc-active, #toc li:hover {
+  background: #1d1d1d;
+  box-shadow: inset -5px 0px 10px -5px #1d1d1d !important; }
+
+#toc li:hover a {
+  color: white; }
+
+/*
+    Document types + stages
+*/
+.document-type-band {
+  left: 0;
+  top: 180px;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 99;
+  /*box-shadow: -5px 0px 10px #1d1d1d*/ }
+
+.document-stage-band {
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 98;
+  box-shadow: -5px 0px 10px #1d1d1d; }
+
+.document-type {
+  position: relative;
+  width: 25px; }
+
+.document-stage {
+  position: relative;
+  width: 25px; }
+
+p.document-type, p.document-stage {
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-left: 6px;
+  writing-mode: tb-rl;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0; }
+
+p.document-type {
+  font-weight: 400;
+  height: 210px; }
+
+#governance-band p.document-type {
+  font-weight: 400;
+  height: 230px !important; }
+
+p.document-stage {
+  font-weight: 300;
+  height: 160px; }
+
+#standard-band {
+  background-color: #0ac442; }
+
+#standard {
+  border-bottom: solid 3px #0ac442; }
+
+#governance {
+  border-bottom: solid 3px #750697; }
+
+#governance-band {
+  background-color: #750697; }
+
+#guide {
+  border-bottom: solid 3px #48a0e7; }
+
+#guide-band {
+  background-color: #48a0e7; }
+
+.coverpage-maturity {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0 0 2em 0;
+  text-transform: uppercase; }
+
+#proposal {
+  border-bottom: solid 3px #00BFFF; }
+
+#proposal-band {
+  background-color: #00BFFF; }
+
+#working-draft {
+  border-bottom: solid 3px #fda706; }
+
+#working-draft-band {
+  background-color: #fda706; }
+
+#committee-draft {
+  border-bottom: solid 3px #fd06fd; }
+
+#committee-draft-band {
+  background-color: #fd06fd; }
+
+#draft-standard {
+  border-bottom: solid 3px #fdf906; }
+
+#draft-standard-band {
+  background-color: #fdf906; }
+
+#final-draft {
+  border-bottom: solid 3px #7e0d13; }
+
+#final-draft-band {
+  background-color: #7e0d13; }
+
+#published {
+  border-bottom: solid 3px #0ac442; }
+
+#published-band {
+  background-color: #0ac442; }
+
+#withdrawn {
+  border-bottom: solid 3px #a0a0a0; }
+
+#withdrawn-band {
+  background-color: #a0a0a0; }
+
+/*
+    3. TYPOGRAPHY
+*/
+/*
+    3.1 Titles
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Overpass", sans-serif;
+  color: #0e1a85;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.3em; }
+
+h1 {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  margin-top: 2em; }
+
+h1#content {
+  margin-top: 2em; }
+
+h2 {
+  font-size: 1.3em; }
+
+h3 {
+  font-size: 1.1em; }
+
+span[id^="toc"]:after {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 0.8em;
+  color: #cfcfcf;
+  content: "\f0c1"; }
+
+p.TermNum, p.Terms, p.AltTerms {
+  color: #485094;
+  font-weight: 400; }
+
+p.TermNum {
+  font-size: 0.9em;
+  line-height: 1em;
+  margin: 0;
+  margin-top: 2em; }
+
+p.Terms {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  margin: 0; }
+
+p.AltTerms {
+  font-style: italic;
+  margin: 0; }
+
+/*
+    3.2 Links
+*/
+a, a:visited {
+  text-decoration: none;
+  color: #485094; }
+
+a:hover {
+  color: white;
+  background: #1d1d1d;
+  box-shadow: 3px 0 0 #1d1d1d, -3px 0 0 #1d1d1d;
+  /* padding: 2px 0 2px 0; */ }
+
+::selection {
+  background: #1d1d1d;
+  /* WebKit/Blink Browsers */
+  color: white; }
+
+::-moz-selection {
+  background: #1d1d1d;
+  /* Gecko Browsers */
+  color: white; }
+
+.contact-info a:hover {
+  color: #485094;
+  text-decoration: underline;
+  background: none;
+  box-shadow: 0 0 0 0; }
+
+/*
+    3.3 Lists
+*/
+ul {
+  margin-left: 0.5em; }
+
+#toc-list ul {
+  margin-bottom: 0.25em; }
+
+#toc-list li {
+  list-style-type: none; }
+
+/*
+    3.4 Rules
+*/
+.rule {
+  width: 100%;
+  height: 1px;
+  background-color: #0e1a85;
+  margin: 2em 0; }
+
+/*
+    3.5 Bibliograhy
+*/
+p.Biblio {
+  margin-top: 1em;
+  margin-left: 2em; }
+
+/*
+    3.6 Source Code + figures
+*/
+.figure, .Sourcecode {
+  font-family: "Space Mono", monospace;
+  background-color: #f7f7f7;
+  font-size: 0.8em;
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow: auto; }
+
+.FigureTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+/*
+    3.7 Notes
+*/
+.Note {
+  background-color: #fff495;
+  color: #47430c;
+  padding: 1.2em;
+  margin: 2em 0 1em 0; }
+
+/*
+    3.8 Examples
+*/
+.example {
+  background-color: #e1eef1;
+  padding: 1.2em;
+  margin: 2em 0 1em 0; }
+
+.example .example-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0; }
+
+/*
+    3.9 Tables
+*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: 300;
+  margin: 1em 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em; }
+
+table, th, td {
+  border: 1px solid black;
+  font-size: 0.95em; }
+
+td, th {
+  padding: 1em; }
+
+td.header {
+  font-weight: 400; }
+
+p.TableTitle {
+  text-align: center;
+  margin-top: 2.5em;
+  font-weight: 400; }
+
+/*
+  3.10 Footnotes
+*/
+a.footnote-number {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+.footnote {
+  font-size: 0.9em; }
+
+/*
+    3.11 Blockquotes
+*/
+.Quote {
+  background-color: #f7f7f7;
+  font-style: italic;
+  width: 80%;
+  padding: 1.5em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*
+    3.12 Formulas
+*/
+.formula {
+  background-color: #f7f7f7;
+  padding: 1.5em;
+  margin-top: 2em;
+  text-align: center; }
+
+/*
+    3.13 Contact Info
+*/
+.contact-info {
+  background-color: #f7f7f7;
+  padding: 2em;
+  margin-top: 5em;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; }
+
+.contact-info p, .contact-info a {
+  font-family: "Space Mono", monospace;
+  font-weight: 400; }
+
+.contact-info .name {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0; }
+
+.contact-info .address {
+  font-size: 1em;
+  line-height: 1.3em;
+  margin-top: 0; }
+
+/*
+    Keywords
+*/
+span.keyword {
+  font-weight: 600; }
+
+/*
+    Paragraphs
+*/
+p {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+/*
+    4.0 Page header
+*/
+/*
+    4.1 Top Logo
+*/
+.wrapper-top {
+  background-color: #0e1a85;
+  /* background-image: url("img/dots@2x.png"); */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAACXBIWXMAABYlAAAWJQFJUiTwAAADwUlEQVR4nO3YgQ2AMAwDwcAiWZ1NizrH30lIeIEq9nPOGSDqPgC7+93v/suy3Mmvhx+6VAAIcwFAmc4nyzYAIMgGAGEuACirdyBZtgEASTYACHMBQFm9A8myDQBIsgFAmAsAyuodSJZtAECSDQDCXABQVu9AsmwDAJJsABDmAoCyegeSZRsAkGQDgDAXAJTVO5As2wCAJBsAhLkAoKzegWTZBgAk2QAgzAUAZfUOJMs2ACDJBgBhLgAoq3cgWbYBAEk2AAhzAUBZvQPJsg0ASLIBQJgLAMrqHUiWbQBAkg0AwlwAUFbvQLJsAwCSbAAQ5gKAsnoHkmUbAJBkA4AwFwCU1TuQLNsAgCQbAIS5AKCs3oFk2QYAJNkAIMwFAGX1DiTLNgAgyQYAYS4AKKt3IFm2AQBJNgAIcwFAWb0DybINAEiyAUCYCwDK6h1Ilm0AQJINAMJcAFBW70CybAMAkmwAEOYCgLJ6B5JlGwCQZAOAMBcAlNU7kCzbAIAkGwCEuQCgrN6BZNkGACTZACDMBQBl9Q4kyzYAIMkGAGEuACirdyBZtgEASTYACHMBQFm9A8myDQBIsgFAmAsAyuodSJZtAECSDQDCXABQVu9AsmwDAJJsABDmAoCyegeSZRsAkGQDgDAXAJTVO5As2wCAJBsAhLkAoKzegWTZBgAk2QAgzAUAZfUOJMs2ACDJBgBhLgAoq3cgWbYBAEk2AAhzAUBZvQPJsg0ASLIBQJgLAMrqHUiWbQBAkg0AwlwAUFbvQLJsAwCSbAAQ5gKAsnoHkmUbAJBkA4AwFwCU1TuQLNsAgCQbAIS5AKCs3oFk2QYAJNkAIMwFAGX1DiTLNgAgyQYAYS4AKKt3IFm2AQBJNgAIcwFAWb0DybINAEiyAUCYCwDK6h1Ilm0AQJINAMJcAFBW70CybAMAkmwAEOYCgLJ6B5JlGwCQZAOAMBcAlNU7kCzbAIAkGwCEuQCgrN6BZNkGACTZACDMBQBl9Q4kyzYAIMkGAGEuACirdyBZtgEASTYACHMBQFm9A8myDQBIsgFAmAsAyuodSJZtAECSDQDCXABQVu9AsmwDAJJsABDmAoCyegeSZRsAkGQDgDAXAJTVO5As2wCAJBsAhLkAoKzegWTZBgAk2QAgzAUAZfUOJMs2ACDJBgBhLgAoq3cgWbYBAEk2AAhzAUBZvQPJsg0ASLIBQJgLAMrqHUiWbQBAkg0AwlwAUFbvQLJsAwCSbAAQ5gKAsnoHkmUbAJBkA4AwFwCU1TuQLNsAgCQbAFTNzA9ggAr9aahO8QAAAABJRU5ErkJggg==");
+  color: #ffffff;
+  padding: 2em 0; }
+
+.doc-number {
+  font-size: 0.5em;
+  font-family: "Overpass", sans-serif; }
+
+.coverpage-title {
+  padding-bottom: 0.5em;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5em;
+  font-weight: 900; }
+
+.WordSection11 {
+  padding: 0 2em 0 3em; }
+
+.WordSection2 {
+  padding: 0 3em 0 6em; }
+
+.zzSTDTitle1, .MsoCommentText {
+  display: none; }
+
+.coverpage {
+  text-align: center; }
+
+.coverpage-logo span, .coverpage-tc-name span {
+  font-family: "Overpass", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+.coverpage-tc-name {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin: 0.25em 0; }
+
+/*
+    4.2 Document Identity
+*/
+.coverpage-doc-identity {
+  font-size: 2em;
+  line-height: 2em; }
+
+.coverpage-title .title-second {
+  display: none; }
+
+.coverpage-stage-block {
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+  font-size: 1.25em;
+  margin: 2em 0em 2em 0em;
+  text-transform: uppercase; }
+
+/*
+    4.3 Draft Warning
+*/
+.coverpage-warning {
+  border-top: solid 1px #f36f36;
+  border-bottom: solid 1px #f36f36;
+  margin: 1em 2em;
+  color: #485094;
+  padding: 1em; }
+
+.coverpage-warning .title {
+  color: #f36f36;
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2em; }
+
+/*
+    4.4 Copyright
+*/
+.copyright {
+  padding: 1em;
+  font-size: 0.8em;
+  text-align: left; }
+
+.copyright .name, .copyright .address {
+  color: #485094; }
+
+/*
+    5.0 Other styles
+*/
+/*
+To top button
+*/
+#myBtn {
+  font-family: "Space Mono", monospace;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  background-color: #1d1d1d;
+  opacity: 0.15;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px 10px 15px;
+  border-radius: 4px; }
+
+#myBtn:hover {
+  opacity: 1; }
+
+-->
+</style>
+    <style>
+      <!--
+p.Sourcecode, li.Sourcecode, div.Sourcecode, pre.Sourcecode {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 12.0pt;
+  margin-left: 0cm;
+  text-align: left;
+  line-height: 12.0pt;
+  tab-stops: 20.15pt;
+  font-size: 9.0pt;
+  font-family: "Space Mono", monospace; }
+
+p.Biblio, li.Biblio, div.Biblio {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 12.0pt;
+  margin-left: 33.15pt;
+  text-indent: -33.15pt;
+  tab-stops: 33.15pt;
+  line-height: 12.0pt;
+  font-size: 11.0pt;
+  font-family: "Overpass", sans-serif; }
+
+p.FigureTitle {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 6.0pt;
+  margin-left: 0cm;
+  text-align: center;
+  line-height: 12.0pt;
+  page-break-before: avoid;
+  tab-stops: 20.15pt;
+  font-size: 11.0pt;
+  font-weight: bold;
+  font-family: "Overpass", sans-serif; }
+
+p.TableTitle {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 6.0pt;
+  margin-left: 0cm;
+  text-align: center;
+  page-break-after: avoid;
+  line-height: 12.0pt;
+  tab-stops: 20.15pt;
+  font-size: 11.0pt;
+  font-family: "Overpass", sans-serif; }
+
+p.Note, div.Note, li.Note, p.TableFootnote, div.TableFootnote, li.TableFootnote {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 12.0pt;
+  margin-left: 0cm;
+  text-align: justify;
+  line-height: 12.0pt;
+  tab-stops: 20.15pt;
+  font-size: 10.0pt;
+  font-family: "Overpass", sans-serif;
+  font-size: 10.0pt; }
+
+p.ANNEX, li.ANNEX, div.ANNEX {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 24.0pt;
+  margin-left: 0cm;
+  text-align: center;
+  text-indent: 0cm;
+  line-height: 15.5pt;
+  page-break-before: always;
+  page-break-after: avoid;
+  tab-stops: 20.15pt;
+  font-size: 14.0pt;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold; }
+
+p.BiblioTitle, li.BiblioTitle, div.BiblioTitle {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 15.5pt;
+  margin-left: 0cm;
+  text-align: center;
+  line-height: 15.5pt;
+  tab-stops: 20.15pt;
+  font-size: 14.0pt;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold; }
+
+p.Definition, li.Definition, div.Definition {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 12.0pt;
+  margin-left: 0cm;
+  text-align: justify;
+  line-height: 12.0pt;
+  tab-stops: 20.15pt;
+  font-size: 11.0pt;
+  font-family: "Overpass", sans-serif; }
+
+p.ForewordTitle, li.ForewordTitle, div.ForewordTitle {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 15.5pt;
+  margin-left: 0cm;
+  text-align: justify;
+  line-height: 15.5pt;
+  page-break-before: always;
+  page-break-after: avoid;
+  tab-stops: 20.15pt;
+  font-size: 14.0pt;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold; }
+
+p.IntroTitle, li.IntroTitle, div.IntroTitle {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 15.5pt;
+  margin-left: 0cm;
+  text-align: justify;
+  line-height: 15.5pt;
+  page-break-after: avoid;
+  tab-stops: 20.15pt;
+  font-size: 14.0pt;
+  page-break-before: always;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold; }
+
+p.zzContents, li.zzContents, div.zzContents {
+  margin-top: 48.0pt;
+  margin-right: 0cm;
+  margin-bottom: 15.5pt;
+  margin-left: 0cm;
+  line-height: 15.5pt;
+  page-break-before: always;
+  page-break-after: avoid;
+  tab-stops: 20.15pt;
+  font-size: 14.0pt;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold; }
+
+p.zzCopyright, li.zzCopyright {
+  margin-top: 0cm;
+  margin-right: 14.2pt;
+  margin-bottom: 12.0pt;
+  margin-left: 14.2pt;
+  text-align: justify;
+  line-height: 12.0pt;
+  tab-stops: 20.15pt 25.7pt 481.15pt;
+  padding: 0cm;
+  font-size: 11.0pt;
+  font-family: "Overpass", sans-serif; }
+
+div.zzCopyright {
+  border: solid windowtext 1.0pt;
+  padding: 1.0pt 4.0pt 0cm 4.0pt;
+  margin-left: 5.1pt;
+  margin-right: 5.1pt; }
+
+p.zzCopyright_address {
+  margin-top: 0cm;
+  margin-right: 14.2pt;
+  margin-bottom: 0.0pt;
+  margin-left: 14.2pt;
+  text-autospace: none;
+  padding-left: 20pt;
+  font-size: 10.0pt;
+  text-align: left; }
+
+p.zzSTDTitle, li.zzSTDTitle, div.zzSTDTitle {
+  margin-top: 20.0pt;
+  margin-right: 0cm;
+  margin-bottom: 38.0pt;
+  margin-left: 0cm;
+  line-height: 17.5pt;
+  tab-stops: 20.15pt;
+  font-size: 16.0pt;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold; }
+
+p.zzSTDTitle1, li.zzSTDTitle1, div.zzSTDTitle1 {
+  margin-top: 0pt;
+  margin-right: 0cm;
+  margin-bottom: 18.0pt;
+  margin-left: 0cm;
+  line-height: 17.5pt;
+  tab-stops: 20.15pt;
+  font-size: 16.0pt;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold; }
+
+p.Quote, li.Quote, div.Quote {
+  margin-top: 0cm;
+  margin-right: 36.0pt;
+  margin-bottom: 0cm;
+  margin-left: 36.0pt;
+  text-align: justify;
+  line-height: 12.0pt;
+  tab-stops: 20.15pt;
+  font-size: 11.0pt;
+  font-family: "Overpass", sans-serif; }
+
+p.QuoteAttribution {
+  text-align: right; }
+
+p.Admonition, li.Admonition, div.Admonition {
+  margin-top: 0cm;
+  margin-right: 57.6pt;
+  margin-bottom: 0cm;
+  margin-left: 57.6pt;
+  margin-bottom: .0001pt;
+  border: none;
+  padding: 0cm;
+  font-size: 12.0pt;
+  font-family: "Overpass", sans-serif;
+  color: #4472C4;
+  font-style: italic; }
+
+p.Code, li.Code, div.Code {
+  margin: 0cm;
+  margin-bottom: .0001pt;
+  line-height: 10.0pt;
+  tab-stops: 20.15pt;
+  font-size: 9.0pt;
+  font-family: "Space Mono", monospace; }
+
+p.Formula, li.Formula, div.Formula {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 11.0pt;
+  margin-left: 20.15pt;
+  line-height: 12.0pt;
+  tab-stops: right 487.45pt;
+  font-size: 11.0pt;
+  font-family: "Overpass", sans-serif; }
+
+@page WordSection1 {
+  size: 595.3pt 841.9pt;
+  margin: 39.7pt 53.85pt 1.0cm 53.85pt; }
+div.WordSection1 {
+  page: WordSection1; }
+
+@page WordSection2 {
+  size: 595.3pt 841.9pt;
+  margin: 39.7pt 53.85pt 1.0cm 53.85pt; }
+div.WordSection2 {
+  page: WordSection2; }
+
+@page WordSection3 {
+  size: 595.3pt 841.9pt;
+  margin: 39.7pt 53.85pt 1.0cm 53.85pt; }
+div.WordSection3 {
+  page: WordSection3; }
+
+ol {
+  margin-bottom: 0cm; }
+
+ul {
+  margin-bottom: 0cm; }
+
+table.MsoISOTable {
+  border-collapse: collapse;
+  border: solid windowtext 2pt;
+  font-size: 10.0pt;
+  font-family: "Overpass", sans-serif; }
+
+table.MsoISOTable tr {
+  page-break-inside: avoid; }
+
+table.MsoISOTable th {
+  border: solid windowtext 1pt;
+  padding: 0cm 2.85pt 0cm 2.85pt; }
+
+table.MsoISOTable td {
+  border: solid windowtext 1pt;
+  padding: 0cm 2.85pt 0cm 2.85pt; }
+
+table.MsoTableGrid {
+  border: solid windowtext 1.0pt;
+  font-size: 10.0pt;
+  font-family: "Overpass", sans-serif; }
+
+td {
+  page-break-inside: avoid; }
+
+tr {
+  page-break-after: avoid; }
+
+span.stem {
+  font-family: "Cambria Math",serif;
+  font-style: italic; }
+
+div.formula {
+  tab-stops: right 487.45pt; }
+
+body {
+  tab-interval: 36.0pt; }
+
+dt {
+  page-break-inside: avoid;
+  page-break-after: avoid; }
+
+.coverpage_docnumber {
+  text-align: center;
+  font-size: 14.0pt;
+  font-weight: bold; }
+
+.coverpage_techcommittee {
+  text-align: center; }
+
+.coverpage_docstage {
+  text-align: center;
+  font-size: 30.0pt;
+  color: #485094; }
+
+div.coverpage_warning {
+  border: solid windowtext 1.0pt #485094;
+  padding: 1.0pt 4.0pt 1.0pt 4.0pt #485094;
+  margin-left: 4.25pt;
+  margin-right: 4.25pt; }
+
+.coverpage_warning {
+  color: #485094;
+  font-size: 10.0pt; }
+
+a.TableFootnoteRef {
+  vertical-align: super; }
+
+aside {
+  font-size: 10.0pt; }
+
+div.example {
+  border: solid black .25pt;
+  padding: 10pt;
+  margin: 10pt; }
+
+table.dl {
+  margin-top: 0cm;
+  margin-right: 0cm;
+  margin-bottom: 11.0pt;
+  margin-left: 20.15pt; }
+
+ol {
+  margin-bottom: 0cm;
+  margin-left: 0cm; }
+
+ul {
+  margin-bottom: 0cm;
+  margin-left: 0cm; }
+
+-->
+    </style>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--TOC script import-->
+<script type="text/javascript" src="https://cdn.rawgit.com/jgallen23/toc/0.3.2/dist/toc.min.js"></script>
+
+<!--Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i|Space+Mono:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,600,900" rel="stylesheet" />
+<!--Font awesome import for the link icon-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous" />
+</head>
+  <body lang="EN-US" link="blue" vlink="#954F72" xml:lang="EN-US" class="container">
+    <div class="WordSection1"><div class="document-stage-band" id="working-draft-band">
+    <p class="document-stage">Working Draft</p>
+</div>
+
+<div class="document-type-band" id="standard-band">
+    <p class="document-type">Calconnect Standard</p>
+</div>
+  
+    
+
+  <div id="toggle"> <span>&#x2022;</span> </div>
+
+  <header>
+
+<!--<div class="WordSection1">-->
+  <div class="coverpage">
+    <div class="wrapper-top">
+
+  <div class="coverpage-doc-identity">
+    <div class="doc-number">
+      <span class="docnumber">CD 18XX(wd)</span>
+      <span class="docnumber-separator">:</span>
+      <span class="docyear">2018</span>
+    </div>
+
+    <div class="coverpage-title">
+      <span class="title-first">Guidelines against calendar abuse for calendaring and mail system operators</span>
+      <!--<span class="title-second"></span>-->
+    </div>
+  </div>
+
+  <div class="coverpage-logo">
+    <span>The Calendaring and Scheduling Consortium</span>
+  </div>
+
+  <div class="coverpage-tc-name">
+    <span>TC CALSPAM</span>
+  </div>
+  </div>
+
+  <div class="WordSection11">
+  <div class="coverpage-stage-block">
+    <span class="coverpage-stage" id="standard">Calconnect Standard</span>
+  </div>
+
+  <div class="coverpage-stage-block">
+    <span class="coverpage-maturity" id="working-draft">Working Draft</span>
+</div>
+
+
+  <div class="coverpage-warning">
+    <span class="title">Warning for Drafts</span>
+
+    <p class="content">
+    This document is not a CalConnect Standard. It is distributed for review and
+    comment, and is subject to change without notice and may not be referred to as
+    a Standard. Recipients of this draft are invited to submit, with their
+    comments, notification of any relevant patent rights of which they are aware
+    and to provide supporting documentation.
+    </p>
+  </div>
+
+
+<div class="copyright">
+  <p class="year">
+    &#xA9; 2018 The Calendaring and Scheduling Consortium, Inc.
+  </p>
+
+  <p class="message">
+    All rights reserved. Unless otherwise specified, no part of this
+    publication may be reproduced or utilized otherwise in any form or by any
+    means, electronic or mechanical, including photocopying, or posting on the
+    internet or an intranet, without prior written permission. Permission can
+    be requested from the address below.
+  </p>
+
+<div class="contact-info">
+  <p class="name">The Calendaring and Scheduling Consortium, Inc.</p>
+  <p class="address">
+    4390 Chaffin Lane<br />
+    McKinleyville<br />
+    California 95519<br />
+    United States of America<br />
+    <br />
+    <a href="mailto:copyright@calconnect.org">copyright@calconnect.org</a><br />
+    <a href="www.calconnect.org">www.calconnect.org</a>
+  </p>
+</div>
+</div>
+
+<div class="rule"></div>
+</div>
+
+
+
+</div></header>
+      <p>&#xA0;</p>
+    </div>
+    <br />
+    <div class="WordSection2"><nav>
+  <h1 id="content">Contents</h1>
+  <div id="toc"></div>
+
+</nav>
+
+
+<div class="rule toc"></div>
+
+      <p>&#xA0;</p>
+    </div>
+    <br />
+    <main class="WordSection3"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <br />
+      <div>
+        <h1 class="ForewordTitle">Foreword</h1>
+        <p id="_8b0cb8e7-7993-462a-a3e0-d9fa1bef9c6d">The Calendaring and Scheduling Consortium ("CalConnect") is global non-profit
+organization with the aim to facilitate interoperability of technologies across
+user-centric systems and applications.</p>
+        <p id="_414980e4-4e71-43e5-90d0-f25faf2128b5">CalConnect works closely with liaison partners including international
+organizations such as ISO, OASIS and M3AAWG.</p>
+        <p id="_3a1d32e4-6769-4da1-b89a-f951bc5e7e71">The procedures used to develop this document and those intended for its further
+maintenance are described in the CalConnect Directives and in this case also aligned
+with the procedures used at M3AAWG.</p>
+        <p id="_f541f558-b3c7-40f3-9607-02be1f88d99a">In particular the different approval criteria needed for the different types of
+CalConnect documents should be noted. This document was drafted in accordance with the
+editorial rules of the CalConnect Directives and M3AAWG.</p>
+        <p id="_9541433d-6bc7-49c7-8d66-9228432484ef">Attention is drawn to the possibility that some of the elements of this
+document may be the subject of patent rights. CalConnect shall not be held responsible
+for identifying any or all such patent rights. Details of any patent rights
+identified during the development of the document will be in the Introduction
+and/or on the CalConnect list of patent declarations received (see
+www.calconnect.com/patents).</p>
+        <p id="_f3ad5d4c-6987-4cc3-90b2-44ae2362d32e">Any trade name used in this document is information given for the convenience
+of users and does not constitute an endorsement.</p>
+        <p id="_a8a38cb4-261b-4150-876a-ff3bc7df353f">This document was prepared by Technical Committee <i>CALSPAM</i>.</p>
+      </div>
+      <br />
+      <div class="Section3" id="_introduction">
+        <h1 class="IntroTitle">0.&#xA0; Introduction</h1>
+        <div id="_definition"><h2>0.1. Definition</h2><p id="_24178c4f-00ac-4d02-b318-6ab90500b1d3">"Calendar spam", unsolicited calendar events and meeting invitations, is a recently
+exploited channel inserting unsolicited or otherwise unwanted events and invitations into
+calendaring &amp; scheduling systems. It is a new form of application-specific spam which
+takes advantage of the application layer across multiple technologies that spans
+scheduling, calendaring and messaging systems.
+As is the case with email spam, calendar spam is not only used to deliver unwanted
+information, but can also be used for malicious purposes such as phishing attempts
+and delivering dangerous payloads.</p>
+<p id="_6267adaf-a83d-4685-81f0-91cf33a78a02">As calendar events and meeting invitations are often transported and delivered via
+email, combatting calendar spam requires awareness, intervention and integration
+with email systems and services.</p></div>
+        <div id="_impact"><h2>0.2. Impact</h2><p id="_b0aa5b01-efde-45eb-9095-7ddd6efcc52a">Calendar spam is unique in a number of ways:</p>
+<ol type="a">
+  <li>
+    <p id="_776754e5-6d0b-4146-b394-aee2c1321299">Calendar spam, unlike email, can be placed chronologically anywhere in calendars, in
+the past or the future, not just the present, making it difficult detect at the time of
+delivery.</p>
+  </li>
+  <li>
+    <p id="_e4f4db3f-cb17-4736-9005-58ccf1967186">Spam meeting invitations, may automatically see these unwanted invitations added to
+their calendar without their consent, with notifications sent to all their devices.
+These invitations are not only difficult to find, but in some cases there is no way for
+the user to remove these events short of deleting the entire calendar.</p>
+  </li>
+  <li>
+    <p id="_43ba586b-ac86-48b5-8598-a047f8513bcf">Calendar events and meeting invitations do not yet carry the rich provenance (detailed
+header information) which today accompanies email, making it difficult to ascertain,
+where and when events originated and were delivered.</p>
+  </li>
+  <li>
+    <p id="_c9c2f45b-b4cb-4a42-9a57-7cfcfd18ee8f">Calendar events often contain notifications/alarms which are often propagated across
+a users many desktop and mobile calendaring clients.</p>
+  </li>
+</ol></div>
+      </div>
+      <p class="zzSTDTitle1">Guidelines against calendar abuse for calendaring and mail system operators</p>
+      <div id="_scope">
+        <h1>1.&#xA0; Scope</h1>
+        <p id="_6a54f69c-8aa5-47d9-8230-014db5fc25b6">This document specifies guidelines for calendaring and mail system operators to:</p>
+        <ul>
+  <li>
+    <p id="_caff8d93-66bb-4fe4-ab73-9ca28e016210">detect the occurrence of calendar abuse;</p>
+  </li>
+  <li>
+    <p id="_861548c5-2396-4e62-b9ab-1ece2ba4eaad">processes and procedures to mitigate calendar abuse; and</p>
+  </li>
+  <li>
+    <p id="_ae3c5c87-3735-4aff-ba6f-237efe09aea9">definition of acceptable practices with calendar usage.</p>
+  </li>
+</ul>
+      </div>
+      <div>
+        <h1>2.&#xA0; Normative References</h1>
+        <p>The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
+        <p id="iMIP" class="Biblio">IETF RFC 6047,
+    <i>iCalendar Message-Based Interoperability Protocol (iMIP)</i>
+  </p>
+        <p id="iTIP" class="Biblio">IETF RFC 5546,
+    <i>iCalendar Transport-Independent Interoperability Protocol (iTIP)</i>
+  </p>
+      </div>
+      <div id="_terms_definitions_and_abbreviations"><h1>3.&#xA0; Terms and Definitions</h1><p>For the purposes of this document,
+    the following terms and definitions apply.</p>
+<div id="_terms_and_definitions"><h2>3.1. Terms and Definitions</h2>
+<h3 class="TermNum" id="calendar-system">3.1.1</h3><p class="Terms" style="text-align:left;">calendar system</p><p id="_af0fb53a-2759-48ba-8aaa-71ea954a1a6a">an information system, that provides the calendar and scheduling functionality for their
+user accounts. This includes creating, editing and deleting events as well as scheduling
+events between different user accounts including user accounts from other calendaring
+systems.</p><p id="_9d569135-f5c8-43c0-8cc6-86a91942e29f">The <i>calendar system</i> should apply state-of-the-art methods to prevent spam being send and
+received for user accounts on their system.</p>
+
+<div class="Note"><p class="Note">Note 1 to entry: The term <i>calendar system</i> in this standard specifically refers
+to calendaring systems that fulfill the requirements of CalConnect
+calendaring standards.</p></div>
+<h3 class="TermNum" id="calendar-spam">3.1.2</h3>
+  <p class="Terms" style="text-align:left;">calendar spam</p>
+  <p id="_41d4b657-9284-4e92-9414-1e78b509fcc3">unsolicited calendar events and meeting invitations delivered through calendaring systems</p>
+
+<h3 class="TermNum" id="calendar-abuse">3.1.3</h3>
+  <p class="Terms" style="text-align:left;">calendar abuse</p>
+  <p id="_9fcff985-c18d-4ee1-a437-e7804b633692">malicious usage of a <i>calendar system</i> (<a href="#calendar-system">3.1.1</a>),
+possibly leading to an <i>attack</i> (<a href="#ISO27000">ISO/IEC 27000: 2018, 3.2</a>)
+on the receiving user</p>
+
+<h3 class="TermNum" id="attack">3.1.4</h3><p class="Terms" style="text-align:left;">attack</p><p id="_5dc79f2f-54ca-4a82-b71a-034863e40221">attempt to destroy, expose, alter, disable, steal or gain unauthorized
+access to or make unauthorized use of an asset</p>
+<p>[SOURCE: <a href="#ISO27000">ISO/IEC 27000: 2018</a>]</p>
+<h3 class="TermNum" id="mail-system">3.1.5</h3><p class="Terms" style="text-align:left;">mail system</p><p id="_887307ad-9d00-4946-abde-324340d86e66">an information system that provides mail functionality. The most used method to send
+calendar invites between users is <i>iMIP</i> (<a href="#iMIP">IETF RFC 6047</a>), a way of exchanging iTIP (<a href="#iTIP">IETF RFC 5546</a>) messages
+using email. Therefor <i>mail systems</i> play a vital role in connecting users from different
+providers by creating events and inviting other users to join. Mail systems are used to
+transport the calendar relevant information from organizers to attendees of events.</p><p id="_6aa5dbb0-08d4-4c9b-991d-165ac56f757c">The <i>mail system</i> should apply state-of-the-art methods to prevent spam being send and
+received for user accounts on their system.</p>
+
+<h3 class="TermNum" id="user-system">3.1.6</h3><p class="Terms" style="text-align:left;">user system</p><p id="_b97e4e81-3987-44a3-a226-f5e011c56054">an information system that provides authentication and autorisation functionality. The
+<i>user system</i> should prevent fake, bot or spam registrations in order to limit the
+number of user accounts on their system, that can later be used for creating spam
+(either mail or calendar).</p><p id="_a3699b79-cff8-4085-895e-b164c975ab05">The <i>user system</i> should also prevent real user accounts being compromised by
+malicious actors by providing state-of-the-art authentication methods e.g. two-factor-
+authentication.</p>
+
+<h3 class="TermNum" id="spam">3.1.7</h3>
+  <p class="Terms" style="text-align:left;">spam</p>
+  <p id="_32e89b1f-9686-4585-a3ef-494b462e66ba">unsolicited information</p>
+</div><div id="abbrev"><h2>3.2. Abbreviations</h2><p id="_52649641-b0b5-4009-b350-6e258f9ee976">For the purposes of this document, the following abbreviations apply.</p>
+<div id="terms-imip"><h3>3.2.1. iMIP</h3><p id="_a09e71ec-dde2-4d12-b246-17757f8dde04">iCalendar Message-Based Interoperability Protocol (iMIP)</p>
+<p>[SOURCE: <a href="#iMIP">IETF RFC 6047</a>]</p></div>
+<div id="terms-itip"><h3>3.2.2. iTIP</h3><p id="_d4b720fa-51a0-4b12-b561-7532b61de721">iCalendar Transport-Independent Interoperability Protocol (iTIP)</p>
+<p>[SOURCE: <a href="#iTIP">IETF RFC 5546</a>]</p></div>
+<div id="terms-smtp"><h3>3.2.3. SMTP</h3><p id="_632a4645-7ba2-4db4-a718-fe9ec9dfa632">Simple Mail Transfer Protocol</p>
+<p>[SOURCE: <a href="#SMTP">IETF RFC 2821</a>]</p></div></div></div>
+      <div id="_best_common_practices_for_mitigating_ways_calendar_spam_occurs">
+        <h1>4.&#xA0; Best common practices for mitigating ways calendar spam occurs</h1>
+        <div id="_detecting_and_mitigating_spam_on_source_system"><h2>4.1. Detecting and mitigating spam on source system</h2><p id="_49aa7f58-b054-4ca6-be24-c2e5ac5f9643">User accounts could be compromised by malicious actors or free hosting providers could
+be abused with bots signing up for free accounts. These accounts are then used to create
+calendar spam events. The calendar system uses templating to send an email invitation
+with the calendar event attached and the event content will also be inserted into body
+of the email.  The "source" hosting provider should take steps to detect and mitigate this
+internal abuse on the calendar system and the email system.</p>
+<div id="_using_calendar_systems"><h3>4.1.1. using calendar systems</h3><p id="_73b7bacf-e61c-441c-ac73-2aa4f777a499">There are different best common practices that can be applied here:</p>
+<ol type="a">
+  <li>
+    <p id="_dcf9dfd4-1e17-4878-9e3c-514c6eb6bd81">abuse detection on frontend usage using input as network/IPs, user agents, click rate /
+path</p>
+  </li>
+  <li>
+    <p id="_e4d39980-5c27-497b-86d5-749e323d315b">checking the event content (subject, description, recurrence, number of attendees,
+links, &#x2026;&#x200B;) for typical spam pattern before creating the event and sending the email
+invitations</p>
+  </li>
+</ol>
+<p id="_56428c67-ded0-4d7a-87d8-158eeff01424">with possible actions if potential spam is detected e.g. not sending, display frontend
+error or feedback, alert user account, apply rate limiting, demand solving captcha before
+sending and more.</p></div>
+<div id="_using_smtp"><h3>4.1.2. using smtp</h3><p id="_e9018704-118e-4683-ba82-b86f0fddfb98">There are different best common practices that can be applied here:</p>
+<ol type="a">
+  <li>
+    <p id="_ae5efa4f-b5c9-4493-9583-9721934e9864">abuse detection for SMTP access using input as network, DNSBL, &#x2026;&#x200B;</p>
+  </li>
+  <li>
+    <p id="_73778748-f162-43d9-8545-ff37422721a3">check email for spam pattern (malicious content, blacklisted/known phishing URLs, &#x2026;&#x200B;)
+using standard email anti-spam scanning applications</p>
+  </li>
+</ol>
+<p id="_dff90e30-d764-4397-af5f-dff1ad974c79">with possible actions if potential spam is detected e.g. not sending, using specific
+black mailer for sending indicating receivers about potential spam content and more.</p></div></div>
+        <div id="_detecting_and_mitigating_spam_on_receiving_system"><h2>4.2. detecting and mitigating spam on receiving system</h2><p id="_7082874b-d5e2-4e46-88f1-af0fdfe34304">Spam events are typically received by recipients in two ways:</p>
+<ol type="a">
+  <li>
+    <p id="_f2246eb1-fa33-4b16-950c-5441d191001a">via email from an external system, or</p>
+  </li>
+  <li>
+    <p id="_e51179ec-ae10-4e1d-bd97-e528ffafdb8f">directly from another account (bot or compromised) within the <i>calendar system</i></p>
+  </li>
+</ol>
+<p id="_740249b0-e1a1-40f7-af32-67c2ae147e03">Events from internal accounts may propagate natively within the <i>calendar system</i> or they
+may propagate over email, depending on implementation.  The "receiving" hosting provider
+can take steps to detect and mitigate the "external" abuse on the <i>calendar system</i> and
+the <i>mail system</i>.</p>
+<div id="_mail_system"><h3>4.2.1. mail system</h3><p id="_5205b0e3-370d-47cf-a08b-6135dc7da5a4">There are different best common practices that can be applied here:</p>
+<ol type="a">
+  <li>
+    <p id="_2b898a89-92a6-4d10-845c-4c47ac8cca10">abuse detection for receiving email including input as network, mail header/
+structure, &#x2026;&#x200B;</p>
+  </li>
+  <li>
+    <p id="_cbeeeb12-cc06-484b-a6bd-d6f577068a81">check email for spam pattern using standard email anti-spam scanning applications,
+DNSBLs, URIBLs, etc.</p>
+  </li>
+  <li>
+    <p id="_2d4b2a0b-4c58-447d-9e6c-559ecc13b458">check sender From address reputation using internal and external sources e.g. subscribe
+to InfoSec feeds of known malicious addresses, organiser on white list, &#x2026;&#x200B;</p>
+  </li>
+</ol>
+<p id="_d29a4aa2-528c-4631-9f83-82b5d2e96ded">with possible actions if potential spam detected e.g. not accepting (reject or discard),
+putting in quarantaine or spam folder. As some of these actions do not deliver the email
+to the user and no interaction with the <i>calendar system</i> occurs, the recipient
+has no way to handle false positives. Therefor these actions can only be taken if the
+<i>mail system</i> is very certain about this being abuse or spam. For these events also the
+interaction with the <i>calendar system</i> should not be initiated.</p>
+<p id="_9e0e8b08-01a0-4517-ad99-22db1893d09f">For some of the milder action e.g. putting in spam folder, the user should be offered
+options, that allow these emails to be marked as false positives and offer manual insert
+into calendar option in app/web app/&#x2026;&#x200B;</p></div>
+<div id="_interaction_between_mail_system_and_calendar_system"><h3>4.2.2. interaction between <i>mail system</i> and <i>calendar system</i></h3><p id="_c04dc5b4-ae3f-46f6-baee-f2cec382e71f">When interacting between <i>mail system</i> and <i>calendar system</i> the following best common
+practices should be applied:</p>
+<ol type="a">
+  <li>
+    <p id="_afaa9c83-50a3-476b-a9c9-c8da12f29e3c">the interaction should only be triggered for emails not already identified as spam
+during applying the above mentioned best common practices for mail systems</p>
+  </li>
+  <li>
+    <p id="_87b154b5-c8be-4e22-8e29-bfe599ee4071">the events should be parsed on <i>calendar system</i> side as the domain knowledge about
+how events are structured is there (and not in the <i>mail system</i>)</p>
+  </li>
+  <li>
+    <p id="_8cac3e8b-666a-4f31-ae78-db62da80efce">the event content should be checked for spam pattern (subject, description, recurrence,
+links, &#x2026;&#x200B;) to determine the likeliness being <i>spam</i></p>
+  </li>
+  <li>
+    <p id="_3985e9ce-56c8-4f91-b5d3-cd679741aa5c">depending on the likeliness being <i>spam</i>, rules should be applied offered in the
+users settings for insert (e.g. only automatic insert for organizers on a white
+list/personal address book, state of this events in availability of calendar (e.g. free,
+conditional or blocked))</p>
+  </li>
+</ol>
+<p id="_3e0b64ca-3e85-4ccb-a338-f7ef96a10290">with possible actions if potential spam detected e.g. not automatically inserting,
+deactivated notifications, &#x2026;&#x200B;</p></div>
+<div id="_calendar_system"><h3>4.2.3. <i>calendar system</i></h3><p id="_1bbaa4ba-bc3b-4081-b63c-2e6bb3409b6c">Besides inserting or not inserting the received events into the user calendar
+during the interaction between <i>mail system</i> and <i>calendar system</i>, the <i>calendarsystem</i> should offer these best common practices:</p>
+<ol type="a">
+  <li>
+    <p id="_951ae02a-3905-489c-b2e0-bf4bec550868">offer delete option for unwanted events e.g. mark as spam in app/web app/&#x2026;&#x200B; in order
+to give the user the option for deleting the unwanted event without notifying the
+organizer. Does ARF need to be extended for calendar abuse reporting?</p>
+  </li>
+  <li>
+    <p id="_17433404-3401-4f70-aba4-89a638b54f65">store information about how an event was inserted into the users calendar e.g. Mail ID
+in order to be able to inform the user about this and prevent extended information for
+being able to inform the sending system about the abuse</p>
+  </li>
+</ol>
+<p id="_05c13fd9-4f5c-4805-bdcf-2627fc5b6db9">with possible actions if spam is detected by the user e.g. sending Feedback loop if
+MailID and original email is still available in the <i>mail system</i>.</p></div></div>
+        <div id="_other_ways_calendar_spam_can_occur"><h2>4.3. other ways calendar <i>spam</i> can occur</h2><div id="_subscribing_to_shared_calendars_containing_malicious_events"><h3>4.3.1. subscribing to shared calendars containing malicious events</h3><p id="_f8d1cfa6-dab1-4034-833e-d8f1c1b0fbf3">Another way how malicious events can end up in users calendar are shared calendars
+being manipulated on origin side. Popular calendars e.g. official vacation/bank holidays
+in countries or states or schedules of populat sports clubs could be target for phishing
+/ taken over by spammers.</p>
+<p id="_4cb05a28-09b5-47f6-adc8-101f1d26498b">Single malicious events within these subscribed calendars can not be deleted if shared
+read-only. More robust controls may be needed for calendar subscribers, but unsubscribing
+the specific calendar can solve the problem on an all or nothing approach (also the
+wanted events are then unsubscribed and deleted from users calendar).</p></div>
+<div id="_itip">
+  <h3>4.3.2.
+    <i>iTIP</i>
+  </h3>
+  <p id="_e5aaa8f3-cdd9-48dc-99ff-31a7260d7ec8">Calendar systems using <i>iTIP</i> for direct communication between each other e.g. within
+the same <i>calendar system</i> also need to consider and implement anti-abuse options as
+mentioned above.</p>
+</div></div>
+      </div>
+      <div id="_conclusion">
+        <h1>5.&#xA0; Conclusion</h1>
+        <p id="_3764cbe9-1f01-443f-85aa-7db72bb2e194">TODO.</p>
+      </div>
+      <br />
+      <div id="AnnexA" class="Section3">
+        <h1 class="Annex"><b>Appendix A</b> (informative) <b>Technical information</b></h1>
+        <div id="_structure_of_an_best_practice_imip_message_containing_an_event"><h2>A.1. Structure of an best practice iMIP message containing an event</h2><p id="_2100f0d8-ad19-4929-ada1-2f2c93681313">Email messages may have more than a single iCalendar file attached, but the best practice
+is to only attach a single iMIP (<a href="#iMIP">IETF RFC 6047</a>) file to each email.</p>
+<p id="_6456ba88-dba9-46f3-84b2-d28712cceede">The recommended structure the email is as follows:</p>
+<p id="_c76b9a6e-ad49-4cfb-b076-1abbfe41f844" class="Sourcecode">&#xA0;multipart/mixed<br />&#xA0;&#xA0;&#xA0;&#xA0;multipart/alternative<br />&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;text/plain<br />&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;text/html<br />&#xA0;&#xA0;&#xA0;&#xA0;text/calendar;&#xA0;method=REQUEST<br />&#xA0;&#xA0;&#xA0;&#xA0;application/ics&#xA0;(with&#xA0;a&#xA0;content-disposition:attachment)&#xA0;BASE64</p>
+<p id="_99f11077-4261-44d8-a616-a939bb1c2b45">This structure is based on interoperability testing with various existing implementations.
+Some clients will only see the part with the standard <tt>text/calendar</tt> content-type and the
+method header. Other clients are only able to attached parts with <tt>application/ics</tt> (which
+is non-standard).</p>
+<p id="_b9427da0-be75-4dbd-ac74-7ecc6bcfd509">It is also recommended that the filename of the <tt>application/ics</tt> part ends
+with the <tt>.ics</tt> file extension.</p>
+<p id="_4a6116eb-3787-43da-b367-0189f1d2f0b6">Some vendors add links within the HTML part which can be used from non-calendaring-aware
+email clients to accept or decline a request without having to process the calendar parts
+at all. The server just updates the ORGANIZER&#x2019;s copy of the event based on the link
+clicked.</p>
+<p id="_cbbe3371-24d3-40a7-9bfc-abc317512d24">When using standard conform <i>calendar systems</i> the structure of the email will be like
+above and the <tt>text/plain</tt> and <tt>text/html</tt> part of the message in the body will also include
+information of the event e.g. subject, description, &#x2026;&#x200B; . This does not prevent spammers
+from not including this potential malicious content besides the attached files, so all
+parts need to be parsed to detect malicious content in events.</p></div>
+      </div>
+      <br />
+      <div>
+        <h1 class="Section3">Bibliography</h1>
+        <p id="ISO27000" class="Biblio">[1]&#xA0; ISO/IEC 27000: 2018, <i> Information technology&#x2009;&#x2014;&#x2009;Security techniques&#x2009;&#x2014;&#x2009;Information security management systems&#x2009;&#x2014;&#x2009;Overview and vocabulary </i></p>
+        <p id="SMTP" class="Biblio">[2]&#xA0; IETF RFC 2821,<i>Simple Mail Transfer Protocol (SMTP)</i> <a href="https://tools.ietf.org/html/rfc2821">https://tools.ietf.org/html/rfc2821</a></p>
+      </div>
+    </main>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    asciimath2jax: {
+      delimiters: [['(#(', ')#)']]
+    }
+ });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML"></script>
+<script>
+    //TOC generation
+      $('#toc').toc({
+          'selectors': 'h1,h2:not(.TermNum)', //elements to use as headings
+          'container': 'main', //element to find all selectors in
+          'smoothScrolling': true, //enable or disable smooth scrolling on click
+          'prefix': 'toc', //prefix for anchor tags and class names
+          'onHighlight': function(el) {}, //called when a new section is highlighted 
+          'highlightOnScroll': true, //add class to heading that is currently in focus
+          'highlightOffset': 100, //offset to trigger the next headline
+          'anchorName': function(i, heading, prefix) { //custom function for anchor name
+              return prefix+i;
+          },
+          'headerText': function(i, heading, $heading) { //custom function building the header-item text
+              return $heading.text();
+          },
+      'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
+        return $heading[0].tagName.toLowerCase();
+      }
+      });
+      
+  </script>
+
+<script>
+  //TOC toggle animation
+$('#toggle').on('click', function(){
+    if( $('nav').is(':visible') ) {
+        $('nav').animate({ 'left': '-353px' }, 'slow', function(){
+            $('nav').hide();
+        });
+        $('.container').animate({ 'padding-left': '31px' }, 'slow');
+    }
+    else {
+        $('nav').show();
+        $('nav').animate({ 'left': '0px' }, 'slow');
+        $('.container').animate({ 'padding-left': '360px' }, 'slow');
+    }
+});
+</script>
+
+<script>
+    // Scroll to top button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+<script>
+  $(document).ready(function() {
+	  $('[id^=toc]').each(function ()
+	  {
+	     var currentToc = $(this);
+       var url = window.location.href;
+	     currentToc.wrap("<a href='" + url + "#" + currentToc.attr("id") + "' </a>");
+	  });
+});
+</script></body>
+</html>
