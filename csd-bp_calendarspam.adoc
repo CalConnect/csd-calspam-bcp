@@ -78,6 +78,9 @@ where and when events originated and were delivered.
 . Calendar events often contain notifications/alarms which are often propagated across
 a users many desktop and mobile calendaring clients.
 
+. Calendar events can include recurrence meaning that one event can show up in the users
+calendar multiple time with multiple notifications/alarms being triggered
+
 :sectnums:
 == Scope
 
