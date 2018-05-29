@@ -5,7 +5,7 @@
 :doctype: standard
 :edition: 1
 :copyright-year: 2018
-:revdate: 2018-05-16T00:00:00Z
+:revdate: 2018-05-29T00:00:00Z
 :language: en
 :technical-committee: CALSPAM
 :draft:
@@ -165,7 +165,7 @@ received for user accounts on their system.
 [[user-system]]
 ==== user system
 
-an information system that provides authentication and autorisation functionality. The
+an information system that provides authentication and autorization functionality. The
 _user system_ should prevent fake, bot or spam registrations in order to limit the
 number of user accounts on their system, that can later be used for creating spam
 (either mail or calendar).
@@ -274,12 +274,12 @@ structure, ...
 DNSBLs, URIBLs, etc.
 
 . check sender From address reputation using internal and external sources e.g. subscribe
-to InfoSec feeds of known malicious addresses, organiser on white list, ...
+to InfoSec feeds of known malicious addresses, organiser on whitelist, ...
 
 with possible actions if potential spam detected e.g. not accepting (reject or discard),
 putting in quarantaine or spam folder. As some of these actions do not deliver the email
 to the user and no interaction with the _calendar system_ occurs, the recipient
-has no way to handle false positives. Therefor these actions can only be taken if the
+has no way to handle false positives. Therefore these actions can only be taken if the
 _mail system_ is very certain about this being abuse or spam. For these events also the
 interaction with the _calendar system_ should not be initiated.
 
@@ -302,8 +302,8 @@ how events are structured is there (and not in the _mail system_)
 links, ...) to determine the likeliness being _spam_
 
 . depending on the likeliness being _spam_, rules should be applied offered in the
-users settings for insert (e.g. only automatic insert for organizers on a white
-list/personal address book, state of this events in availability of calendar (e.g. free,
+users settings for insert (e.g. only automatic insert for organizers on a whitelist /
+personal address book, state of this events in availability of calendar (e.g. free,
 conditional or blocked))
 
 with possible actions if potential spam detected e.g. not automatically inserting,
@@ -332,7 +332,7 @@ MailID and original email is still available in the _mail system_.
 
 Another way how malicious events can end up in users calendar are shared calendars
 being manipulated on origin side. Popular calendars e.g. official vacation/bank holidays
-in countries or states or schedules of populat sports clubs could be target for phishing
+in countries or states or schedules of popular sports clubs could be target for phishing
 / taken over by spammers.
 
 Single malicious events within these subscribed calendars can not be deleted if shared
