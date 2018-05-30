@@ -1,5 +1,5 @@
-= CalConnect Standard: Guidelines against calendar abuse for calendaring and mail system operators
-:title: Guidelines against calendar abuse for calendaring and mail system operators
+= CalConnect Standard: Guidelines to thwart calendar abuse for calendaring and mail system operators
+:title: Guidelines to thwart calendar abuse for calendaring and mail system operators
 :docnumber: CD 18XX
 :status: working-draft
 :doctype: standard
@@ -45,8 +45,8 @@ This document was prepared by Technical Committee _{technical-committee}_.
 
 === Definition
 
-"Calendar spam", unsolicited calendar events and meeting invitations, is a recently
-exploited channel inserting unsolicited or otherwise unwanted events and invitations into
+"Calendar spam", unsolicited or otherwise unwanted calendar events and meeting invitations,
+is a recently exploited channel for abuse aimed at users of
 calendaring & scheduling systems. It is a new form of application-specific spam which
 takes advantage of the application layer across multiple technologies that spans
 scheduling, calendaring and messaging systems.
@@ -54,7 +54,7 @@ As is the case with email spam, calendar spam is not only used to deliver unwant
 information, but can also be used for malicious purposes such as phishing attempts
 and delivering dangerous payloads.
 
-As calendar events and meeting invitations are often transported and delivered via
+As calendar events and meeting invitations are often (but not exclusively) transported and delivered via
 email, combatting calendar spam requires awareness, intervention and integration
 with email systems and services.
 
@@ -63,7 +63,7 @@ with email systems and services.
 Calendar spam is unique in a number of ways:
 
 . Calendar spam, unlike email, can be placed chronologically anywhere in calendars, in
-the past or the future, not just the present, making it difficult detect at the time of
+the past or the future, not just the present, making it difficult for the end-user to detect at the time of
 delivery.
 
 . Spam meeting invitations, may automatically see these unwanted invitations added to
@@ -71,15 +71,16 @@ their calendar without their consent, with notifications sent to all their devic
 These invitations are not only difficult to find, but in some cases there is no way for
 the user to remove these events short of deleting the entire calendar.
 
-. Calendar events and meeting invitations do not yet carry the rich provenance (detailed
-header information) which today accompanies email, making it difficult to ascertain,
+. Calendar events and meeting invitations do not yet carry the rich provenance which today accompanies email (detailed
+header information), making it difficult to ascertain
 where and when events originated and were delivered.
 
-. Calendar events often contain notifications/alarms which are often propagated across
-a users many desktop and mobile calendaring clients.
+. Calendar events often contain notifications/alarms which are propagated across
+a user's desktop and mobile calendaring clients.  It is common for users to have multiple 
+calendaring clients which exacerbates the abuse.
 
-. Calendar events can include recurrence meaning that one event can show up in the users
-calendar multiple time with multiple notifications/alarms being triggered
+. Calendar events can include recurrence meaning that one event can show up in the user's
+calendar multiple times with multiple notifications/alarms being triggered over time.
 
 :sectnums:
 == Scope
@@ -88,9 +89,9 @@ This document specifies guidelines for calendaring and mail system operators to:
 
 * detect the occurrence of calendar abuse;
 
-* processes and procedures to mitigate calendar abuse; and
+* consider processes and procedures to mitigate calendar abuse; and
 
-* definition of acceptable practices with calendar usage.
+* suggest acceptable (non-abusive) practices with calendar usage.
 
 
 [bibliography]
@@ -116,13 +117,13 @@ For the purposes of this document, the following terms and definitions apply.
 [[calendar-system]]
 ==== calendar system
 
-an information system, that provides the calendar and scheduling functionality for their
-user accounts. This includes creating, editing and deleting events as well as scheduling
+an information system that provides the calendar and scheduling functionality for end-user accounts. 
+This includes creating, editing and deleting events as well as scheduling
 events between different user accounts including user accounts from other calendaring
 systems.
 
-The _calendar system_ should apply state-of-the-art methods to prevent spam being send and
-received for user accounts on their system.
+The _calendar system_ should apply state-of-the-art methods to prevent spam being sent from and
+received by user accounts on their system.
 
 NOTE: The term _calendar system_ in this standard specifically refers
 to calendaring systems that fulfill the requirements of CalConnect
@@ -159,8 +160,8 @@ using email. Therefor _mail systems_ play a vital role in connecting users from 
 providers by creating events and inviting other users to join. Mail systems are used to
 transport the calendar relevant information from organizers to attendees of events.
 
-The _mail system_ should apply state-of-the-art methods to prevent spam being send and
-received for user accounts on their system.
+The _mail system_ should apply state-of-the-art methods to prevent spam being sent by and
+received from user accounts on their system.
 
 [[user-system]]
 ==== user system
@@ -177,7 +178,7 @@ authentication.
 [[spam]]
 ==== spam
 
-unsolicited information
+unsolicited or unwanted information
 
 
 [[abbrev]]
