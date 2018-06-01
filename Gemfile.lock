@@ -62,7 +62,7 @@ GEM
     camertron-eprun (1.1.1)
     cldr-plurals-runtime-rb (1.0.1)
     ffi (1.9.23)
-    html2doc (0.7.0)
+    html2doc (0.7.1)
       asciimath
       htmlentities (~> 4.3.4)
       image_size
