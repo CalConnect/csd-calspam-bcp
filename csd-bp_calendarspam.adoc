@@ -236,7 +236,7 @@ invitations
 
 There are many potential actions that could be invoked if potential spam is detected (e.g. not sending, display frontend
 error or feedback, alert user account, apply rate limiting, demand solving captcha before
-sending and more.)
+sending, block the account altogether and more.)
 
 ==== using smtp
 
