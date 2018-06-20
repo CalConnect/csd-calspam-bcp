@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/riboseinc/asciidoctor-csd
+  revision: 11ae13a2e408d0cbd6e98a56d26fd09adcb40254
+  specs:
+    asciidoctor-csd (0.4.0)
+      asciidoctor-iso (>= 0.9.0)
+      isodoc (>= 0.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -18,9 +26,6 @@ GEM
       ruby-xslt
       thread_safe
       uuidtools
-    asciidoctor-csd (0.4.0)
-      asciidoctor-iso (>= 0.9.0)
-      isodoc (>= 0.8.0)
     asciidoctor-gb (0.3.0)
       asciidoctor-iso (>= 0.9.0)
       isodoc (>= 0.8.0)
@@ -103,7 +108,7 @@ GEM
     isoics (0.1.6)
     json (2.1.0)
     liquid (4.0.0)
-    metanorma (0.2.1)
+    metanorma (0.2.2)
       asciidoctor-csand (>= 0.3.0)
       asciidoctor-csd (>= 0.4.0)
       asciidoctor-gb (>= 0.3.0)
@@ -144,6 +149,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asciidoctor-csd!
   metanorma
 
 BUNDLED WITH
