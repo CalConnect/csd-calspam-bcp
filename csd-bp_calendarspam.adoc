@@ -358,8 +358,14 @@ mentioned above.
 
 == Conclusion
 
-TODO.
+Spam has been there since mail exists. Calendar spam is now catching up and lead to 
+actions needed as well in the mail domain as in the calendaring domain. As provider 
+of these kind of services often have their own special systems, this is a more general 
+way of describing, what is needed to fight calendar spam.
 
+There is no doubt, that this topic will grow over time and preparing the systems and 
+workflow of doing so is needed. It's all about prevention and if we are successful 
+in doing so, nobody will ever recognize.
 
 
 [[AnnexA]]
