@@ -1,4 +1,6 @@
-image: ribose/metanorma
+image:
+  name: ribose/metanorma
+  entrypoint: [""]
 
 cache:
   paths:
