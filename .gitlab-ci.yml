@@ -8,6 +8,7 @@ cache:
 build:
   stage: build
   script:
+    - bundle
     - make clean all
     - mkdir -p public && mv *.doc *.pdf *.xml *.html public/
   artifacts:
