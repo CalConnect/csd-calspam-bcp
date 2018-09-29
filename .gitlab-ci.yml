@@ -1,4 +1,4 @@
-image: riboseinc/metanorma
+image: ribose/metanorma
 
 cache:
   paths:
