@@ -11,10 +11,11 @@ all: $(HTML) $(XML) $(PDF) $(DOC)
 clean:
 	rm -f $(HTML) $(XML) $(PDF) $(DOC)
 
-%.xml %.html %.pdf: %.adoc
+%.xml %.html %.pdf %.doc: %.adoc
 	bundle exec metanorma -t csd -x html,pdf,doc,xml $^
 	#docker run -v "$$(pwd)":/metanorma/ ribose/metanorma -t csd -x html,pdf $<
 
 open:
 	open $(HTML)
 
+.PHONY: bundle all open
