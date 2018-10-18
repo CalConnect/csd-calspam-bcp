@@ -5,7 +5,7 @@
 :doctype: standard
 :edition: 1
 :copyright-year: 2018
-:revdate: 2018-08-29T00:00:00Z
+:revdate: 2018-10-18T00:00:00Z
 :language: en
 :technical-committee: CALSPAM
 :draft:
@@ -367,6 +367,21 @@ There is no doubt, that this topic will grow over time and preparing the systems
 workflow of doing so is needed. It's all about prevention and if we are successful 
 in doing so, nobody will ever recognize.
 
+== Acknowledgements
+
+The editor of this document wishes to thank all people engaged at CalConnect - 
+the Calendaring and Scheduling Consortium and attendees of the M3AAWG conference sessions 
+about the topic, as well as the following individuals who have participated in the
+drafting, review, and discussion of this document:
+
+Arne Allisat, Bron Gondwana, Andrew Laurence, Andrey Maevsky, Dave Thewlis, Jesse Thompson 
+and Ronald Tse.
+
+Author
+
+Thomas Schäfer (editor)
+
+1&1 Mail&Media Development and Technology GmbH
 
 [[AnnexA]]
 [appendix,obligation=informative]
