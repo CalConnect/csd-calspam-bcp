@@ -213,7 +213,7 @@ Simple Mail Transfer Protocol
 
 
 
-== Best common practices for mitigating ways calendar spam occurs
+== Best common practices for mitigating calendar spam
 
 === Detecting and mitigating spam on source system
 
@@ -387,7 +387,7 @@ Thomas Schäfer (editor)
 [appendix,obligation=informative]
 == Technical information
 
-=== Structure of an best practice iMIP message containing an event
+=== Structure of a best practice iMIP message containing an event
 
 Email messages may have more than a single iCalendar file attached, but the best practice
 is to only attach a single iMIP (<<iMIP>>) file to each email.
