@@ -13,7 +13,7 @@
 
 .Foreword
 The Calendaring and Scheduling Consortium ("`CalConnect`") is global non-profit
-organization with the aim to facilitate interoperability of technologies across
+organization with the aim of facilitating interoperability of technologies across
 user-centric systems and applications.
 
 CalConnect works closely with liaison partners including international
