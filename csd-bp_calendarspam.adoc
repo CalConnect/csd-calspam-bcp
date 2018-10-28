@@ -358,14 +358,20 @@ mentioned above.
 
 == Conclusion
 
-Spam has been there since mail exists. Calendar spam is now catching up and lead to 
-actions needed as well in the mail domain as in the calendaring domain. As provider 
-of these kind of services often have their own special systems, this is a more general 
-way of describing, what is needed to fight calendar spam.
+Spam is a well know problem regarding to mail. As calendaring uses mail as main 
+communication protocol, calendar spam is one of the logical next steps from spammers
+trying to extend their impact and attack vectors. Knowledge of both domains is needed 
+to understand the interaction and new possibilities coming with this thread.
+
+Service providers working together in the field of mail and calendaring security exchange 
+their general views, but will always have specific systems and workflows handling the 
+thread depending on their architecture and infrastructure. Therefor the aim of this 
+document is to provide a general overview about what is needed to fight calendar spam, 
+but does not suggest concrete implementations.
 
 There is no doubt, that this topic will grow over time and preparing the systems and 
-workflow of doing so is needed. It's all about prevention and if we are successful 
-in doing so, nobody will ever recognize.
+workflows of doing so is needed. It's all about understanding and preventing the thread 
+and if we are successful in doing so, nobody will ever recognize.
 
 == Acknowledgements
 
