@@ -365,7 +365,7 @@ to understand the interaction and new possibilities coming with this thread.
 
 Service providers working together in the field of mail and calendaring security exchange 
 their general views, but will always have specific systems and workflows handling the 
-thread depending on their architecture and infrastructure. Therefor the aim of this 
+thread depending on their architecture and infrastructure. Therefore the aim of this 
 document is to provide a general overview about what is needed to fight calendar spam, 
 but does not suggest concrete implementations.
 
