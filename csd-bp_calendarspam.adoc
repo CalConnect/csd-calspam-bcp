@@ -20,7 +20,7 @@ CalConnect works closely with liaison partners including international
 organizations such as ISO, OASIS and M3AAWG.
 
 The procedures used to develop this document and those intended for its further
-maintenance are described in the CalConnect Directives and in this case also aligned
+maintenance are described in the CalConnect Directives, and in this case, also aligned
 with the procedures used at M3AAWG.
 
 In particular the different approval criteria needed for the different types of
@@ -43,11 +43,13 @@ This document was prepared by Technical Committee _{technical-committee}_.
 :sectnums!:
 == Introduction
 
-=== Definition
+=== Rise of calendar spam
 
 "`Calendar spam`", unsolicited or otherwise unwanted calendar events and meeting invitations,
 is a recently exploited channel for abuse aimed at users of
-calendaring & scheduling systems. It is a new form of application-specific spam which
+calendaring & scheduling systems.
+
+It is a new form of application-specific spam which
 takes advantage of the application layer across multiple technologies that spans
 scheduling, calendaring and messaging systems.
 As is the case with email spam, calendar spam is not only used to deliver unwanted
@@ -58,7 +60,8 @@ As calendar events and meeting invitations are often (but not exclusively) trans
 delivered via email, combatting calendar spam requires awareness, intervention and
 integration with email systems and services.
 
-=== Impact
+
+=== Impact of calendar spam
 
 Calendar spam is unique in a number of ways:
 
@@ -169,6 +172,9 @@ iTIP:: iCalendar Transport-Independent Interoperability Protocol (see <<iTIP>>)
 
 SMTP:: Simple Mail Transfer Protocol (see <<SMTP>>)
 
+DNSBL:: Domain Name System-based Blackhole List
+
+URIBL:: Realtime URI Blacklist
 
 ////
 Calendar system
@@ -216,97 +222,181 @@ authentication.
 ////
 
 
-== Best common practices for mitigating calendar abuse
+== Calendar spam and its delivery path
 
-=== Detecting and mitigating spam at the source system
+Calendar spam and calendar abuse originates at the OSI application layer
+but also travels across multiple application layer technologies
+through networked hosts.
 
-User accounts could be compromised by malicious actors or free hosting providers could
-be abused with bots signing up for free accounts.
-
-These accounts are then used to create
-calendar spam events. The calendar system uses templating to send an email invitation
-with the calendar event attached and the event content will also be inserted into body
-of the email. The "source" hosting provider should take steps to detect and mitigate this
-internal abuse on the calendar system and the email system.
+Best practices used at the various checkpoints
+that a calendar spam instance encounters within its delivery path
+are described in clauses that follow.
 
 
-==== At the calendar systems
+== Mitigating calendar abuse at source
 
-There are different best common practices that can be applied here:
+=== General
 
-. abuse detection on front-end usage using input as network/IPs, user agents, click rate /
-path
+Calendar spam may be produced by innocent calendar systems when:
 
-. checking the event content (e.g. subject, description, recurrence, number of attendees,
-links) for typical spam patterns before creating the event and sending the email
-invitations
+* its users were compromised;
+* it contains abusive users (such as a free-of-charge hosting provider).
 
-There are many potential actions that could be invoked if potential spam is detected (e.g.
-not sending, display frontend error or feedback, alert user account, apply rate limiting,
-demand solving captcha before sending, block the account altogether and more.)
+In the latter case, approaches such as automation ("`bots`") can exacerbate
+the issue with the automated creation of free accounts.
 
+Such user accounts can be readily used to create calendar spam events:
 
-==== Using SMTP
+. The malicious user account inserts spam content into a newly created calendar event;
+. The calendar system uses templating to send an email invitation with the calendar event attached;
+. The event content, which contains spam, will be inserted into body of the email.
 
-Different best common practices can be applied here, including:
-
-. abuse detection for SMTP access using input, such as: network patterns, DNSBL checks against
-the client IP, etc.
-
-. checks on email spam content patterns, (such as malicious content, blacklisted/known phishing
-URLs) using standard email anti-spam scanning applications
-
-There are many potential actions that could be invoked if potential spam is detected (e.g.
-bounce the message, discard the message, data sharing with the receiving email /
-calendar providers, and more.)
+The "`source`" calendar system provider should take steps to detect and
+mitigate such internal abuse, by placing detection mechanisms and
+automated responses at its calendar system and its email system associated
+with calendar event delivery.
 
 
-=== Detecting and mitigating spam on receiving system
+=== Source calendar system
 
-Spam events are typically received by recipients in two ways:
+The source calendar system is where an calendar abuse instance originates from.
 
-. via email from an external system, or
+The source calendar system can apply the following best practices:
 
-. directly from another account (bot or compromised) within the _calendar system_
+. abuse detection should be performed, through channels such as:
 
-Events from internal accounts may propagate natively within the _calendar system_ or they
-may propagate over email, depending on implementation. The "receiving" hosting provider
-can take steps to detect and mitigate the "external" abuse on the _calendar system_ and
-the _mail system_.
+.. user interface and input detection, such as user agent checks;
+.. network origination, such as network addresses and IPs; and
+.. user behavior such as click rate.
 
+. detection of malicious content for typical spam patterns,
+  before event creation and the subsequent sending of email invitations,
+  by checking event content, such as:
 
-
-==== Mail system
-
-There are different best common practices that can be applied here:
-
-. abuse detection for receiving email including input as network, mail header/
-structure, ...
-
-. check email for spam content patterns using standard email anti-spam scanning
-applications, DNSBLs, URIBLs, etc.
-
-. check sender From address reputation using internal and external sources e.g. subscribe
-to InfoSec feeds of known malicious addresses, organiser on whitelist, ...
-
-There are many potential actions that could be invoked if potential spam is detected (e.g.
-bounce the message, discard the message, put the message in quarantaine or spam folder.)
-Interaction (e.g. adding the event to the end-user's calendar) with the _calendar system_
-should not be initiated in these instances.
-
-As some of these actions do not deliver the email
-to the user and no interaction with the _calendar system_ occurs, the recipient
-has no way to handle false positives. Therefore these actions can only be taken if the
-_mail system_ is very certain about this being abuse or spam.
-
-For some of the milder actions (e.g. putting in spam folder) the user should be offered
-options. For example, allow these emails to be marked as false positives and offer the
-client option to manually insert the events into the user's calendar.
+.. subject;
+.. description;
+.. recurrence;
+.. number of attendees; and
+.. links.
 
 
-==== Interaction between _mail system_ and _calendar system_
+A number of potential actions can be invoked once potential spam
+is detected, such as:
 
-Interaction between the _mail system_ and the _calendar system_ should follow these best
+. deny the sending of the calendar invite;
+. display of errors and feedback at the user interface;
+. alert the owner of the user account in case the user account has been hijacked;
+. application of rate limiting to prevent automated spamming;
+. implement automation detection measures, such as usage of a CAPTCHA prior to sending an invitation; and
+. blocking the user account altogether.
+
+
+=== Electronic mail system (SMTP)
+
+The source electronic mail system is where the calendar system delivers
+an event invitation to for its forwarding.
+
+The following mitigation measures should be taken at the electronic mail system:
+
+. abuse detection for SMTP access should be performed based on input, such as:
+
+.. network patterns of the originator;
+.. DNSBL checks against the originating IP.
+
+. detection of spam content patterns of the email message, using standard email anti-spam scanning applications:
+
+.. scanning for malicious content;
+.. detection of blacklisted and/or known phishing URLs.
+
+
+A number of potential actions can be invoked once potential spam
+is detected, such as:
+
+. bounce the email that contains suspected calendar spam;
+. silently discard the email with suspected calendar spam;
+. communicate with the upstream calendar provider to indicate potential abuse; and
+. communicate with downstream email providers who will be receive the potential spam.
+
+
+== Mitigating calendar abuse at destination
+
+=== General
+
+Calendar spam events are typically received by recipients in two ways:
+
+. via email from an external email system; or
+
+. directly from another account within the same calendar system the recipient resides on. +
++
+NOTE: The case of a same-system account abuse can apply when the calendar system
+contains compromised accounts.
+
+
+Calendar spam events originating from a calendar system may be propagated
+back to its own accounts through different channels, depending on their method of integration,
+such as:
+
+* from within the calendar system, where the event did not leave the calendar system; or
+
+* delivered through email, where the event was sent by the calendar system
+to an internal email system, and re-routed back to the originating calendar system.
+
+System providers at the receiving end
+should therefore take steps to detect and mitigate abuse originating
+from both external and internal calendar and mail systems.
+
+
+=== Electronic mail system
+
+The following best practices apply:
+
+. abuse detection for receiving email by analyzing input, such as:
+
+.. originating network addresses;
+.. content of the mail header and its structure.
+
+. analysis of email spam content patterns using standard email anti-spam scanning
+applications, such as through:
+
+.. checking of DNSBLs; and
+.. checking of URIBLs.
+
+. checking email header content against internal and external sources, such as:
+
+.. verification of sender address reputation using the `From:` address;
+
+.. detection of known malicious addresses from security advisories;
+
+.. determining whether the organizer has been whitelisted.
+
+
+Actions to be taken when potential spam is detected are provided below:
+
+. bounce the message;
+. silently discard the message;
+. pick out the message into quarantaine;
+. moving the message into the spam folder.
+
+When potential spam is detected, "`interaction`" (e.g. adding the event to the end-user's calendar) between the recipient and the sender at the calendar system shall not proceed.
+
+Certain mitigation actions, such as the silent discard of an email,
+do not provide any feedback to the originating calendar system. This means
+that there will be no method for the originator of the calendar event
+to learn of these events and handle them in the case of false positives.
+
+Therefore, these actions should only be taken if the
+electronic mail system is very certain about the calendar invitation
+being an abuse instance or spam.
+
+For some of the milder actions (e.g. putting in spam folder),
+the calendar system should provide options to the recipient user. For example, the recipient user can mark such emails as false positives, and are able to manually insert them into the user's calendar.
+
+
+// TODO: RT review
+
+==== Interactions between the calendar system and the mail system
+
+Interaction between the electronic mail system and the calendar system should follow these best
 common practices:
 
 . the interaction should only be triggered for emails not already identified as spam
@@ -347,46 +437,55 @@ e.g. sending Feedback loop if MailID and original email is still available in th
 _mail system_.
 
 
-=== Other ways calendar _spam_ can occur
+== Other ways calendar spam occur
 
-==== subscribing to shared calendars containing malicious events
+=== Subscription to shared calendars
 
-Another way how malicious events can end up in users calendar are shared calendars
-being manipulated on origin side. Popular calendars e.g. official vacation/bank holidays
-in countries or states or schedules of popular sports clubs could be target for phishing
-/ taken over by spammers.
+Malicious events can end up in user calendars through shared calendars.
 
-Single malicious events within these subscribed calendars can not be deleted if shared
-read-only. More robust controls may be needed for calendar subscribers, but unsubscribing
-the specific calendar can solve the problem on an all or nothing approach (also the
-wanted events are then unsubscribed and deleted from users calendar).
+Shared calendars are have a single origin and users are subscribed to its events,
+and therefore manipulation of the calendar source will impact all its subscribers.
 
-==== _iTIP_
+Popular calendars, such as official calendars (e.g. public and bank holidays),
+schedules of shows and sports teams, are valuable targets for malicious actors.
 
-Calendar systems using _iTIP_ for direct communication between each other e.g. within
-the same _calendar system_ also need to consider and implement anti-abuse options as
+Disturbingly, very often calendar applications do not allow deletion
+of such shared events if the subscription is set to "`read-only`". This means
+that malicious events propagated through such calendars may not even be
+eligible for recipient removal, which adds salt to injury.
+
+The only approach for users of these calendar applications are to unsubscribe
+the entire calendar, even though all previous events will be deleted from
+the user's calendar when unsubscribed.
+More robust controls are certainly needed for calendar subscribers.
+
+
+==== iTIP
+
+Calendar systems using iTIP for direct communication between each other e.g. within
+the same calendar system also need to consider and implement anti-abuse options as
 mentioned above.
 
 
 == Conclusion
 
-Spam is along-standing and well-known email problem. As email is a commonly used transport 
-for calendar ("meeting") invitations and events, spammers are now using these calendar 
-events and invitations as a spam vector. Consequently, knowledge of both domains is 
+Spam is along-standing and well-known email problem. As email is a commonly used transport
+for calendar ("`meeting`") invitations and events, spammers are now using these calendar
+events and invitations as a spam vector. Consequently, knowledge of both domains is
 required to develop defenses against these attacks.
 
-This document provides email and calendar system operators with an introduction to 
-calendar spam, and best practices for identifying and mitigating calendar spam. 
-Implementing these guidelines will largely be system-specific. 
+This document provides email and calendar system operators with an introduction to
+calendar spam, and best practices for identifying and mitigating calendar spam.
+Implementing these guidelines will largely be system-specific.
 
-As the "war" against malware, including spam, is dynamic and ever-changing, email and 
-calendar system experts will need to share their expertise and experiences with each 
-other on an ongoing basis. CalConnect's collaboration with M3AAWG represents the first 
+As the "war" against malware, including spam, is dynamic and ever-changing, email and
+calendar system experts will need to share their expertise and experiences with each
+other on an ongoing basis. CalConnect's collaboration with M3AAWG represents the first
 formal collaboration in this area.
 
 == Acknowledgements
 
-The editor of this document wishes to thank all people engaged at CalConnect --
+The editor of this document wishes to thank the experts of CalConnect --
 the Calendaring and Scheduling Consortium and attendees of the M3AAWG conference sessions
 about the topic, as well as the following individuals who have participated in the
 drafting, review, and discussion of this document:
@@ -423,12 +522,14 @@ as follows:
 ** an `application/ics` part, with a `content-disposition:attachment`, in `BASE64` encoding
 
 
-This structure is based on interoperability testing with various existing implementations.
+This recommended structure was devised through interoperability testing with
+various existing implementations.
+
 Some clients will only see the part with the standard `text/calendar` content-type and the
 method header. Other clients are only able to attached parts with `application/ics` (which
 is non-standard).
 
-It is also recommended that the filename of the `application/ics` part ends
+It is recommended that the filename of the `application/ics` part ends
 with the `.ics` file extension.
 
 Some vendors add links within the HTML part which can be used from non-calendaring-aware
@@ -436,9 +537,12 @@ email clients to accept or decline a request without having to process the calen
 at all. The server just updates the ORGANIZER’s copy of the event based on the link
 clicked.
 
-When using standard conform _calendar systems_ the structure of the email will be like
+When using calendar systems that conforms to calendaring standards,
+the structure of the email will be like
 above and the `text/plain` and `text/html` part of the message in the body will also
-include information of the event e.g. subject, description, ... . This does not prevent
+include information of the event e.g. subject, description, ... .
+
+This does not prevent
 spammers from not including this potential malicious content besides the attached files,
 so all parts need to be parsed to detect malicious content in events.
 
