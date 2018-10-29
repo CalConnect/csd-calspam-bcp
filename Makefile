@@ -26,8 +26,8 @@ bundle:
 	bundle
 
 %.xml %.html %.doc:	%.adoc | bundle
-	# bundle exec metanorma -t csd -x xml,pdf,html,doc $^
-	docker run -v "$$(pwd)":/metanorma/ --entrypoint='/bin/sh' ribose/metanorma -c 'bundle; metanorma -t csd -x xml,pdf,html,doc $<'
+	bundle exec metanorma -t csd -x xml,pdf,html,doc $^
+	# docker run -v "$$(pwd)":/metanorma/ --entrypoint='/bin/sh' ribose/metanorma -c 'bundle; metanorma -t csd -x xml,pdf,html,doc $<'
 
 html: clean-html $(HTML)
 
