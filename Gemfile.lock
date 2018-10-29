@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/riboseinc/metanorma-csd
-  revision: d44968ed0a63089ec7338adcb4e7b0c58d5e566c
+  revision: bf55fe42b531d7773102bf7a8ea2081c5452c75f
   specs:
     metanorma-csd (1.0.7)
       isodoc (~> 0.9.6)
