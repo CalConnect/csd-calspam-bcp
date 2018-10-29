@@ -76,7 +76,7 @@ accompanies email (detailed header information), making it difficult to ascertai
 where and when events originated and were delivered.
 
 . Calendar events often contain notifications/alarms which are propagated across
-a user's desktop and mobile calendaring clients.  It is common for users to have multiple
+a user's desktop and mobile calendaring clients. It is common for users to have multiple
 calendaring clients which exacerbates the abuse.
 
 . Calendar events can include recurrence meaning that one event can show up in the user's
@@ -226,7 +226,7 @@ be abused with bots signing up for free accounts.
 These accounts are then used to create
 calendar spam events. The calendar system uses templating to send an email invitation
 with the calendar event attached and the event content will also be inserted into body
-of the email.  The "source" hosting provider should take steps to detect and mitigate this
+of the email. The "source" hosting provider should take steps to detect and mitigate this
 internal abuse on the calendar system and the email system.
 
 
@@ -270,7 +270,7 @@ Spam events are typically received by recipients in two ways:
 . directly from another account (bot or compromised) within the _calendar system_
 
 Events from internal accounts may propagate natively within the _calendar system_ or they
-may propagate over email, depending on implementation.  The "receiving" hosting provider
+may propagate over email, depending on implementation. The "receiving" hosting provider
 can take steps to detect and mitigate the "external" abuse on the _calendar system_ and
 the _mail system_.
 
@@ -370,20 +370,19 @@ mentioned above.
 
 == Conclusion
 
-Spam is a well know problem regarding to mail. As calendaring uses mail as main
-communication protocol, calendar spam is one of the logical next steps from spammers
-trying to extend their impact and attack vectors. Knowledge of both domains is needed
-to understand the interaction and new possibilities coming with this thread.
+Spam is along-standing and well-known email problem. As email is a commonly used transport 
+for calendar ("meeting") invitations and events, spammers are now using these calendar 
+events and invitations as a spam vector. Consequently, knowledge of both domains is 
+required to develop defenses against these attacks.
 
-Service providers working together in the field of mail and calendaring security exchange
-their general views, but will always have specific systems and workflows handling the
-thread depending on their architecture and infrastructure. Therefore the aim of this
-document is to provide a general overview about what is needed to fight calendar spam,
-but does not suggest concrete implementations.
+This document provides email and calendar system operators with an introduction to 
+calendar spam, and best practices for identifying and mitigating calendar spam. 
+Implementing these guidelines will largely be system-specific. 
 
-There is no doubt, that this topic will grow over time and preparing the systems and
-workflows of doing so is needed. It's all about understanding and preventing the thread
-and if we are successful in doing so, nobody will ever recognize.
+As the "war" against malware, including spam, is dynamic and ever-changing, email and 
+calendar system experts will need to share their expertise and experiences with each 
+other on an ongoing basis. CalConnect's collaboration with M3AAWG represents the first 
+formal collaboration in this area.
 
 == Acknowledgements
 
