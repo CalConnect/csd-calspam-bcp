@@ -294,7 +294,7 @@ is detected, such as:
 . alert the owner of the user account in case the user account has been hijacked;
 . application of rate limiting to prevent automated spamming;
 . implement automation detection measures, such as usage of a CAPTCHA prior to sending an 
-invitation; and
+  invitation; and
 . blocking the user account altogether.
 
 
@@ -311,7 +311,7 @@ The following mitigation measures should be taken at the electronic mail system:
 .. DNSBL checks against the originating IP.
 
 . detection of spam content patterns of the email message, using standard email anti-spam 
-scanning applications:
+  scanning applications:
 
 .. scanning for malicious content;
 .. detection of blacklisted and/or known phishing URLs.
@@ -364,7 +364,7 @@ The following best practices apply:
 .. content of the mail header and its structure.
 
 . analysis of email spam content patterns using standard email anti-spam scanning
-applications, such as through:
+  applications, such as through:
 
 .. checking of DNSBLs; and
 .. checking of URIBLs.
@@ -458,7 +458,7 @@ In addition, further actions can be taken to detect calendar spam at the
 calendar user application, such as:
 
 . sending an email feedback loop if the original email that carried
-the calendar invitation and its `MailID` is still available.
+  the calendar invitation and its `MailID` is still available.
 
 
 == Other ways calendar spam occur
