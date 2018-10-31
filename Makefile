@@ -6,7 +6,7 @@ PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
 
 SHELL := /bin/bash
 COMPILE_CMD_LOCAL := bundle exec metanorma -t csd -x xml,pdf,html,doc $$FILENAME
-COMPILE_CMD_DOCKER := docker run -v "$$(pwd)":/metanorma/ ribose/metanorma -t csd -x xml,pdf,html,doc $$FILENAME
+COMPILE_CMD_DOCKER := docker run -v "$$(pwd)":/metanorma/ ribose/metanorma "metanorma -t csd -x xml,pdf,html,doc $$FILENAME"
 
 ifdef METANORMA_DOCKER
   COMPILE_CMD := echo "DOCKER"; $(COMPILE_CMD_DOCKER)

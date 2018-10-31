@@ -10,6 +10,8 @@
 :technical-committee: CALSPAM
 :draft:
 :toc:
+:local-cache-only:
+:data-uri-image:
 
 .Foreword
 The Calendaring and Scheduling Consortium ("`CalConnect`") is global non-profit
