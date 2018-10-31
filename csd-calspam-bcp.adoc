@@ -13,6 +13,12 @@
 :local-cache-only:
 :data-uri-image:
 
+////
+Editors
+Thomas Schäfer, 1&1 Mail&Media Development and Technology GmbH
+Jesse Thompson, University of Wisconsin-Madison
+////
+
 .Foreword
 The Calendaring and Scheduling Consortium ("`CalConnect`") is global non-profit
 organization with the aim of facilitating interoperability of technologies across
@@ -40,6 +46,12 @@ Any trade name used in this document is information given for the convenience
 of users and does not constitute an endorsement.
 
 This document was prepared by Technical Committee _{technical-committee}_.
+
+Editors:
+
+Thomas Schäfer, 1&1 Mail&Media Development and Technology GmbH
+
+Jesse Thompson, University of Wisconsin-Madison
 
 
 :sectnums!:
@@ -539,14 +551,8 @@ the Calendaring and Scheduling Consortium and attendees of the M3AAWG conference
 about the topic, as well as the following individuals who have participated in the
 drafting, review, and discussion of this document:
 
-Arne Allisat, Bron Gondwana, Andrew Laurence, Andrey Maevsky,
-Dave Thewlis, Jesse Thompson and Ronald Tse.
-
-Author
-
-Thomas Schäfer (editor)
-
-1&1 Mail&Media Development and Technology GmbH
+Arne Allisat, Bron Gondwana, Andrew Laurence, Andrey Maevsky, Gary Schwartz, 
+Dave Thewlis and Ronald Tse
 
 
 [[AnnexA]]
