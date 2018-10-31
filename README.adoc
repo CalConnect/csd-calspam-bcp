@@ -1,35 +1,35 @@
-= CalConnect Standard: Guidelines against calendar abuse for calendaring system operators
+= CalConnect Standard: Calendar operator practices -- Guidelines to protect against calendar abuse
 
-////
-image:https://img.shields.io/travis/calconnect/csd-operator-guidelines/master.svg[
-	Build Status, link="https://travis-ci.org/calconnect/csd-operator-guidelines"]
-////
-
-This CalConnect Standard Document ("`CSD`") is written in pure AsciiDoc using the excellent
-https://github.com/riboseinc/asciidoctor-csd[`asciidoctor-csd` gem]. The latest
-draft of this is available through your CalConnect membership.
-
-The CSD model is defined here: https://github.com/riboseinc/csd
+This work item belongs to TC CALSPAM.
 
 == Fetching the document
 
 [source,sh]
 ----
-git clone https://github.com/calconnect/TC-CALSPAM/
+git clone https://gitlab.com/calconnect/csd-calspam-bcp/
 ----
 
 == Installing Build Tools
 
-You will need Ruby.
+See https://www.metanorma.com/overview/getting-started/
 
-=== On macOS
+
+== Running via Docker or locally
+
+If you have installed the build tools locally, and wish to run the
+locally-installed compilation tools, there is nothing further to set.
+
+If you don't want to deal with local dependencies, use the docker
+version by:
 
 [source,sh]
 ----
-cd BP_workingdraft
-gem install bundler
-bundle install
+export METANORMA_DOCKER=1
 ----
+
+The `Makefile` will automatically choose the proper command to
+execute.
+
 
 == Building The Document
 
@@ -38,17 +38,19 @@ bundle install
 make clean all
 ----
 
-The following formats will be built:
+The following outputs will be built:
 
-* CSD HTML (`[filename].html`)
-* CSD XML (https://github.com/riboseinc/csd) (`[filename].xml`)
+* CSD XML (https://github.com/riboseinc/metanorma-model-csd) (`[filename].xml`)
+* HTML (`[filename].html`)
+* PDF (`[filename].pdf`)
+* Word DOC (`[filename].doc`)
+
 
 == Iterating the document
 
 [source,sh]
 ----
-make clean all
+make html
 open csd-*.html
 ----
-
 

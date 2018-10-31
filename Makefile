@@ -5,6 +5,14 @@ DOC  := $(patsubst %.adoc,%.doc,$(SRC))
 PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
 
 SHELL := /bin/bash
+COMPILE_CMD_LOCAL := bundle exec metanorma -t csd -x xml,pdf,html,doc $$FILENAME
+COMPILE_CMD_DOCKER := docker run -v "$$(pwd)":/metanorma/ ribose/metanorma -t csd -x xml,pdf,html,doc $$FILENAME
+
+ifdef METANORMA_DOCKER
+  COMPILE_CMD := echo "DOCKER"; $(COMPILE_CMD_DOCKER)
+else
+  COMPILE_CMD := echo "LOCAL"; $(COMPILE_CMD_LOCAL)
+endif
 
 all: $(HTML) $(XML) $(PDF)
 
@@ -25,9 +33,9 @@ clean-html:
 bundle:
 	bundle
 
-%.xml %.html %.doc:	%.adoc | bundle
-	bundle exec metanorma -t csd -x xml,pdf,html,doc $^
-	# docker run -v "$$(pwd)":/metanorma/ --entrypoint='/bin/sh' ribose/metanorma -c 'bundle; metanorma -t csd -x xml,pdf,html,doc $<'
+%.xml %.html %.doc %.pdf:	%.adoc #| bundle
+	FILENAME=$^; \
+	${COMPILE_CMD}
 
 html: clean-html $(HTML)
 
