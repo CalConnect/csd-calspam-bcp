@@ -45,8 +45,8 @@ This document was prepared by Technical Committee _{technical-committee}_.
 
 === Rise of calendar spam
 
-"`Calendar spam`" - unsolicited, or otherwise unwanted, calendar events and meeting
-invitations - is a recently exploited channel for abuse aimed at users of
+"`Calendar spam`" -- unsolicited, or otherwise unwanted, calendar events and meeting
+invitations -- is a recently exploited channel for abuse aimed at users of
 calendaring & scheduling systems.
 
 It is a new form of application-specific spam which takes advantage of the application
