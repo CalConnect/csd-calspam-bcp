@@ -14,7 +14,7 @@
 :data-uri-image:
 
 ////
-Editors
+Authors
 Thomas Schäfer, 1&1 Mail&Media Development and Technology GmbH
 Jesse Thompson, University of Wisconsin-Madison
 ////
@@ -47,7 +47,7 @@ of users and does not constitute an endorsement.
 
 This document was prepared by Technical Committee _{technical-committee}_.
 
-Editors:
+Authors:
 
 Thomas Schäfer, 1&1 Mail&Media Development and Technology GmbH
 
