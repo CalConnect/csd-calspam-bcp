@@ -180,54 +180,10 @@ URIBL:: Realtime URI Blacklist
 
 ARF:: Abuse Reporting Format
 
-////
-Calendar system
-
-This includes creating, editing and deleting events as well as scheduling
-events between different user accounts including user accounts from other calendaring
-systems.
-
-The _calendar system_ should apply state-of-the-art methods to prevent spam being sent
-from and received by user accounts on their system.
-////
-
-////
-NOTE: _calendar system_ in this document specifically refers
-to calendaring systems that fulfill the requirements of CalConnect
-calendaring standards.
-////
-
-
-////
-Mail system
-
-NOTE: The most used method to send calendar invites between users is _iMIP_ (<<iMIP>>), a
-way of exchanging iTIP (<<iTIP>>) messages using email. Therefor _mail systems_ play a
-vital role in connecting users from different providers by creating events and inviting
-other users to join. Mail systems are used to transport the calendar relevant information
-from organizers to attendees of events.
-
-The _mail system_ should apply state-of-the-art methods to prevent spam being sent by and
-received from user accounts on their system.
-////
-
-
-////
-
-User system
-
-. The
-_user system_ should prevent fake, bot or spam registrations in order to limit the
-number of user accounts on their system, that can later be used for creating spam
-(either mail or calendar).
-
-The _user system_ should also prevent real user accounts being compromised by
-malicious actors by providing state-of-the-art authentication methods e.g. two-factor-
-authentication.
-////
-
 
 == Calendar spam and its delivery path
+
+=== General
 
 Calendar spam and calendar abuse originates at the OSI application layer
 but also travels across multiple application layer technologies
@@ -236,6 +192,72 @@ through networked hosts.
 Best practices used at the various checkpoints
 that a calendar spam instance encounters within its delivery path
 are described in clauses that follow.
+
+=== Information systems involved in calendar abuse
+
+==== Calendar system
+
+The calendar system plays a crucial role in calendar abuse, where
+it allows creating, editing and deleting events as well as scheduling
+events between different user accounts, including user accounts from
+other calendaring systems.
+
+The calendar system should apply state-of-the-art methods to prevent
+calendar spam being sent from and received by user accounts on their
+system.
+
+NOTE: The term "`calendar system`" in this document specifically refers
+to calendaring systems that fulfill the requirements of
+calendaring standards.
+
+==== Email system
+
+The email system is an important factor in calendar abuse as a
+delivery mechanism.
+
+In calendar systems, the most common method to send calendar invitations
+to user recipients is iMIP (<<iMIP>>), a way of exchanging iTIP (<<iTIP>>)
+messages through email.
+
+iTIP (and iTIP) are mechanisms that allow users of different
+calendar systems to communicate with one another, by delivering
+calendar event information through email.
+
+[example]
+User A on a calendar system can invite another user B that does not
+belong to the same calendar system, to a calendar event, where the
+invitation information is sent through email to user B, either
+by user A or user A's calendar system.
+
+Email systems are also used to transport information relevant to
+the calendar event from organizers to attendees of events.
+
+The email system should apply state-of-the-art methods to prevent
+calendar spam being sent by and received from user accounts on
+their system.
+
+==== Related systems
+
+Calendar and email systems are often connected with, and rely on,
+other information systems, such as identity management systems
+for authentication and authorization.
+
+When a system depended on by the calendar system is compromised,
+such as through the creation of malicious user accounts,
+the dependent calendar (and perhaps email) systems are also
+affected. For example, the malicious user accounts may be used
+to send out calendar abuse.
+
+These related systems should implement security best practices to
+protect systems that are dependent on them, such as,
+the calendar system.
+
+[example]
+An identity management system should protect its user accounts
+from malicious actors; prevent registration of fake, bot or
+spam user accounts; and adopt strong authentication methods
+such as two-factor authentication.
+
 
 
 == Mitigating calendar abuse at source
