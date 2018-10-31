@@ -45,20 +45,20 @@ This document was prepared by Technical Committee _{technical-committee}_.
 
 === Rise of calendar spam
 
-"`Calendar spam`" - unsolicited, or otherwise unwanted, calendar events and meeting 
+"`Calendar spam`" - unsolicited, or otherwise unwanted, calendar events and meeting
 invitations - is a recently exploited channel for abuse aimed at users of
 calendaring & scheduling systems.
 
-It is a new form of application-specific spam which takes advantage of the application 
-layer across multiple technologies that spans scheduling, calendaring and messaging 
+It is a new form of application-specific spam which takes advantage of the application
+layer across multiple technologies that spans scheduling, calendaring and messaging
 systems.
 
 As is the case with email spam, calendar spam is not only used to deliver unwanted
 information, but can also be used for malicious purposes such as phishing attempts
 and delivering dangerous payloads.
 
-Because calendar events and meeting invitations are often (but not exclusively) 
-transported and delivered via email, combatting calendar spam requires awareness, 
+Because calendar events and meeting invitations are often (but not exclusively)
+transported and delivered via email, combatting calendar spam requires awareness,
 intervention and integration with email systems and services.
 
 
@@ -117,7 +117,7 @@ This document specifies guidelines for calendar and mail system operators to:
 [[calendar-spam]]
 ==== calendar spam
 
-calendar events and meeting invitations containing _spam_ (<<term-spam>>) delivered 
+calendar events and meeting invitations containing _spam_ (<<term-spam>>) delivered
 through _calendar systems_ (<<term-calendar-system>>)
 
 
@@ -201,10 +201,10 @@ calendaring standards.
 ////
 Mail system
 
-NOTE: The most used method to send calendar invites between users is _iMIP_ (<<iMIP>>), a 
-way of exchanging iTIP (<<iTIP>>) messages using email. Therefor _mail systems_ play a 
-vital role in connecting users from different providers by creating events and inviting 
-other users to join. Mail systems are used to transport the calendar relevant information 
+NOTE: The most used method to send calendar invites between users is _iMIP_ (<<iMIP>>), a
+way of exchanging iTIP (<<iTIP>>) messages using email. Therefor _mail systems_ play a
+vital role in connecting users from different providers by creating events and inviting
+other users to join. Mail systems are used to transport the calendar relevant information
 from organizers to attendees of events.
 
 The _mail system_ should apply state-of-the-art methods to prevent spam being sent by and
@@ -253,7 +253,7 @@ the issue with the automated creation of free accounts.
 Such user accounts can be readily used to create calendar spam events:
 
 . The malicious user account inserts spam content into a newly created calendar event;
-. The calendar system uses templating to send an email invitation with the calendar event 
+. The calendar system uses templating to send an email invitation with the calendar event
 attached;
 . The event content, which contains spam, will be inserted into body of the email.
 
@@ -293,7 +293,7 @@ is detected, such as:
 . display of errors and feedback at the user interface;
 . alert the owner of the user account in case the user account has been hijacked;
 . application of rate limiting to prevent automated spamming;
-. implement automation detection measures, such as usage of a CAPTCHA prior to sending an 
+. implement automation detection measures, such as usage of a CAPTCHA prior to sending an
   invitation; and
 . blocking the user account altogether.
 
@@ -310,7 +310,7 @@ The following mitigation measures should be taken at the electronic mail system:
 .. network patterns of the originator;
 .. DNSBL checks against the originating IP.
 
-. detection of spam content patterns of the email message, using standard email anti-spam 
+. detection of spam content patterns of the email message, using standard email anti-spam
   scanning applications:
 
 .. scanning for malicious content;
@@ -385,7 +385,7 @@ Actions to be taken when potential spam is detected are provided below:
 . pick out the message into quarantaine;
 . moving the message into the spam folder.
 
-When potential spam is detected, "`interaction`" (e.g. adding the event to the end-user's 
+When potential spam is detected, "`interaction`" (e.g. adding the event to the end-user's
 calendar) between the recipient and the sender at the calendar system shall not proceed.
 
 Certain mitigation actions, such as the silent discard of an email,
@@ -398,8 +398,8 @@ electronic mail system is very certain about the calendar invitation
 being an abuse instance or spam.
 
 For some of the milder actions (e.g. putting in spam folder),
-the calendar system should provide options to the recipient user. For example, the 
-recipient user can mark such emails as false positives, and are able to manually insert 
+the calendar system should provide options to the recipient user. For example, the
+recipient user can mark such emails as false positives, and are able to manually insert
 them into the user's calendar.
 
 
@@ -493,17 +493,17 @@ described above.
 
 == Conclusion
 
-Spam is a long-standing and well-known email problem. Because email is a commonly used 
-transport for calendar ("`meeting`") invitations and events, spammers are now using these 
-calendar events and invitations as a spam vector. Consequently, knowledge of both domains 
+Spam is a long-standing and well-known email problem. Because email is a commonly used
+transport for calendar ("`meeting`") invitations and events, spammers are now using these
+calendar events and invitations as a spam vector. Consequently, knowledge of both domains
 is required to develop defenses against these attacks.
 
 This document provides email and calendar system operators with an introduction to
 calendar spam, and highlights best practices for identifying and mitigating calendar spam.
 Implementation details will largely be system-specific.
 
-The "`war`" against malware, including spam, is dynamic and ever-changing. As a result, 
-email and calendar system experts will need to share their expertise and experiences with 
+The "`war`" against malware, including spam, is dynamic and ever-changing. As a result,
+email and calendar system experts will need to share their expertise and experiences with
 each other on an ongoing basis. CalConnect's collaboration with M3AAWG represents the first
 formal collaboration in this area.
 
@@ -557,10 +557,10 @@ Guidelines on this structure:
 
 * The filename of the `application/ics` part should end with the `.ics` file extension.
 
-* Some calendar user applications will only see the part with the standard `text/calendar` 
+* Some calendar user applications will only see the part with the standard `text/calendar`
 `content-type` and the `method` header.
 
-* Some calendar user applications are only able to see attached parts with 
+* Some calendar user applications are only able to see attached parts with
 `application/ics` (this is non-standard behavior).
 
 * Some calendar systems automatically insert links within the HTML part,
