@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/riboseinc/metanorma-csd
+  revision: a3452a5ef8081ef9923018806bbdb0344b41794e
+  specs:
+    metanorma-csd (1.0.8)
+      isodoc (~> 0.9.6)
+      metanorma-standoc (~> 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -23,7 +31,7 @@ GEM
       cnccs (~> 0.1.1)
       gb-agencies (~> 0.0.1)
       iso-bib-item (~> 0.4.2)
-    html2doc (0.8.5)
+    html2doc (0.8.6)
       asciimath
       htmlentities (~> 4.3.4)
       image_size
@@ -50,9 +58,9 @@ GEM
       algoliasearch
       iecbib (~> 0.2.1)
       iso-bib-item (~> 0.4.2)
-    isodoc (0.9.6)
+    isodoc (0.9.7)
       asciimath
-      html2doc (~> 0.8.1)
+      html2doc (~> 0.8.6)
       htmlentities (~> 4.3.4)
       liquid
       metanorma (~> 0.3.0)
@@ -99,9 +107,6 @@ GEM
       ruby-xslt
       thread_safe
       uuidtools
-    metanorma-csd (1.0.8)
-      isodoc (~> 0.9.6)
-      metanorma-standoc (~> 1.0.0)
     metanorma-gb (1.0.7)
       gb-agencies (~> 0.0.1)
       isodoc (~> 0.9.1)
@@ -188,7 +193,7 @@ PLATFORMS
 DEPENDENCIES
   metanorma
   metanorma-cli
-  metanorma-csd
+  metanorma-csd!
 
 BUNDLED WITH
    1.17.0
