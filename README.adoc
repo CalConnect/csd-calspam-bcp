@@ -1,6 +1,18 @@
+:repo-name: csd-calspam-bcp
+
 = CalConnect Standard: Calendar operator practices -- Guidelines to protect against calendar abuse
 
 This work item belongs to TC CALSPAM.
+
+image:https://travis-ci.com/calconnect/csd-calspam-bcp.svg?branch=master["Build Status", link="https://travis-ci.com/calconnect/csd-calspam-bcp"]
+
+This document is available in its rendered forms here:
+
+* https://calconnect.github.io/csd-calspam-bcp/[CalConnect Calendar operator practices -- Guidelines to protect against calendar abuse (HTML)]
+* https://calconnect.github.io/csd-calspam-bcp/csd-calspam-bcp.pdf[PDF]
+* https://calconnect.github.io/csd-calspam-bcp/csd-calspam-bcp.xml[Metanorma XML]
+* https://calconnect.github.io/csd-calspam-bcp/csd-calspam-bcp.rxl[Relaton XML (Bibliographic item)]
+
 
 == Fetching the document
 
@@ -40,7 +52,7 @@ make clean all
 
 The following outputs will be built:
 
-* CSD XML (https://github.com/riboseinc/metanorma-model-csd) (`[filename].xml`)
+* CSD XML (https://github.com/calconnect/metanorma-model-csd) (`[filename].xml`)
 * HTML (`[filename].html`)
 * PDF (`[filename].pdf`)
 * Word DOC (`[filename].doc`)
