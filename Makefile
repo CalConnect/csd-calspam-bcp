@@ -60,7 +60,7 @@ clean:
 	rm -f $(OUT_FILES)
 
 bundle:
-	bundle
+	if [ -z "${METANORMA_DOCKER}" ]; then bundle; fi
 
 .PHONY: bundle all open clean
 
