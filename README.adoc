@@ -13,6 +13,7 @@ This document is available in its rendered forms here:
 * https://calconnect.github.io/csd-calspam-bcp/csd-calspam-bcp.xml[Metanorma XML]
 * https://calconnect.github.io/csd-calspam-bcp/csd-calspam-bcp.rxl[Relaton XML (Bibliographic item)]
 
+Because of all this, there is no need to build the document on your own, but if you wish to do so, this is how it can be done:
 
 == Fetching the document
 
