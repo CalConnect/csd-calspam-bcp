@@ -6,6 +6,7 @@
 :edition: 1
 :copyright-year: 2018
 :revdate: 2018-10-31T00:00:00Z
+:published-date: 2018-10-31T00:00:00Z
 :language: en
 :technical-committee: CALSPAM
 :draft:
@@ -551,7 +552,7 @@ the Calendaring and Scheduling Consortium and attendees of the M3AAWG conference
 about the topic, as well as the following individuals who have participated in the
 drafting, review, and discussion of this document:
 
-Arne Allisat, Bron Gondwana, Andrew Laurence, Andrey Maevsky, Gary Schwartz, 
+Arne Allisat, Bron Gondwana, Andrew Laurence, Andrey Maevsky, Gary Schwartz,
 Dave Thewlis and Ronald Tse
 
 
