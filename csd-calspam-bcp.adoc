@@ -16,12 +16,6 @@
 :local-cache-only:
 :data-uri-image:
 
-////
-Authors
-Thomas Schäfer, 1&1 Mail&Media Development and Technology GmbH
-Jesse Thompson, University of Wisconsin-Madison
-////
-
 .Foreword
 The Calendaring and Scheduling Consortium ("`CalConnect`") is global non-profit
 organization with the aim of facilitating interoperability of technologies across
