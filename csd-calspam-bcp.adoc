@@ -7,6 +7,7 @@
 :copyright-year: 2018
 :revdate: 2018-10-31T00:00:00Z
 :published-date: 2018-10-31T00:00:00Z
+:author: Thomas Schäfer,1&1 Mail&Media Development and Technology GmbH
 :language: en
 :technical-committee: CALSPAM
 :draft:
