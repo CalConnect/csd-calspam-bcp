@@ -7,7 +7,8 @@
 :copyright-year: 2018
 :revdate: 2018-10-31T00:00:00Z
 :published-date: 2018-10-31T00:00:00Z
-:author: Thomas Schäfer,1&1 Mail&Media Development and Technology GmbH
+:fullname: Thomas Schäfer, 1&1 Mail&Media Development and Technology GmbH
+:fullname_2: Jesse Thompson, University of Wisconsin-Madison
 :language: en
 :technical-committee: CALSPAM
 :draft:
