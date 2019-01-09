@@ -4,7 +4,6 @@ SHELL := /bin/bash
 include metanorma.env
 export $(shell sed 's/=.*//' metanorma.env)
 
-DOCTYPE := $(METANORMA_DOCTYPE)
 FORMATS := $(METANORMA_FORMATS)
 comma := ,
 empty :=
@@ -16,9 +15,12 @@ XML  := $(patsubst %.adoc,%.xml,$(SRC))
 HTML := $(patsubst %.adoc,%.html,$(SRC))
 DOC  := $(patsubst %.adoc,%.doc,$(SRC))
 PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
+WSD  := $(wildcard models/*.wsd)
+XMI	 := $(patsubst models/%,xmi/%,$(patsubst %.wsd,%.xmi,$(WSD)))
+PNG	 := $(patsubst models/%,images/%,$(patsubst %.wsd,%.png,$(WSD)))
 
-COMPILE_CMD_LOCAL := bundle exec metanorma -t $(DOCTYPE) -x $(FORMATS_LIST) $$FILENAME
-COMPILE_CMD_DOCKER := docker run -v "$$(pwd)":/metanorma/ ribose/metanorma "metanorma -t $(DOCTYPE) -x $(FORMATS_LIST) $$FILENAME"
+COMPILE_CMD_LOCAL := bundle exec metanorma $$FILENAME
+COMPILE_CMD_DOCKER := docker run -v "$$(pwd)":/metanorma/ ribose/metanorma "metanorma $$FILENAME"
 
 ifdef METANORMA_DOCKER
   COMPILE_CMD := echo "Compiling via docker..."; $(COMPILE_CMD_DOCKER)
@@ -29,11 +31,21 @@ endif
 _OUT_FILES := $(foreach FORMAT,$(FORMATS),$(shell echo $(FORMAT) | tr '[:lower:]' '[:upper:]'))
 OUT_FILES  := $(foreach F,$(_OUT_FILES),$($F))
 
-all: $(OUT_FILES)
+all: images $(OUT_FILES)
 
 %.xml %.html %.doc %.pdf:	%.adoc | bundle
 	FILENAME=$^; \
 	${COMPILE_CMD}
+
+images: $(PNG)
+
+images/%.png: models/%.wsd
+	plantuml -tpng -o ../images/ $<
+
+xmi: $(XMI)
+
+xmi/%.xmi: models/%.wsd
+	plantuml -xmi:star -o ../xmi/ $<
 
 define FORMAT_TASKS
 OUT_FILES-$(FORMAT) := $($(shell echo $(FORMAT) | tr '[:lower:]' '[:upper:]'))
@@ -51,8 +63,6 @@ $(FORMAT): clean-$(FORMAT) $$(OUT_FILES-$(FORMAT))
 endef
 
 $(foreach FORMAT,$(FORMATS),$(eval $(FORMAT_TASKS)))
-
-# open: $(foreach FORMAT,$(FORMATS),open-$(FORMAT))
 
 open: open-html
 
