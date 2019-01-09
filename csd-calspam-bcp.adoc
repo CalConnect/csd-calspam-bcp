@@ -175,7 +175,6 @@ information system that provides electronic mail functionality
 information system that provides authentication and authorization functionality
 
 
-
 [[abbrev]]
 === Abbreviations
 
@@ -268,7 +267,6 @@ An identity management system should protect its user accounts
 from malicious actors; prevent registration of fake, bot or
 spam user accounts; and adopt strong authentication methods
 such as two-factor authentication.
-
 
 
 == Mitigating calendar abuse at source
@@ -451,8 +449,8 @@ should follow these principles:
   calendar event data structures not understandable to electronic mail systems;
 
 . calendar event content should be checked for spam patterns in its text fields,
-   such as the fields of subject, description, recurrence and links,
-   to determine the likelihood of it being spam;
+  such as the fields of subject, description, recurrence and links,
+  to determine the likelihood of it being spam;
 
 . depending on the likelihood of being spam, spam handling options should be
   offered to the user directly, such as:
@@ -547,7 +545,7 @@ The editor of this document wishes to thank the experts of
 CalConnect -- the Calendaring and Scheduling Consortium and
 attendees of the M3AAWG conference sessions about the topic,
 as well as the following individuals who have participated in
-the drafting, review, and discussion of this document:
+the drafting, review and discussion of this document:
 
 * Arne Allisat
 * Bron Gondwana
