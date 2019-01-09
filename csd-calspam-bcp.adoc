@@ -1,12 +1,12 @@
 = CalConnect Standard: Calendar operator practices -- Guidelines to protect against calendar abuse
 :title: Calendar operator practices -- Guidelines to protect against calendar abuse
 :docnumber: 18003
-:status: draft-standard
+:status: published
 :doctype: report
 :edition: 1
-:copyright-year: 2018
-:revdate: 2018-10-31T00:00:00Z
-:published-date: 2018-10-31T00:00:00Z
+:copyright-year: 2019
+:revdate: 2019-01-18T00:00:00Z
+:published-date: 2019-01-18T00:00:00Z
 :fullname: Thomas Schäfer, 1&1 Mail&Media Development and Technology GmbH
 :fullname_2: Jesse Thompson, University of Wisconsin-Madison
 :language: en
