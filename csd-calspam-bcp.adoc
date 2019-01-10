@@ -541,7 +541,7 @@ formal collaboration in this area.
 
 == Acknowledgements
 
-The editor of this document wishes to thank the experts of
+The authors of this document wishes to thank the experts of
 CalConnect -- the Calendaring and Scheduling Consortium and
 attendees of the M3AAWG conference sessions about the topic,
 as well as the following individuals who have participated in
