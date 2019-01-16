@@ -16,9 +16,9 @@
 :stem:
 :xrefstyle: short
 :imagesdir: images
-:docfile: csd-calspam-bcp.adoc
+:docfile: cc-18003.adoc
 :mn-document-class: csd
-:mn-output-extensions: xml,html,doc,pdf
+:mn-output-extensions: xml,html,pdf
 :local-cache-only:
 :data-uri-image:
 
