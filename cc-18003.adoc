@@ -597,7 +597,7 @@ Guidelines on this structure:
 * Some calendar systems automatically insert links within the HTML part,
   which can be used by email clients that are not calendar-aware to accept
   or decline an invitation without having to process the calendar parts.
-  In this case, the server simply updates the `ORGANIZER` 's copy of the
+  In this case, the server simply updates the ``ORGANIZER``'s copy of the
   event based on the link clicked.
 
 * The `text/plain` and `text/html` part of the message in the body will
