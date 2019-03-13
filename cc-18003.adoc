@@ -5,8 +5,8 @@
 :doctype: report
 :edition: 1
 :copyright-year: 2019
-:revdate: 2019-01-18T00:00:00Z
-:published-date: 2019-01-18T00:00:00Z
+:revdate: 2019-01-18
+:published-date: 2019-01-18
 :fullname: Thomas Schäfer, 1&1 Mail&Media Development and Technology GmbH
 :fullname_2: Jesse Thompson, University of Wisconsin-Madison
 :language: en
