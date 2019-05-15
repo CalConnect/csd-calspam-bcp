@@ -1,37 +1,23 @@
-dist: trusty
-sudo: false
 language: ruby
-os:
-  - linux
-  - osx
+dist: xenial
+# branches:
+#   only:
+#     - master
+env:
+  global:
+    - JAVA_OPTS="java.awt.headless=true"
+    - COMMIT_AUTHOR_EMAIL="travis-ci@calconnect.org"
 rvm:
   - 2.5
-  - 2.4
-  - 2.3
-  - ruby-head
+cache: bundler
 before_install:
-  - gem install bundler -v 2.0.1
-  - bundle update
-  - unset _JAVA_OPTIONS
-
-matrix:
-  allow_failures:
-    - rvm: ruby-head
-
-after_success:
-  - >
-    echo "TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST" &&
-    if [[ ($TRAVIS_BRANCH == master) &&
-          ($TRAVIS_PULL_REQUEST == false) ]] ; then
-      curl -LO --retry 3 https://raw.github.com/mernst/plume-lib/master/bin/trigger-travis.sh &&
-      sh trigger-travis.sh riboseinc metanorma.com $TRAVIS_ACCESS_TOKEN;
-    fi
-
-after_failure:
-  - >
-    echo "TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST" &&
-    if [[ ($TRAVIS_BRANCH == master) &&
-          ($TRAVIS_PULL_REQUEST == false) ]] ; then
-      curl -LO --retry 3 https://raw.github.com/mernst/plume-lib/master/bin/trigger-travis.sh &&
-      sh trigger-travis.sh riboseinc metanorma.com $TRAVIS_ACCESS_TOKEN;
-    fi
+  - gem update --system
+  - gem install bundler
+  - sudo bash -c "curl -L https://raw.githubusercontent.com/metanorma/metanorma-linux-setup/master/ubuntu.sh | bash"
+script:
+  - make clean all publish
+deploy:
+  provider: script
+  script: bash -c "curl -L https://raw.githubusercontent.com/metanorma/metanorma-build-scripts/deploy-to-gh-pages.sh | bash"
+  on:
+    branch: master
