@@ -1,0 +1,1683 @@
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style>
+  <!--
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  vertical-align: baseline; }
+
+html, body, div, span, applet, object, iframe,
+p, blockquote,
+a, abbr, acronym, address, big, cite,
+del, dfn, em, img, ins, q, s,
+small, strike, strong, sub, sup, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: "Source Sans Pro", sans-serif; }
+
+code, pre, tt, kbd, samp {
+  font-family: "Source Code Pro", monospace;
+  font-variant-ligatures: none; }
+
+code *, pre *, tt *, kbd *, samp * {
+  font-family: "Source Code Pro", monospace !important;
+  font-variant-ligatures: none; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Source Sans Pro", sans-serif; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+
+.h2Annex {
+  font-family: "Source Sans Pro", sans-serif; }
+
+dl {
+  display: grid;
+  grid-template-columns: max-content auto; }
+  dl dt p, dl dd p {
+    margin-top: 0; }
+  dl dt {
+    grid-column-start: 1; }
+  dl dd {
+    grid-column-start: 2; }
+
+b, strong {
+  font-weight: bold; }
+
+div.document-stage-band, div.document-type-band {
+  background-color: #333333; }
+
+#standard-band {
+  background-color: #0AC442; }
+
+#standard {
+  border-bottom: solid 3px #0AC442; }
+
+#directive-band {
+  background-color: #540D6E; }
+
+#directive {
+  border-bottom: solid 3px #540D6E; }
+
+#guide-band {
+  background-color: #D183C9; }
+
+#guide {
+  border-bottom: solid 3px #D183C9; }
+
+#specification-band {
+  background-color: #65AFFF; }
+
+#specification {
+  border-bottom: solid 3px #65AFFF; }
+
+#report-band {
+  background-color: #3A405A; }
+
+#report {
+  border-bottom: solid 3px #3A405A; }
+
+#amendment-band {
+  background-color: #F26430; }
+
+#amendment {
+  border-bottom: solid 3px #F26430; }
+
+#corrigendum-band {
+  background-color: #C84630; }
+
+#corrigendum {
+  border-bottom: solid 3px #C84630; }
+
+#administrative-band {
+  background-color: #BFAE48; }
+
+#administrative {
+  border-bottom: solid 3px #BFAE48; }
+
+#advisory-band {
+  background-color: #BD9391; }
+
+#advisory {
+  border-bottom: solid 3px #BD9391; }
+
+#proposal-band {
+  background-color: #39A0ED; }
+
+#proposal {
+  border-bottom: solid 3px #39A0ED; }
+
+#working-draft-band {
+  background-color: #2D7393; }
+
+#working-draft {
+  border-bottom: solid 3px #2D7393; }
+
+#committee-draft-band {
+  background-color: #2A6B7C; }
+
+#committee-draft {
+  border-bottom: solid 3px #2A6B7C; }
+
+#draft-standard-band {
+  background-color: #1C7F7A; }
+
+#draft-standard {
+  border-bottom: solid 3px #1C7F7A; }
+
+#final-draft-band {
+  background-color: #53C170; }
+
+#final-draft {
+  border-bottom: solid 3px #53C170; }
+
+#published-band {
+  background-color: #069E2D; }
+
+#published {
+  border-bottom: solid 3px #069E2D; }
+
+#withdrawn-band {
+  background-color: #004E64; }
+
+#withdrawn {
+  border-bottom: solid 3px #004E64; }
+
+#cancelled-band {
+  background-color: #2E382E; }
+
+#cancelled {
+  border-bottom: solid 3px #2E382E; }
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4em;
+  color: #1d1d1d;
+  background-color: #fff; }
+  body main {
+    margin: 0 3em 0 6em; }
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 360px; } }
+
+@media print {
+  .container {
+    padding-left: 0; } }
+
+@media screen and (min-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 323px;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0 0 0 45px;
+    background-color: #f7f7f7; } }
+
+@media print {
+  nav {
+    position: relative;
+    width: auto;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0;
+    margin-right: 0;
+    background-color: white; } }
+
+nav #toc {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400; }
+  @media screen and (max-width: 768px) {
+    nav #toc {
+      padding: 0 1.5em;
+      overflow: visible; } }
+@media screen and (min-width: 768px) {
+  #toggle {
+    position: fixed;
+    height: 100%;
+    width: 30px;
+    background-color: #1d1d1d;
+    color: white !important;
+    cursor: pointer;
+    z-index: 100; }
+    #toggle span {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%); } }
+
+@media screen and (max-width: 768px) {
+  #toggle {
+    display: none; } }
+
+@media print {
+  #toggle {
+    display: none; } }
+
+#toc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  #toc ul li a {
+    padding: 5px 10px; }
+  #toc ul a {
+    color: #485094;
+    text-decoration: none;
+    display: block; }
+    #toc ul a:hover {
+      box-shadow: none;
+      color: white; }
+
+#toc .h2 {
+  padding-left: 30px; }
+
+#toc .h3 {
+  padding-left: 50px; }
+
+#toc .toc-active, #toc li:hover {
+  background: #1d1d1d;
+  box-shadow: inset -5px 0px 10px -5px #1d1d1d !important; }
+  #toc .toc-active a, #toc li:hover a {
+    color: white; }
+
+@media print {
+  #toc .toc-active, #toc li:hover {
+    background: white;
+    box-shadow: none !important; }
+  #toc .toc-active a {
+    color: #485094; }
+  #toc li:hover a {
+    color: black; } }
+
+#toc ul {
+  margin-bottom: 0.25em; }
+
+#toc li {
+  list-style-type: none; }
+  #toc li:before {
+    content: " " !important;
+    display: none; }
+
+.rule {
+  width: 100%;
+  height: 1px;
+  background-color: #0e1a85;
+  margin: 2em 0; }
+  @media screen and (min-width: 768px) {
+    .rule.toc {
+      display: none; } }
+.document-stage-band {
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 101;
+  box-shadow: -5px 0px 10px #1d1d1d; }
+  .document-stage-band > :first-child {
+    position: relative;
+    width: 25px;
+    font-weight: 300;
+    height: 160px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0;
+    margin-left: 6px;
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    white-space: nowrap;
+    display: block;
+    bottom: 0; }
+  @media print {
+    .document-stage-band {
+      display: none; } }
+.document-type-band {
+  left: 0;
+  top: 180px;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 102; }
+  .document-type-band > :first-child {
+    position: relative;
+    width: 25px;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0;
+    margin-left: 6px;
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    white-space: nowrap;
+    display: block;
+    bottom: 0; }
+  @media print {
+    .document-type-band {
+      display: none; } }
+  .document-type-band .document-type {
+    top: 20px; }
+
+/* Typograpy */
+h1, h2, h3, h4, h5, h6 {
+  color: #0e1a85;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.3em; }
+
+h1 {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  margin-top: 2em; }
+  h1#content {
+    margin-top: 2em; }
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 400; }
+  h2 p {
+    display: inline; }
+
+h3 {
+  font-size: 1.1em;
+  font-weight: 400; }
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+/* Terms */
+.TermNum, .Terms, .AltTerms {
+  color: #485094;
+  font-weight: 400; }
+
+p.TermNum {
+  font-size: 0.9em;
+  line-height: 1em;
+  margin: 0;
+  margin-top: 2em; }
+
+p.Terms {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  margin: 0; }
+
+/* Links, selection */
+a, a:visited {
+  text-decoration: none;
+  color: #485094; }
+
+a:hover {
+  color: white;
+  background: #1d1d1d;
+  box-shadow: 3px 0 0 #1d1d1d, -3px 0 0 #1d1d1d; }
+
+::selection,
+::-moz-selection {
+  background: #1d1d1d;
+  color: white; }
+
+/* Lists */
+ol {
+  margin-left: 1.2em; }
+
+ul {
+  position: relative;
+  margin-left: 0;
+  list-style: none;
+  padding-left: 1.2em; }
+
+ul > li:before {
+  content: "\2014";
+  position: absolute;
+  left: 0; }
+
+main li {
+  margin-top: 1em;
+  padding-left: 0.5em; }
+
+/* Bibliograhy */
+p.Biblio, p.NormRef {
+  margin-top: 1em; }
+
+p.Biblio:before, p.NormRef:before {
+  content: "\2014";
+  padding-right: 1em; }
+
+/* Blocks */
+.figure {
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow: auto;
+  font-family: "Source Code Pro", monospace;
+  font-variant-ligatures: none; }
+  .figure .FigureTitle, .figure .figure-title {
+    font-weight: 700;
+    font-size: 1em;
+    text-align: center; }
+  .figure > img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 100%;
+    height: auto; }
+
+.SourceTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+pre {
+  font-family: "Source Code Pro", monospace;
+  font-variant-ligatures: none;
+  background-color: #f7f7f7;
+  font-size: 0.8em;
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow-y: auto;
+  overflow-x: scroll; }
+  .example pre {
+    background: none; }
+
+.pseudocode {
+  background-color: #f7f7f7;
+  font-size: 0.8em;
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow: auto; }
+  .pseudocode .SourceTitle {
+    font-weight: 700;
+    font-size: 1em;
+    text-align: center; }
+  .example .pseudocode {
+    background: none; }
+
+.Admonition .AdmonitionTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.recommend .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.require .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.permission .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.Note, .Admonition {
+  color: #47430c;
+  padding: 0.25em;
+  margin: 0; }
+
+.Note {
+  background-color: #fff495; }
+  .Note p {
+    margin: 1em; }
+
+.blockquote, .Quote {
+  background-color: #f7f7f7;
+  font-style: italic;
+  width: 80%;
+  padding: 1.5em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto; }
+  .blockquote .QuoteAttribution, .Quote .QuoteAttribution {
+    text-align: right; }
+
+.formula, .Formula {
+  background-color: #f7f7f7;
+  padding: 1.5em;
+  margin-top: 2em;
+  text-align: center; }
+
+/* Examples */
+table.example {
+  background-color: #e1eef1; }
+
+td.example {
+  padding: 0 1em 0 1em;
+  margin: 2em 0 1em 0; }
+
+.example {
+  background-color: #e1eef1;
+  padding: 0.5em;
+  margin: 2em 0 1em 0;
+  text-align: left;
+  padding-left: 2em; }
+
+.example p {
+  margin: 0; }
+
+.example .example-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left: -1.5em; }
+
+.example pre, .example .pseudocode {
+  background: none; }
+
+/* Tables */
+table {
+  width: 100%;
+  font-weight: 300;
+  margin: 1em 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em; }
+  table, table th, table td {
+    border: 1px solid black;
+    font-size: 0.95em; }
+  table th, table td {
+    padding: 1em; }
+  table td.header {
+    font-weigth: 400; }
+
+p.TableTitle {
+  text-align: center;
+  margin-top: 2.5em;
+  font-weight: 400; }
+
+/* Footnotes */
+a.footnote-number {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+.footnote {
+  font-size: 0.9em; }
+
+/* Contact Info */
+.contact-info {
+  background-color: #f7f7f7;
+  padding: 1em;
+  margin-top: 2em;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left; }
+  .contact-info p, .contact-info a {
+    font-family: "Source Code Pro", monospace;
+    font-variant-ligatures: none;
+    font-weight: 400;
+    line-height: 1.3em;
+    font-size: 1em;
+    margin: 0; }
+  .contact-info a:hover {
+    color: #485094;
+    background: none;
+    text-decoration: underline;
+    box-shadow: none; }
+  .contact-info .name {
+    font-weight: 700; }
+
+/* Keywords */
+span.keyword {
+  font-weight: 600; }
+
+/* Admonitions */
+.Admonition, .admonition {
+  background-color: #ffb3b3;
+  padding: 0.5em;
+  margin: 1.5em 0 1.5em 0;
+  text-align: left; }
+  .Admonition p, .admonition p {
+    margin: 0; }
+
+.coverpage {
+  text-align: center;
+  padding-left: 1.5em; }
+
+.wrapper-top {
+  background-color: #0e1a85;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAACXBIWXMAABYlAAAWJQFJUiTwAAADwUlEQVR4nO3YgQ2AMAwDwcAiWZ1NizrH30lIeIEq9nPOGSDqPgC7+93v/suy3Mmvhx+6VAAIcwFAmc4nyzYAIMgGAGEuACirdyBZtgEASTYACHMBQFm9A8myDQBIsgFAmAsAyuodSJZtAECSDQDCXABQVu9AsmwDAJJsABDmAoCyegeSZRsAkGQDgDAXAJTVO5As2wCAJBsAhLkAoKzegWTZBgAk2QAgzAUAZfUOJMs2ACDJBgBhLgAoq3cgWbYBAEk2AAhzAUBZvQPJsg0ASLIBQJgLAMrqHUiWbQBAkg0AwlwAUFbvQLJsAwCSbAAQ5gKAsnoHkmUbAJBkA4AwFwCU1TuQLNsAgCQbAIS5AKCs3oFk2QYAJNkAIMwFAGX1DiTLNgAgyQYAYS4AKKt3IFm2AQBJNgAIcwFAWb0DybINAEiyAUCYCwDK6h1Ilm0AQJINAMJcAFBW70CybAMAkmwAEOYCgLJ6B5JlGwCQZAOAMBcAlNU7kCzbAIAkGwCEuQCgrN6BZNkGACTZACDMBQBl9Q4kyzYAIMkGAGEuACirdyBZtgEASTYACHMBQFm9A8myDQBIsgFAmAsAyuodSJZtAECSDQDCXABQVu9AsmwDAJJsABDmAoCyegeSZRsAkGQDgDAXAJTVO5As2wCAJBsAhLkAoKzegWTZBgAk2QAgzAUAZfUOJMs2ACDJBgBhLgAoq3cgWbYBAEk2AAhzAUBZvQPJsg0ASLIBQJgLAMrqHUiWbQBAkg0AwlwAUFbvQLJsAwCSbAAQ5gKAsnoHkmUbAJBkA4AwFwCU1TuQLNsAgCQbAIS5AKCs3oFk2QYAJNkAIMwFAGX1DiTLNgAgyQYAYS4AKKt3IFm2AQBJNgAIcwFAWb0DybINAEiyAUCYCwDK6h1Ilm0AQJINAMJcAFBW70CybAMAkmwAEOYCgLJ6B5JlGwCQZAOAMBcAlNU7kCzbAIAkGwCEuQCgrN6BZNkGACTZACDMBQBl9Q4kyzYAIMkGAGEuACirdyBZtgEASTYACHMBQFm9A8myDQBIsgFAmAsAyuodSJZtAECSDQDCXABQVu9AsmwDAJJsABDmAoCyegeSZRsAkGQDgDAXAJTVO5As2wCAJBsAhLkAoKzegWTZBgAk2QAgzAUAZfUOJMs2ACDJBgBhLgAoq3cgWbYBAEk2AAhzAUBZvQPJsg0ASLIBQJgLAMrqHUiWbQBAkg0AwlwAUFbvQLJsAwCSbAAQ5gKAsnoHkmUbAJBkA4AwFwCU1TuQLNsAgCQbAFTNzA9ggAr9aahO8QAAAABJRU5ErkJggg==");
+  color: #ffffff;
+  padding: 2em 0; }
+
+.doc-number {
+  font-size: 0.5em;
+  font-family: "Source Sans Pro", sans-serif; }
+
+.coverpage-maturity {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0 0 2em 0;
+  text-transform: uppercase; }
+
+.coverpage-title {
+  padding-bottom: 0.5em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  font-weight: 600;
+  padding-left: 1em;
+  padding-right: 1em; }
+
+.title-section1 {
+  padding: 0 2em 0 3em; }
+
+.prefatory-section {
+  padding: 0 3em 0 6em; }
+
+.zzSTDTitle1, .MsoCommentText {
+  display: none; }
+
+.coverpage-logo span, .coverpage-tc-name span {
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+.coverpage-tc-name {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin: 0.25em 0; }
+
+.coverpage-contributors {
+  margin-top: 1em;
+  line-height: 1.5em;
+  font-weight: 300; }
+  .coverpage-contributors .role {
+    font-variant-caps: all-small-caps;
+    background: #f7f7f7;
+    border-radius: 5px;
+    padding: 0.1em 0.5em;
+    margin-left: 1em;
+    color: #485094;
+    font-size: 0.9em;
+    font-weight: 900; }
+  .coverpage-contributors .person {
+    display: block;
+    font-weight: 300; }
+
+.coverpage-doc-identity {
+  font-size: 2em;
+  line-height: 2em; }
+
+.coverpage-title .title-second {
+  display: none; }
+
+.coverpage-stage-block {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  font-size: 1.25em;
+  margin: 2em 0em 2em 0em;
+  text-transform: uppercase; }
+
+.coverpage-warning {
+  border-top: solid 1px #f36f36;
+  border-bottom: solid 1px #f36f36;
+  margin: 1em 2em;
+  color: #485094;
+  padding: 1em; }
+  .coverpage-warning .title {
+    color: #f36f36;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.2em; }
+
+.copyright {
+  padding: 1em;
+  font-size: 0.9em;
+  text-align: left; }
+  .copyright .name, .copyright .address {
+    color: #485094; }
+
+#myBtn {
+  font-family: "Source Code Pro", monospace;
+  font-variant-ligatures: none;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  background-color: #1d1d1d;
+  opacity: 0.15;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px 10px 15px;
+  border-radius: 4px; }
+  #myBtn:hover {
+    opacity: 1; }
+  @media print {
+    #myBtn {
+      display: none; } }
+a.anchorjs-link:hover {
+  background: none;
+  color: #485094;
+  box-shadow: none; }
+
+@page {
+  margin: 2cm 1cm 2cm 1cm; }
+
+@media print {
+  h1, .title-section1 {
+    page-break-before: always; }
+  h1.toc-contents {
+    margin-top: 2em; } }
+
+-->
+</style><title>Calendar operator practices&#x2009;&#x2014;&#x2009;Guidelines to protect against calendar abuse</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--TOC script import-->
+<script type="text/javascript" src="https://cdn.rawgit.com/jgallen23/toc/0.3.2/dist/toc.min.js"></script>
+<script type="text/javascript">function toclevel() { return "h1:not(:empty):not(.TermNum):not(.noTOC),h2:not(:empty):not(.TermNum):not(.noTOC)";}
+</script>
+
+<!--Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
+
+<!--Font awesome import for the link icon-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous" />
+<style class="anchorjs"></style>
+</head>
+  <body lang="EN-US" link="blue" vlink="#954F72" xml:lang="EN-US" class="container">
+    <div class="title-section"><div class="document-stage-band" id="published-band">
+  <p class="document-stage">Published</p>
+</div>
+
+<div class="document-type-band" id="report-band">
+  <p class="document-type">CalConnect Report</p>
+</div>
+
+<div id="toggle"> <span>&#x2022;</span> </div>
+
+<header>
+
+  <!--<div class="WordSection1">-->
+  <div class="coverpage">
+    <div class="wrapper-top">
+
+      <div class="coverpage-doc-identity">
+        <div class="doc-number">
+          <span class="docnumber">CC/R 18003:2019</span>
+          <!-- <span class="docnumber-separator">:</span>
+            <span class="docyear">2019</span> -->
+        </div>
+
+        <div class="coverpage-title">
+          <span class="title-first">Calendar operator practices&#x2009;&#x2014;&#x2009;Guidelines to protect against calendar abuse</span>
+          <!--<span class="title-second"></span>-->
+        </div>
+      </div>
+
+      <div class="coverpage-logo">
+        <span>The Calendaring and Scheduling Consortium</span>
+      </div>
+
+      <div class="coverpage-tc-name">
+        <span>TC CALSPAM</span>
+      </div>
+
+      
+
+      
+
+      <div class="coverpage-contributors">
+        
+        <div class="group author">
+          
+          
+          <span class="person author">Thomas Sch&#xE4;fer, 1&amp;1 Mail&amp;Media Development and Technology GmbH<span class="role">Author</span></span>
+          
+          <span class="person author">Jesse Thompson, University of Wisconsin-Madison<span class="role">Author</span></span>
+          
+          <div class="affiliation"></div>
+          
+        </div>
+        
+
+      </div>
+    </div>
+
+    <div class="title-section1">
+      <div class="coverpage-stage-block">
+        <span class="coverpage-stage" id="report">CalConnect Report</span>
+      </div>
+
+      <div class="coverpage-stage-block">
+        <span class="coverpage-maturity" id="published"></span>
+      </div>
+
+      
+
+      <div class="copyright">
+        <div class="year">
+          <div class="boilerplate-copyright">
+    <div>
+      <p id="_cf165bfb-4414-4967-9722-7c0330ba89c9">&#xA9; 2019 The Calendaring and Scheduling Consortium, Inc. </p>
+    </div>
+  </div>
+        </div>
+
+        <div class="message">
+          <div class="boilerplate-legal">
+    <div>
+      <p id="_0b178890-0adb-4650-a097-d97ba346f9d7">All rights reserved. Unless otherwise specified, no part of this
+        publication may be reproduced or utilized otherwise in any form or by any
+        means, electronic or mechanical, including photocopying, or posting on the
+        internet or an intranet, without prior written permission. Permission can
+        be requested from the address below.  </p>
+    </div>
+  </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="boilerplate-feedback">
+    <div>
+      <p id="boilerplate-name">The Calendaring and Scheduling Consortium, Inc.</p>
+      <p id="boilerplate-address">4390 Chaffin Lane<br />
+        McKinleyville<br />
+        California 95519<br />
+        United States of America<br />
+        <br />
+        <a href="mailto:copyright@calconnect.org">copyright@calconnect.org</a><br />
+        <a href="www.calconnect.org">www.calconnect.org</a>
+      </p>
+    </div>
+  </div>
+        </div>
+      </div>
+
+      <div class="rule"></div>
+    </div>
+  </div>
+</header>
+
+      <p>&#xA0;</p>
+    </div>
+    <br />
+    <div class="prefatory-section"><nav>
+  <h1 id="content">Contents</h1>
+  <div id="toc"><ul><li class="h1"><a href="#toc0">      Foreword</a></li><li class="h1"><a href="#toc1">      Introduction</a></li><li class="h2"><a href="#toc2">      Rise of calendar spam</a></li><li class="h2"><a href="#toc3">      Impact of calendar spam</a></li><li class="h1"><a href="#toc4">      Acknowledgements</a></li><li class="h1"><a href="#toc5">      1.&#xA0; Scope</a></li><li class="h1"><a href="#toc6">      2.&#xA0; Normative references</a></li><li class="h1"><a href="#toc7">      3.&#xA0; Terms and definitions</a></li><li class="h2"><a href="#toc8">      3.1.&#xA0; Terms and definitions</a></li><li class="h2"><a href="#toc9">      3.2.&#xA0; Abbreviations</a></li><li class="h1"><a href="#toc10">      4.&#xA0; Calendar spam and its delivery path</a></li><li class="h2"><a href="#toc11">      4.1.&#xA0; General</a></li><li class="h2"><a href="#toc12">      4.2.&#xA0; Information systems involved in calendar abuse</a></li><li class="h1"><a href="#toc13">      5.&#xA0; Mitigating calendar abuse at source</a></li><li class="h2"><a href="#toc14">      5.1.&#xA0; General</a></li><li class="h2"><a href="#toc15">      5.2.&#xA0; Source calendar system</a></li><li class="h2"><a href="#toc16">      5.3.&#xA0; Electronic mail system (SMTP)</a></li><li class="h1"><a href="#toc17">      6.&#xA0; Mitigating calendar abuse at destination</a></li><li class="h2"><a href="#toc18">      6.1.&#xA0; General</a></li><li class="h2"><a href="#toc19">      6.2.&#xA0; Electronic mail system</a></li><li class="h1"><a href="#toc20">      7.&#xA0; Interactions between the calendar system and the mail system</a></li><li class="h2"><a href="#toc21">      7.1.&#xA0; Calendar user application</a></li><li class="h1"><a href="#toc22">      8.&#xA0; Other ways calendar spam occur</a></li><li class="h2"><a href="#toc23">      8.1.&#xA0; Subscription to shared calendars</a></li><li class="h1"><a href="#toc24">      9.&#xA0; Conclusion</a></li><li class="h1"><a href="#toc25">      Appendix A (informative)  Technical information</a></li><li class="h2"><a href="#toc26">      A.1.&#xA0; Structure of a best practice iMIP message containing an event</a></li><li class="h1"><a href="#toc27">      Bibliography</a></li></ul></div>
+
+</nav>
+
+
+<div class="rule toc"></div>
+
+      <p>&#xA0;</p>
+    </div>
+    <br />
+    <main class="main-section"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <div class="authority">
+  
+
+
+
+  
+
+  
+</div>
+      <br />
+      <div id="_c66d2ad1-c390-4288-9cb3-4af848d64d87">
+        <h1 class="ForewordTitle" id="toc0">Foreword</h1>
+        <p id="_134e93cf-0622-4388-b1dd-83efe8887396">The Calendaring and Scheduling Consortium (&#x201C;CalConnect&#x201D;) is a global non-profit
+organization with the aim of facilitating interoperability of technologies across
+user-centric systems and applications.</p>
+        <p id="_5daaa2a4-c640-47e1-9ce3-1c19e0fabde4">CalConnect works closely with liaison partners including international
+organizations such as ISO, OASIS and M3AAWG.</p>
+        <p id="_ea020204-a346-4179-8f30-e776f3d9ed18">The procedures used to develop this document and those intended for its further
+maintenance are described in the CalConnect Directives, and in this case, also aligned
+with the procedures used at M3AAWG.</p>
+        <p id="_75a8246e-fe23-4392-a912-fcb7c8910dcc">In particular the different approval criteria needed for the different types of
+CalConnect documents should be noted. This document was drafted in accordance with the
+editorial rules of the CalConnect Directives.</p>
+        <p id="_6a91eb1f-7406-4fc3-ac97-69cee3dd2f57">Attention is drawn to the possibility that some of the elements of this
+document may be the subject of patent rights. CalConnect shall not be held responsible
+for identifying any or all such patent rights. Details of any patent rights
+identified during the development of the document will be in the Introduction
+and/or on the CalConnect list of patent declarations received (see
+www.calconnect.com/patents).</p>
+        <p id="_b05b15c6-4187-4d7c-80ca-858d28163a26">Any trade name used in this document is information given for the convenience
+of users and does not constitute an endorsement.</p>
+        <p id="_1f936964-41aa-420c-8e4f-525df56fc0f0">This document was prepared by Technical Committee <i>CALSPAM</i>.</p>
+      </div>
+      <br />
+      <div class="Section3" id="_introduction">
+        <h1 class="IntroTitle" id="toc1">Introduction</h1>
+        <div id="_rise_of_calendar_spam"><h2 id="toc2">Rise of calendar spam</h2><p id="_d053f98b-6a8e-4e6c-96d6-a03d7626bb9d">&#x201C;Calendar spam&#x201D;&#x2009;&#x2014;&#x2009;unsolicited, or otherwise unwanted, calendar events and meeting
+invitations&#x2009;&#x2014;&#x2009;is a recently exploited channel for abuse aimed at users of
+calendaring &amp; scheduling systems.</p>
+<p id="_d4d3dc33-8010-4872-9034-52fc4888704d">It is a new form of application-specific spam which takes advantage of the application
+layer across multiple technologies that spans scheduling, calendaring and messaging
+systems.</p>
+<p id="_5aa0f33a-083a-425f-974a-83b96a8c0584">As is the case with email spam, calendar spam is not only used to deliver unwanted
+information, but can also be used for malicious purposes such as phishing attempts
+and delivering dangerous payloads.</p>
+<p id="_41b83a02-3e33-45b5-a309-66ba8e967011">Because calendar events and meeting invitations are often (but not exclusively)
+transported and delivered via email, combatting calendar spam requires awareness,
+intervention and integration with email systems and services.</p></div>
+        <div id="_impact_of_calendar_spam"><h2 id="toc3">Impact of calendar spam</h2><p id="_dafce7ef-0541-452d-93cb-9e38f546e4d2">Calendar spam is unique in a number of ways:</p>
+<ol type="a" id="_9b9f95c8-04d7-4860-b2aa-e91d0354a35d">
+<li>
+<p id="_48c92a69-6467-4158-a27f-bf038087e4c6">Calendar spam, unlike email, can be placed chronologically anywhere in calendars, in
+the past or the future, not just the present, making it difficult for the end-user to
+detect at the time of delivery.</p>
+</li>
+<li>
+<p id="_a75589e4-86ba-4771-92f9-dff652274872">Spam meeting invitations, may automatically see these unwanted invitations added to
+their calendar without their consent, with notifications sent to all their devices.
+These invitations are not only difficult to find, but in some cases there is no way for
+the user to remove these events short of deleting the entire calendar.</p>
+</li>
+<li>
+<p id="_8306b7f6-161d-444b-baca-37168f69558f">Calendar events and meeting invitations do not yet carry the rich provenance which today
+accompanies email (detailed header information), making it difficult to ascertain
+where and when events originated and were delivered.</p>
+</li>
+<li>
+<p id="_fff092fe-526e-408a-9f90-09184f8c844d">Calendar events often contain notifications/alarms which are propagated across
+a user&#x2019;s desktop and mobile calendaring clients. It is common for users to have multiple
+calendaring clients which exacerbates the abuse.</p>
+</li>
+<li>
+<p id="_64041e6a-e911-49f3-a495-0939d60f88bb">Calendar events can include recurrence meaning that one event can show up in the user&#x2019;s
+calendar multiple times with multiple notifications/alarms being triggered over time.</p>
+</li>
+</ol></div>
+      </div>
+      <br />
+      <div class="Section3" id="_acknowledgements">
+        <h1 class="IntroTitle" id="toc4">Acknowledgements</h1>
+        <p id="_6ca4594e-8966-476e-81a4-e0b12af7493e">The authors of this document wishes to thank the experts of
+CalConnect&#x2009;&#x2014;&#x2009;the Calendaring and Scheduling Consortium and
+attendees of the M3AAWG conference sessions about the topic,
+as well as the following individuals who have participated in
+the drafting, review and discussion of this document:</p>
+        <ul id="_fbade3e4-ca97-4a5a-b3ab-aebf387344d2">
+<li>
+<p id="_e356b31c-9a63-4152-a62a-da28a74482d8">Arne Allisat</p>
+</li>
+<li>
+<p id="_85ef9fcd-6f78-49b3-8eb9-3dc9a474bb4d">Bron Gondwana</p>
+</li>
+<li>
+<p id="_168cd4cb-e58e-4e76-966b-0f744ccbc3c1">Andrew Laurence</p>
+</li>
+<li>
+<p id="_abdc14ae-9176-45a4-a133-90761fdfe09f">Andrey Maevsky</p>
+</li>
+<li>
+<p id="_a89600a4-8a0a-434d-a40a-d715887f4fed">Gary Schwartz</p>
+</li>
+<li>
+<p id="_6d73318a-7147-4d10-ba58-fa7cb995a787">Dave Thewlis</p>
+</li>
+<li>
+<p id="_f3a1c2c9-4851-471a-a855-b349c488c628">Ronald Tse</p>
+</li>
+</ul>
+      </div>
+      <p class="zzSTDTitle1">Calendar operator practices&#x2009;&#x2014;&#x2009;Guidelines to protect against calendar abuse</p>
+      <div id="_scope">
+        <h1 id="toc5">1.&#xA0; Scope</h1>
+        <p id="_5252c45b-d089-43e2-8e44-f5f0d8200222">This document specifies guidelines for calendar and mail system operators to:</p>
+        <ul id="_ba9ae476-016f-43c4-9e5c-574e9e40761b">
+<li>
+<p id="_1bfc7db6-05f5-4f10-b071-9eb81670e262">detect the occurrence of calendar abuse;</p>
+</li>
+<li>
+<p id="_82f34884-ecff-4bd2-b86a-3650f41017a6">consider processes and procedures to mitigate calendar abuse; and</p>
+</li>
+<li>
+<p id="_8cb10f5b-4b46-4dc1-aebf-5b31c967e1bd">suggest acceptable (non-abusive) practices with calendar usage.</p>
+</li>
+</ul>
+      </div>
+      <div><h1 id="toc6">2.&#xA0; Normative references</h1><p id="_26f4c10d-c622-48c1-8cb6-7dda640080e7">The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p> <p id="iMIP" class="NormRef">IETF RFC 6047, <i>iCalendar Message-Based Interoperability Protocol (iMIP)</i></p> <p id="iTIP" class="NormRef">IETF RFC 5546, <i>iCalendar Transport-Independent Interoperability Protocol (iTIP)</i></p></div>
+      <div id="terms">
+        <h1 id="toc7">3.&#xA0; Terms and definitions</h1>
+        <p id="_48458e2d-0c31-420c-9f64-4289a1e87ac7">For the purposes of this document,
+    the following terms and definitions apply.</p>
+        <div id="_terms_and_definitions"><h2 id="toc8">3.1.&#xA0; Terms and definitions</h2><h3 class="TermNum" id="calendar-spam">3.1.1.&#xA0;<p class="Terms" style="text-align:left;">calendar spam</p></h3>
+
+<p id="_2091ca40-5aab-49e6-ad91-3cc94cf12cef">calendar events and meeting invitations containing <i>spam</i> (<a href="#term-spam">Clause 3.1.3</a>) delivered
+through <i>calendar systems</i> (<a href="#term-calendar-system">Clause 3.1.5</a>)</p>
+
+<h3 class="TermNum" id="term-calendar-abuse">3.1.2.&#xA0;<p class="Terms" style="text-align:left;">calendar abuse</p></h3>
+
+<p id="_751c1fef-a8f5-41dc-ae9b-b8ba95b24526">malicious usage of a <i>calendar system</i> (<a href="#term-calendar-system">Clause 3.1.5</a>),
+possibly leading to an <i>attack</i> (<a href="#ISO27000">ISO/IEC 27000:2018, Clause 3.2</a>)
+on the receiving user</p>
+
+<h3 class="TermNum" id="term-spam">3.1.3.&#xA0;<p class="Terms" style="text-align:left;">spam</p></h3>
+
+<p id="_cc0347d5-22b5-4feb-aeda-b7a074408773">unsolicited or unwanted information</p>
+
+<h3 class="TermNum" id="attack">3.1.4.&#xA0;<p class="Terms" style="text-align:left;">attack</p></h3><p id="_7fa05e2f-97c0-44f5-a0bc-3298e0962bc1">attempt to destroy, expose, alter, disable, steal or gain unauthorized
+access to or make unauthorized use of an asset</p>
+<p>[SOURCE: <a href="#ISO27000">ISO/IEC 27000:2018</a>]</p>
+<h3 class="TermNum" id="term-calendar-system">3.1.5.&#xA0;<p class="Terms" style="text-align:left;">calendar system</p></h3>
+
+<p id="_62646c59-1d9e-411c-9a6c-6965ad244aec">information system that provides calendar and scheduling functionality for user
+accounts</p>
+
+<h3 class="TermNum" id="mail-system">3.1.6.&#xA0;<p class="Terms" style="text-align:left;">mail system</p></h3>
+
+<p id="_9ea5a889-dd5b-483f-a3b6-4434c5aefbe4">information system that provides electronic mail functionality</p>
+
+<h3 class="TermNum" id="user-system">3.1.7.&#xA0;<p class="Terms" style="text-align:left;">user system</p></h3>
+
+<p id="_24417240-3d46-4750-b676-b5eb7926b134">information system that provides authentication and authorization functionality</p>
+</div>
+        <div id="abbrev"><h2 id="toc9">3.2.&#xA0; Abbreviations</h2>
+
+<dl id="_6d2ad9b1-b96e-470a-9cff-a0349be1acb8"><dt><p>ARF</p></dt><dd>
+<p id="_26a1e1e6-a069-4c31-855a-3d03bc1625c3">Abuse Reporting Format</p>
+</dd><dt><p>DNSBL</p></dt><dd>
+<p id="_ed345da6-09f3-4567-82c1-1ec0f35e3f7d">Domain Name System-based Blackhole List</p>
+</dd><dt><p>SMTP</p></dt><dd>
+<p id="_835c039b-767d-4665-94c7-8a69297b68e0">Simple Mail Transfer Protocol (see <a href="#SMTP">RFC 2821</a>)</p>
+</dd><dt><p>URIBL</p></dt><dd>
+<p id="_7c8999af-b607-421e-b77c-b3176e1bc9d8">Realtime URI Blacklist</p>
+</dd><dt><p>iMIP</p></dt><dd>
+<p id="_70a9de55-e91b-462c-b561-7aeaf7692184">iCalendar Message-Based Interoperability Protocol (see <a href="#iMIP">RFC 6047</a>)</p>
+</dd><dt><p>iTIP</p></dt><dd>
+<p id="_0168fc7f-3524-4bcc-a63e-8d4c6ebaa0a2">iCalendar Transport-Independent Interoperability Protocol (see <a href="#iTIP">RFC 5546</a>)</p>
+</dd></dl>
+</div>
+      </div>
+      <div id="_calendar_spam_and_its_delivery_path">
+        <h1 id="toc10">4.&#xA0; Calendar spam and its delivery path</h1>
+        <div id="_general"><h2 id="toc11">4.1.&#xA0; General</h2><p id="_a1a2fa39-7149-4d75-8396-b168df8af2da">Calendar spam and calendar abuse originates at the OSI application layer
+but also travels across multiple application layer technologies
+through networked hosts.</p>
+<p id="_5af8df79-20ab-45d3-9f93-87bc78a4152c">Best practices used at the various checkpoints
+that a calendar spam instance encounters within its delivery path
+are described in clauses that follow.</p></div>
+        <div id="_information_systems_involved_in_calendar_abuse"><h2 id="toc12">4.2.&#xA0; Information systems involved in calendar abuse</h2><div id="_calendar_system"><h3>4.2.1.&#xA0; Calendar system</h3><p id="_20921adc-a5e3-4c64-a4c9-ee2c33f8d814">The calendar system plays a crucial role in calendar abuse, where
+it allows creating, editing and deleting events as well as scheduling
+events between different user accounts, including user accounts from
+other calendaring systems.</p>
+<p id="_9f2627b1-4e07-434a-aa4b-46a178be60e7">The calendar system should apply state-of-the-art methods to prevent
+calendar spam being sent from and received by user accounts on their
+system.</p>
+<div id="_f1f69527-5bb6-4022-b4f6-2890169daa7c" class="Note"><p><span class="note_label">NOTE</span>&#xA0; The term &#x201C;calendar system&#x201D; in this document specifically refers
+to calendaring systems that fulfill the requirements of
+calendaring standards.</p></div></div>
+<div id="_email_system"><h3>4.2.2.&#xA0; Email system</h3><p id="_f4d92ee9-53bb-4ace-bf23-32c526f0e4fa">The email system is an important factor in calendar abuse as a
+delivery mechanism.</p>
+<p id="_87c69116-b3bf-4c12-a4d5-121ef179b0fc">In calendar systems, the most common method to send calendar invitations
+to user recipients is iMIP (<a href="#iMIP">RFC 6047</a>), a way of exchanging iTIP (<a href="#iTIP">RFC 5546</a>)
+messages through email.</p>
+<p id="_abc6492c-d2af-457c-bc85-b995406fce79">iTIP (and iTIP) are mechanisms that allow users of different
+calendar systems to communicate with one another, by delivering
+calendar event information through email.</p>
+<div id="_70290685-a16f-4326-a83e-e6427917a727" class="example"><p class="example-title">EXAMPLE</p>
+<p id="_077d6c27-17e1-43ea-baab-8246c29afa75">User A on a calendar system can invite another user B that does not
+belong to the same calendar system, to a calendar event, where the
+invitation information is sent through email to user B, either
+by user A or user A&#x2019;s calendar system.</p>
+</div>
+<p id="_256a2c82-e8c2-4448-88d0-8dbebfe3c03d">Email systems are also used to transport information relevant to
+the calendar event from organizers to attendees of events.</p>
+<p id="_1c807d26-96ea-4ac5-b165-50e57cd35759">The email system should apply state-of-the-art methods to prevent
+calendar spam being sent by and received from user accounts on
+their system.</p></div>
+<div id="_related_systems"><h3>4.2.3.&#xA0; Related systems</h3><p id="_918cfc50-0230-4e3a-b6d5-4b5da595be8a">Calendar and email systems are often connected with, and rely on,
+other information systems, such as identity management systems
+for authentication and authorization.</p>
+<p id="_831262b2-9aad-4e55-b753-eb90ae4ac58b">When a system depended on by the calendar system is compromised,
+such as through the creation of malicious user accounts,
+the dependent calendar (and perhaps email) systems are also
+affected. For example, the malicious user accounts may be used
+to send out calendar abuse.</p>
+<p id="_e493cf47-5a87-4798-b29c-2cea984f7eff">These related systems should implement security best practices to
+protect systems that are dependent on them, such as,
+the calendar system.</p>
+<div id="_d2d86351-f655-480c-a630-3bc39ba1115d" class="example"><p class="example-title">EXAMPLE</p>
+<p id="_99b0552f-d5ee-44fd-b6c1-df8338ba7921">An identity management system should protect its user accounts
+from malicious actors; prevent registration of fake, bot or
+spam user accounts; and adopt strong authentication methods
+such as two-factor authentication.</p>
+</div></div></div>
+      </div>
+      <div id="_mitigating_calendar_abuse_at_source">
+        <h1 id="toc13">5.&#xA0; Mitigating calendar abuse at source</h1>
+        <div id="_general_2"><h2 id="toc14">5.1.&#xA0; General</h2><p id="_004385d8-86fa-4c06-a7f9-5ac75e5c5e4b">Calendar spam may be produced by innocent calendar systems when:</p>
+<ul id="_4715b1aa-01d4-4c36-af19-1bc76ee48ddf">
+<li>
+<p id="_37954622-fc72-4eef-a02c-5db310f0bcb9">its users were compromised;</p>
+</li>
+<li>
+<p id="_f7158c85-ac66-4a49-b46c-dac8a9b5ad84">it contains abusive users (such as a free-of-charge hosting provider).</p>
+</li>
+</ul>
+<p id="_a1c71807-c45b-492c-a4db-f6834af7956c">In the latter case, approaches such as automation (&#x201C;bots&#x201D;) can exacerbate
+the issue with the automated creation of free accounts.</p>
+<p id="_20fbce9a-6ca5-4ff7-b2ad-08f6bbd061ac">Such user accounts can be readily used to create calendar spam events:</p>
+<ol type="a" id="_a8fabcb8-b0a3-4166-87ba-8dc8938bc25b">
+<li>
+<p id="_a4b713ae-5dd4-474e-94b8-cc8c528746e0">The malicious user account inserts spam content into a newly created calendar event;</p>
+</li>
+<li>
+<p id="_b58a9a89-7663-47d0-b64c-915eaf27d919">The calendar system uses templating to send an email invitation with the calendar event
+attached;</p>
+</li>
+<li>
+<p id="_ede6aa20-a853-43a5-ba60-86cbce768a1e">The event content, which contains spam, will be inserted into body of the email.</p>
+</li>
+</ol>
+<p id="_cbbec90f-d0da-4272-b46e-54ac115458e2">The &#x201C;source&#x201D; calendar system provider should take steps to detect and
+mitigate such internal abuse, by placing detection mechanisms and
+automated responses at its calendar system and its email system associated
+with calendar event delivery.</p></div>
+        <div id="_source_calendar_system"><h2 id="toc15">5.2.&#xA0; Source calendar system</h2><p id="_10e5889d-d021-4022-a64f-1a7008945cfd">The source calendar system is where an calendar abuse instance originates from.</p>
+<p id="_7a78f092-86a7-48d4-93f4-9ac650eaf437">The source calendar system can apply the following best practices:</p>
+<ol type="a" id="_8dec1911-002c-4d7f-bec3-7c8f1e9bd262">
+<li>
+<p id="_e75c6e95-dc8d-4d7a-a5cb-e994c92547e1">abuse detection should be performed, through channels such as:</p>
+<ol type="1" id="_35e13a29-2899-48c9-8905-b5de0d87c0eb">
+<li>
+<p id="_a8964309-edb5-491c-81d6-3790ee130fb7">user interface and input detection, such as user agent checks;</p>
+</li>
+<li>
+<p id="_a9f3ab44-1ff4-4bd8-9912-1bb7bb0401f6">network origination, such as network addresses and IPs; and</p>
+</li>
+<li>
+<p id="_f869c9ff-409a-4a19-8e01-3a7ddc5e6cf0">user behavior such as click rate.</p>
+</li>
+</ol>
+</li>
+<li>
+<p id="_5712c575-38f6-45b2-8a84-6df7461981d6">detection of malicious content for typical spam patterns,
+before event creation and the subsequent sending of email invitations,
+by checking event content, such as:</p>
+<ol type="1" id="_87d79a4b-4eb5-48aa-8e19-6e061fc32616">
+<li>
+<p id="_ef7e0d81-f15e-495e-8638-6bdfc97f4ed6">subject;</p>
+</li>
+<li>
+<p id="_5a4b252f-18ba-4f1b-8608-aebc65944b5a">description;</p>
+</li>
+<li>
+<p id="_f7696f68-20a0-4276-9ee2-60db4c23d68b">recurrence;</p>
+</li>
+<li>
+<p id="_0c7560f7-61e7-4a3d-84a6-4d6b98707c05">number of attendees; and</p>
+</li>
+<li>
+<p id="_c1a4a8d8-d007-4530-a6d7-f0ea6e1df10e">links.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p id="_96914831-a857-4cb9-b784-81f9d43a0f5b">A number of potential actions can be invoked once potential spam
+is detected, such as:</p>
+<ol type="a" id="_459d6961-1e74-4975-b28d-dbf970ff834a">
+<li>
+<p id="_2b664ea6-9f43-44b0-b51e-2371768c535d">deny the sending of the calendar invite;</p>
+</li>
+<li>
+<p id="_2bc43d1e-32ea-48ad-873f-f4efc6920a6c">display of errors and feedback at the user interface;</p>
+</li>
+<li>
+<p id="_076ca42a-9e1c-4e01-b820-2f5aa2f1853e">alert the owner of the user account in case the user account has been hijacked;</p>
+</li>
+<li>
+<p id="_fb5415d7-5f69-4e67-bdb7-b18ef04c7296">application of rate limiting to prevent automated spamming;</p>
+</li>
+<li>
+<p id="_1b173a68-6a79-4024-ac4c-051073b51ad2">implement automation detection measures, such as usage of a CAPTCHA prior to sending an
+invitation; and</p>
+</li>
+<li>
+<p id="_3493975d-dd23-46e6-b3ca-06cb8cd90551">blocking the user account altogether.</p>
+</li>
+</ol></div>
+        <div id="_electronic_mail_system_smtp"><h2 id="toc16">5.3.&#xA0; Electronic mail system (SMTP)</h2><p id="_8207b557-f439-413c-816c-26b30dbda240">The source electronic mail system is where the calendar system delivers
+an event invitation to for its forwarding.</p>
+<p id="_8850dbad-0230-482b-a3c4-91740e327768">The following mitigation measures should be taken at the electronic mail system:</p>
+<ol type="a" id="_ee48203a-6e6b-474b-9b05-4d6dd7c91e2d">
+<li>
+<p id="_9940423c-ce28-4122-9770-eee8c5c805b8">abuse detection for SMTP access should be performed based on input, such as:</p>
+<ol type="1" id="_2b5335b5-56df-4a1d-a77a-c520a1b81598">
+<li>
+<p id="_145f64ce-f717-40c5-a911-f94f5b957206">network patterns of the originator;</p>
+</li>
+<li>
+<p id="_a1dc4f4b-3755-415d-b909-b801f4edf1bb">DNSBL checks against the originating IP.</p>
+</li>
+</ol>
+</li>
+<li>
+<p id="_f463eea2-df8e-4e26-823c-b7434e163532">detection of spam content patterns of the email message, using standard email anti-spam
+scanning applications:</p>
+<ol type="1" id="_c40678e9-fc03-4cc2-908f-41a87ff40e58">
+<li>
+<p id="_d4e05f65-c097-4168-a042-3ad7d850d03c">scanning for malicious content;</p>
+</li>
+<li>
+<p id="_3ee25ce6-faa3-40f2-a022-4880180067d5">detection of blacklisted and/or known phishing URLs.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p id="_2238ee81-83fc-4778-a86d-7be0a71b6b4e">A number of potential actions can be invoked once potential spam
+is detected, such as:</p>
+<ol type="a" id="_84df5a9f-5a4a-4168-aa56-b5db4f4ad1d9">
+<li>
+<p id="_c6767965-06af-41cf-be24-c730ada36a49">bounce the email that contains suspected calendar spam;</p>
+</li>
+<li>
+<p id="_45c64f31-8d83-4e56-bcd7-070869d08a01">silently discard the email with suspected calendar spam;</p>
+</li>
+<li>
+<p id="_8e42f031-c713-470a-bb00-e0bd7a38fb33">communicate with the upstream calendar provider to indicate potential abuse; and</p>
+</li>
+<li>
+<p id="_6e07ca50-fb33-43a9-a95f-551d4334729f">communicate with downstream email providers who will be receive the potential spam.</p>
+</li>
+</ol></div>
+      </div>
+      <div id="_mitigating_calendar_abuse_at_destination">
+        <h1 id="toc17">6.&#xA0; Mitigating calendar abuse at destination</h1>
+        <div id="_general_3"><h2 id="toc18">6.1.&#xA0; General</h2><p id="_2486308d-6884-4330-8dfe-e1185e7e8408">Calendar spam events are typically received by recipients in two ways:</p>
+<ol type="a" id="_2442f20a-ad99-4e7c-ab18-fd49890dd938">
+<li>
+<p id="_ecc2d709-105c-4b66-ace0-0f0777d031da">via email from an external email system; or</p>
+</li>
+<li>
+<p id="_e245b244-d979-49fb-904c-807b8641010a">directly from another account within the same calendar system the recipient resides on.<br /></p>
+<div id="_aaae080c-fd21-4710-8d8b-db03d71910c0" class="Note"><p><span class="note_label">NOTE</span>&#xA0; The case of a same-system account abuse can apply when the calendar system
+contains compromised accounts.</p></div>
+</li>
+</ol>
+<p id="_1faaf701-5bde-4b84-9774-3184ecc3a118">Calendar spam events originating from a calendar system may be propagated
+back to its own accounts through different channels, depending on their method of integration,
+such as:</p>
+<ul id="_ecb265b3-8dd7-4c98-93a3-b720ad267913">
+<li>
+<p id="_e98dd6d6-e933-4d29-aa24-0870c2bd2f20">from within the calendar system, where the event did not leave the calendar system; or</p>
+</li>
+<li>
+<p id="_fe529dba-e8a7-4dde-834f-b92e8f01b9ce">delivered through email, where the event was sent by the calendar system
+to an internal email system, and re-routed back to the originating calendar system.</p>
+</li>
+</ul>
+<p id="_a2548459-8b15-42ab-8f94-a7c913acaba9">System providers at the receiving end
+should therefore take steps to detect and mitigate abuse originating
+from both external and internal calendar and mail systems.</p></div>
+        <div id="_electronic_mail_system"><h2 id="toc19">6.2.&#xA0; Electronic mail system</h2><p id="_36cd5737-d226-41ee-8ab7-ca391819a135">The following best practices apply:</p>
+<ol type="a" id="_0519d971-398c-43d8-9f91-6341923627f7">
+<li>
+<p id="_a7d568da-375c-481a-bfed-213acfc936e7">abuse detection for receiving email by analyzing input, such as:</p>
+<ol type="1" id="_339e95d4-2236-40f9-b695-5aa7c8ecaf27">
+<li>
+<p id="_26f4bde6-951e-4edb-9834-6a52bfcd7079">originating network addresses;</p>
+</li>
+<li>
+<p id="_9f6e0c69-1453-4978-ad3d-c46c5605ae9d">content of the mail header and its structure.</p>
+</li>
+</ol>
+</li>
+<li>
+<p id="_1284615d-5850-41a4-85c1-b4b71944f3fb">analysis of email spam content patterns using standard email anti-spam scanning
+applications, such as through:</p>
+<ol type="1" id="_3d5e77b8-88e1-4fc6-9cfd-28ba8ab3897d">
+<li>
+<p id="_6adfd464-fcd4-48ac-a239-71955c25b5eb">checking of DNSBLs; and</p>
+</li>
+<li>
+<p id="_16e52b6a-1a0d-474a-8a84-a69383e55f9a">checking of URIBLs.</p>
+</li>
+</ol>
+</li>
+<li>
+<p id="_dfaf11cc-0024-4ac2-a68a-f651009ac562">checking email header content against internal and external sources, such as:</p>
+<ol type="1" id="_6ec9ffac-7eb0-4cc8-9c93-a67a23cca72d">
+<li>
+<p id="_f9f5f44e-693b-4741-b72b-47787d5105b2">verification of sender address reputation using the <tt>From:</tt> address;</p>
+</li>
+<li>
+<p id="_71fb95ce-4f4b-44b1-9900-dc2d1a6a1e3b">detection of known malicious addresses from security advisories;</p>
+</li>
+<li>
+<p id="_ab500fb1-9512-4bb0-8cec-2293450c564a">determining whether the organizer has been whitelisted.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p id="_683be401-3a42-41fd-ad59-e1a3d26e6081">Actions to be taken when potential spam is detected are provided below:</p>
+<ol type="a" id="_5ffd5bff-570d-460e-a758-1e5e273f7385">
+<li>
+<p id="_972da774-5386-4aff-90dd-28b08bdb32c7">bounce the message;</p>
+</li>
+<li>
+<p id="_66af0319-97a1-4ef7-94f1-c060943bd95e">silently discard the message;</p>
+</li>
+<li>
+<p id="_708dfccc-84f4-4166-be33-806a50ef5d02">pick out the message into quarantaine;</p>
+</li>
+<li>
+<p id="_77614e81-4c61-49a1-9ea2-181788a0dcfe">moving the message into the spam folder.</p>
+</li>
+</ol>
+<p id="_02d1678a-992e-41a4-bc36-461b5d1d8865">When potential spam is detected, &#x201C;interaction&#x201D; (e.g. adding the event to the end-user&#x2019;s
+calendar) between the recipient and the sender at the calendar system shall not proceed.</p>
+<p id="_860b32d8-48ad-4346-8c91-ac047d9dfdb0">Certain mitigation actions, such as the silent discard of an email,
+do not provide any feedback to the originating calendar system. This means
+that there will be no method for the originator of the calendar event
+to learn of these events and handle them in the case of false positives.</p>
+<p id="_d0f132a9-5354-4b66-9b16-c3d842d0b464">Therefore, these actions should only be taken if the
+electronic mail system is very certain about the calendar invitation
+being an abuse instance or spam.</p>
+<p id="_3f9e5509-d56b-4da8-a81b-6310478e1728">For some of the milder actions (e.g. putting in spam folder),
+the calendar system should provide options to the recipient user. For example, the
+recipient user can mark such emails as false positives, and are able to manually insert
+them into the user&#x2019;s calendar.</p></div>
+      </div>
+      <div id="_interactions_between_the_calendar_system_and_the_mail_system">
+        <h1 id="toc20">7.&#xA0; Interactions between the calendar system and the mail system</h1>
+        <p id="_c2a70c26-6212-4302-a32b-268b77fc6301">Interaction between the electronic mail and calendar systems
+should follow these principles:</p>
+        <ol type="a" id="_3ec30a1e-81ce-4226-af9d-376bfde4e846">
+<li>
+<p id="_9ce2a8dc-e63d-4f18-ba74-fc3999ba4d2b">interaction between these systems should only be triggered for emails
+not already identified as spam, i.e. anti-abuse measures have already
+been applied on both systems independently;</p>
+</li>
+<li>
+<p id="_4c8545a9-5077-4ae1-a0c5-d211abcbf4e5">calendar invitations should be analyzed and categorized by the
+calendar system to leverage its domain knowledge on calendar event information,
+which is necessary for a detailed analysis that takes into account
+calendar event data structures not understandable to electronic mail systems;</p>
+</li>
+<li>
+<p id="_7e31931e-8244-433a-b255-63a87f85b8ea">calendar event content should be checked for spam patterns in its text fields,
+such as the fields of subject, description, recurrence and links,
+to determine the likelihood of it being spam;</p>
+</li>
+<li>
+<p id="_b70582ef-d5a5-4cfa-94cb-02bf13bc9388">depending on the likelihood of being spam, spam handling options should be
+offered to the user directly, such as:</p>
+<ul id="_a7ce982a-5575-47c5-9d3d-e9dc3327d497">
+<li>
+<p id="_1a8aedbf-34fa-4ca5-bfb3-978f99404248">the automatic insertion of organizers on a whitelist or address book;</p>
+</li>
+<li>
+<p id="_837989f8-b1f1-4bcc-89db-d48df8cfca57">the state of this event in availability of calendar (e.g. free,
+conditional or blocked).</p>
+</li>
+</ul>
+</li>
+</ol>
+        <p id="_8cad26b2-912a-4773-93d3-215ea1d9e86f">When spam is detected during the interaction stage, a number of mitigation
+actions can be taken, such as:</p>
+        <ol type="a" id="_d4d4b4e3-dfdd-4188-9a96-ade8b940a64b">
+<li>
+<p id="_975b20c8-4f32-4854-af34-23a8f6e84356">do not automatically insert the calendar event into the user&#x2019;s calendar; or</p>
+</li>
+<li>
+<p id="_87e1bc16-f27f-4cf8-96f7-c5b266bd62bc">deactivate calendar event notifications for this calendar event.</p>
+</li>
+</ol>
+        <div id="_calendar_user_application"><h2 id="toc21">7.1.&#xA0; Calendar user application</h2><p id="_4278f2a6-15eb-49d9-84a0-055326a1a0ee">The calendar user application, as part of the &#x201C;calendar system&#x201D;,
+should offer the following functionality relating to calendar abuse:</p>
+<ol type="a" id="_065084cd-6eb6-454e-b448-5a00a9fb3d19">
+<li>
+<p id="_5ccc686c-b3ed-4795-9e2c-fb606d1ca50a">allow the user to delete unwanted events (e.g. &#x201C;Mark as spam&#x201D;),
+without notifying the organizer as normally performed with calendar
+events;</p>
+</li>
+<li>
+<p id="_365d24f4-a80d-4d02-a37a-a25ca6cebbfa">submission of ARF reports to report calendar abuse;</p>
+</li>
+<li>
+<p id="_57fba11a-41e1-49ea-83f9-4b2f61c9a67e">store information on how a particular calendar event was inserted
+into the users calendar (e.g. by tracking the <tt>Message-ID</tt> attribute),
+to be able to inform the user such information and provide additional
+information to the originating calendar system on abuse.</p>
+</li>
+</ol>
+<p id="_16fcf4b8-813b-46f8-91b4-ddaace9e7def">In addition, further actions can be taken to detect calendar spam at the
+calendar user application, such as:</p>
+<ol type="a" id="_8b74a87c-83c1-43b7-9503-5278abf58194">
+<li>
+<p id="_d07c4aef-d486-4e8d-a209-f69ae2188465">sending an email feedback loop if the original email that carried
+the calendar invitation and its <tt>MailID</tt> is still available.</p>
+</li>
+</ol></div>
+      </div>
+      <div id="_other_ways_calendar_spam_occur">
+        <h1 id="toc22">8.&#xA0; Other ways calendar spam occur</h1>
+        <div id="_subscription_to_shared_calendars"><h2 id="toc23">8.1.&#xA0; Subscription to shared calendars</h2><p id="_e30f0e18-12b0-4477-af50-2e67603acebc">Malicious events can end up in user calendars through shared calendars.</p>
+<p id="_6e9b6357-a74f-4b43-ae9d-b89eef428858">Shared calendars are have a single origin and users are subscribed to its events,
+and therefore manipulation of the calendar source will impact all its subscribers.</p>
+<p id="_f1943524-62af-4a63-b586-17feb643b176">Popular calendars, such as official calendars (e.g. public and bank holidays),
+schedules of shows and sports teams, are valuable targets for malicious actors.</p>
+<p id="_dc98be1f-c34b-496c-b819-e5978b9638b4">Disturbingly, very often calendar applications do not allow deletion
+of such shared events if the subscription is set to &#x201C;read-only&#x201D;. This means
+that malicious events propagated through such calendars may not even be
+eligible for recipient removal, which adds salt to injury.</p>
+<p id="_d909100d-7cce-48d8-a031-abd4bab84eaa">The only approach for users of these calendar applications are to unsubscribe
+the entire calendar, even though all previous events will be deleted from
+the user&#x2019;s calendar when unsubscribed.
+More robust controls are certainly needed for calendar subscribers.</p>
+<div id="_itip"><h3>8.1.1.&#xA0; iTIP</h3>
+
+<p id="_8b5f9e59-c0a8-4d34-b2a1-61b14fb1b77e">Calendar systems using iTIP for direct communication between each other, e.g. within
+the same calendar system, should consider and implement anti-abuse best practices as
+described above.</p>
+</div></div>
+      </div>
+      <div id="_conclusion">
+        <h1 id="toc24">9.&#xA0; Conclusion</h1>
+        <p id="_3a822810-1626-452f-b8b0-a1b7616d6b2e">Spam is a long-standing and well-known email problem. Because email is a commonly used
+transport for calendar (&#x201C;meeting&#x201D;) invitations and events, spammers are now using these
+calendar events and invitations as a spam vector. Consequently, knowledge of both domains
+is required to develop defenses against these attacks.</p>
+        <p id="_90e5d4c0-4bec-4599-b842-de7a68b7f20d">This document provides email and calendar system operators with an introduction to
+calendar spam, and highlights best practices for identifying and mitigating calendar spam.
+Implementation details will largely be system-specific.</p>
+        <p id="_5ba6d97f-429c-4068-81b2-2035854b82b6">The &#x201C;war&#x201D; against malware, including spam, is dynamic and ever-changing. As a result,
+email and calendar system experts will need to share their expertise and experiences with
+each other on an ongoing basis. CalConnect&#x2019;s collaboration with M3AAWG represents the first
+formal collaboration in this area.</p>
+      </div>
+      <br />
+      <div id="AnnexA" class="Section3">
+        <h1 class="Annex" id="toc25"><b>Appendix A</b><br />(informative) <br /><b>Technical information</b></h1>
+        <div id="_structure_of_a_best_practice_imip_message_containing_an_event"><h2 id="toc26">A.1.&#xA0; Structure of a best practice iMIP message containing an event</h2><p id="_cce1561d-a786-4c55-a882-a322bbedc425">An email message should only contain a single iCalendar attachment (an iMIP file).<div id="_bb3cdca8-6958-4f84-a75a-17faffe657cd" class="Note"><p><span class="note_label">NOTE  1</span>&#xA0; Current practice allows attaching multiple iCalendar attachments
+to a single email.</p></div></p>
+
+<p id="_da4f142e-d06f-4709-861c-aa09ff5265b0">The recommended MIME/<tt>multipart</tt> structure of an email that contains
+a calendar event invitation, optimized for interoperability,
+is provided as follows:</p>
+<ul id="_58ff5ed0-26e2-4cad-ae89-8138836cade0">
+<li>
+<p id="_4241cd6b-3336-46ed-a3bb-c105506a5466">a single <tt>multipart/mixed</tt> part, which contains:</p>
+<ul id="_1ae9c323-13d8-4a76-afb2-85386c7441de">
+<li>
+<p id="_3b3d37b5-4524-4acf-aa3b-82985cf2c89c">a single <tt>multipart/alternative</tt> part, which contains:</p>
+<ul id="_81f7de3b-0456-420a-a4b4-fd17ea542bf1">
+<li>
+<p id="_58d58794-c1ed-45f9-9987-f6b40f33fe9d">a <tt>text/plain</tt> part; and</p>
+</li>
+<li>
+<p id="_896dbdf9-d83d-4a2f-851b-eab860f79b89">a <tt>text/html</tt> part;</p>
+</li>
+</ul>
+</li>
+<li>
+<p id="_e19565dc-2fc9-42bc-a393-14edaa42e879">a <tt>text/calendar</tt> part with <tt>method=REQUEST</tt>; and</p>
+</li>
+<li>
+<p id="_061f5007-867c-4cdb-b242-74e19400ac1a">an <tt>application/ics</tt> part, with a <tt>content-disposition:attachment</tt>, in <tt>BASE64</tt> encoding</p>
+</li>
+</ul>
+</li>
+</ul>
+<p id="_40f1bf63-fb3a-4a67-8523-4d0ae58495c2">This recommended structure was devised through interoperability testing with
+multiple existing implementations.<div id="_f12cda55-32a2-4ad0-b96e-fe1d93f1ffa1" class="Note"><p><span class="note_label">NOTE  2</span>&#xA0; A calendar system that conforms to calendaring standards produces
+an email structure similar to that above.</p></div></p>
+
+<p id="_03a222ae-298b-48df-b801-e9203cda62c4">Guidelines on this structure:</p>
+<ul id="_a59e5334-ba45-441b-815e-c15fedf9332c">
+<li>
+<p id="_da624aa3-4628-4758-8bf8-f10d0b8e7ddf">The filename of the <tt>application/ics</tt> part should end with the <tt>.ics</tt> file extension.</p>
+</li>
+<li>
+<p id="_059daef6-2ace-4c26-8110-663ce7f0b69a">Some calendar user applications will only see the part with the standard <tt>text/calendar</tt>
+<tt>content-type</tt> and the <tt>method</tt> header.</p>
+</li>
+<li>
+<p id="_54e03335-bf4f-42d5-aca9-f2585340d65f">Some calendar user applications are only able to see attached parts with
+<tt>application/ics</tt> (this is non-standard behavior).</p>
+</li>
+<li>
+<p id="_5c79bb21-313d-43f9-bb3a-08705b58cfb8">Some calendar systems automatically insert links within the HTML part,
+which can be used by email clients that are not calendar-aware to accept
+or decline an invitation without having to process the calendar parts.
+In this case, the server simply updates the <tt>ORGANIZER</tt>&#x2018;s copy of the
+event based on the link clicked.</p>
+</li>
+<li>
+<p id="_33fc334a-2e77-43c5-8572-1528f21e8299">The <tt>text/plain</tt> and <tt>text/html</tt> part of the message in the body will
+include information of the event, such as its subject and description.</p>
+</li>
+<li>
+<p id="_71392c66-e46d-4ea6-959f-f1afbb61c690">An email using the provide structure does not preclude spammers from
+inserting malicious content outside of the attached files&#x2009;&#x2014;&#x2009;all parts of the email should still be parsed to detect malicious content.</p>
+</li>
+</ul></div>
+      </div>
+      <br />
+      <div><h1 class="Section3" id="toc27">Bibliography</h1><p id="ISO27000" class="Biblio">[1]&#xA0; ISO/IEC 27000:2018, <i>Information technology &#x2013; Security techniques &#x2013; Information security management systems&#x2009;&#x2014;&#x2009;Overview and vocabulary</i></p><p id="SMTP" class="Biblio">[2]&#xA0; IETF RFC 2821, <i>Simple Mail Transfer Protocol</i></p>  </div>
+    </main>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    asciimath2jax: { delimiters: [['(#(', ')#)']] }
+ });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=MML_HTMLorMML-full" async="async"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>  <script>
+    $("#toc").on('click', 'li', function(e) {
+    $(this).parent().find('li.toc-active').removeClass('toc-active');
+    $(this).addClass('toc-active');
+});
+  </script>
+  
+  <script>
+  //TOC toggle animation
+$('#toggle').on('click', function(){
+    if( $('nav').is(':visible') ) {
+        $('nav').animate({ 'left': '-353px' }, 'slow', function(){
+            $('nav').hide();
+        });
+        $('.container').animate({ 'padding-left': '31px' }, 'slow');
+    }
+    else {
+        $('nav').show();
+        $('nav').animate({ 'left': '0px' }, 'slow');
+        $('.container').animate({ 'padding-left': '360px' }, 'slow');
+    }
+});
+</script>
+
+<script>
+    // Scroll to top button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+  <script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.2.2 - 2020-04-20
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2020 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function f(A){A.icon=A.hasOwnProperty("icon")?A.icon:"",A.visible=A.hasOwnProperty("visible")?A.visible:"hover",A.placement=A.hasOwnProperty("placement")?A.placement:"right",A.ariaLabel=A.hasOwnProperty("ariaLabel")?A.ariaLabel:"Anchor",A.class=A.hasOwnProperty("class")?A.class:"",A.base=A.hasOwnProperty("base")?A.base:"",A.truncate=A.hasOwnProperty("truncate")?Math.floor(A.truncate):64,A.titleText=A.hasOwnProperty("titleText")?A.titleText:""}function p(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new Error("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],f(this.options),this.isTouchDevice=function(){return!!("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,i,n,o,s,a,r,c,h,l,u,d=[];if(f(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=p(A=A||"h2, h3, h4, h5, h6")).length)return this;for(!function(){if(null!==document.head.querySelector("style.anchorjs"))return;var A,e=document.createElement("style");e.className="anchorjs",e.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(e):document.head.insertBefore(e,A);e.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",e.sheet.cssRules.length),e.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",e.sheet.cssRules.length),e.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",e.sheet.cssRules.length),e.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',e.sheet.cssRules.length)}(),t=document.querySelectorAll("[id]"),i=[].map.call(t,function(A){return A.id}),o=0;o<e.length;o++)if(this.hasAnchorJSLink(e[o]))d.push(o);else{if(e[o].hasAttribute("id"))n=e[o].getAttribute("id");else if(e[o].hasAttribute("data-anchor-id"))n=e[o].getAttribute("data-anchor-id");else{for(c=r=this.urlify(e[o].textContent),a=0;void 0!==s&&(c=r+"-"+a),a+=1,-1!==(s=i.indexOf(c)););s=void 0,i.push(c),e[o].setAttribute("id",c),n=c}(h=document.createElement("a")).className="anchorjs-link "+this.options.class,h.setAttribute("aria-label",this.options.ariaLabel),h.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(h.title=this.options.titleText),u=document.querySelector("base")?window.location.pathname+window.location.search:"",u=this.options.base||u,h.href=u+"#"+n,"always"===l&&(h.style.opacity="1"),""===this.options.icon&&(h.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(h.style.lineHeight="inherit")),"left"===this.options.placement?(h.style.position="absolute",h.style.marginLeft="-1em",h.style.paddingRight="0.5em",e[o].insertBefore(h,e[o].firstChild)):(h.style.paddingLeft="0.375em",e[o].appendChild(h))}for(o=0;o<d.length;o++)e.splice(d[o]-o,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,i=p(A),n=0;n<i.length;n++)(t=i[n].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(i[n]))&&this.elements.splice(e,1),i[n].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){return this.options.truncate||f(this.options),A.trim().replace(/\'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\\n\t\b\v]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),t=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||t||!1}}});
+// @license-end
+  </script>
+  <script>
+/*
+  $(document).ready(function() {
+          $('[id^=toc]').each(function ()
+          {
+             var currentToc = $(this);
+       var url = window.location.href;
+             currentToc.wrap("<a href='" + url + "#" + currentToc.attr("id") + "' </a>");
+          });
+});
+*/
+  anchors.options = {
+  placement: 'left'
+};
+anchors.add('h1, h2, h3, h4');
+</script>
+
+</body>
+</html>

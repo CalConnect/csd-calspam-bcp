@@ -1,0 +1,59 @@
+<bibdata type="standard">
+<title language="en" format="text/plain">Calendar operator practices — Guidelines to protect against calendar abuse</title>
+<docidentifier type="csd">CC/R 18003:2019</docidentifier>
+<docnumber>18003</docnumber>
+<date type="published">
+<on>2019-01-18</on>
+</date>
+<contributor>
+<role type="author"/>
+<organization>
+<name>CalConnect</name>
+</organization>
+</contributor>
+<contributor>
+<role type="author"/>
+<person>
+<name>
+<completename>Thomas Schäfer, 1&amp;amp;1 Mail&amp;amp;Media Development and Technology GmbH</completename>
+</name>
+</person>
+</contributor>
+<contributor>
+<role type="author"/>
+<person>
+<name>
+<completename>Jesse Thompson, University of Wisconsin-Madison</completename>
+</name>
+</person>
+</contributor>
+<contributor>
+<role type="publisher"/>
+<organization>
+<name>CalConnect</name>
+</organization>
+</contributor>
+<edition>1</edition>
+<version>
+<revision-date>2019-01-18</revision-date>
+</version>
+<language>en</language>
+<script>Latn</script>
+<status>
+<stage>published</stage>
+</status>
+<copyright>
+<from>2019</from>
+<owner>
+<organization>
+<name>CalConnect</name>
+</organization>
+</owner>
+</copyright>
+<ext>
+<doctype>report</doctype>
+<editorialgroup>
+<technical-committee>CALSPAM</technical-committee>
+</editorialgroup>
+</ext>
+</bibdata>
