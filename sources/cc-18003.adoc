@@ -11,9 +11,6 @@
 :fullname_2: Jesse Thompson, University of Wisconsin-Madison
 :language: en
 :technical-committee: CALSPAM
-:draft:
-:toc:
-:stem:
 :xrefstyle: short
 :imagesdir: images
 :docfile: cc-18003.adoc
