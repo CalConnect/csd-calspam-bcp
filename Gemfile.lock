@@ -25,7 +25,7 @@ GEM
       down (~> 5.0)
       libmspack (~> 0.1.0)
     gb-agencies (0.0.6)
-    git (1.7.0)
+    git (1.11.0)
       rchardet (~> 1.8)
     html2doc (1.0.1)
       asciimath (~> 1.0.9)
