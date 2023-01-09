@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     asciidoctor (2.0.10)
     asciimath (1.0.9)
     bibtex-ruby (5.1.4)
@@ -13,8 +13,8 @@ GEM
     concurrent-ruby (1.1.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    down (5.1.1)
-      addressable (~> 2.5)
+    down (5.4.0)
+      addressable (~> 2.8)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
@@ -25,7 +25,8 @@ GEM
       down (~> 5.0)
       libmspack (~> 0.1.0)
     gb-agencies (0.0.6)
-    git (1.7.0)
+    git (1.13.0)
+      addressable (~> 2.8)
       rchardet (~> 1.8)
     html2doc (1.0.1)
       asciimath (~> 1.0.9)
@@ -69,7 +70,7 @@ GEM
       htmlentities
       mn2pdf (~> 1.13)
       nokogiri
-    metanorma-cli (1.2.13.1)
+    metanorma-cli (1.2.13.2)
       fontist (~> 0.2.0)
       git (~> 1.5)
       isodoc (~> 1.0.0)
@@ -162,7 +163,7 @@ GEM
       isodoc (~> 1.0.20)
       metanorma-standoc (~> 1.4.0)
       ruby-jing
-    metanorma-standoc (1.4.0)
+    metanorma-standoc (1.4.1)
       asciidoctor (~> 2.0.0)
       concurrent-ruby
       iev (~> 0.2.1)
